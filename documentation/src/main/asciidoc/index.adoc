@@ -1,0 +1,17 @@
+:docinfo:
+= mydocmgt
+Documentation
+:nofooter:
+
+This document describes the mydocmgt app.
+
+include::subpage.adoc[]
+
+include::additionalpage.adoc[]
+
+== About
+
+mydocmgt +
+(C) Your Company
+
+https://your-website.com/
