@@ -1,15 +1,4 @@
 [
-  {
-    "databaseName": "(Customer)",
-    "groupName": "(Customer)",
-    "editorMode": "*",
-    "event": "maskein",
-    "key": "*",
-    "field": "*",
-    "headOrTable": "*",
-    "isContinue": "[C]",
-    "handler": "ow1/S00X.DOCMGT.FO2"
-  },
     {
     "databaseName": "(Company)",
     "groupName": "(CompanyData)",
@@ -32,10 +21,65 @@
     "isContinue": "[C]",
     "handler": "ow1/S00X.DOCMGT.FO2"
   },
-    {
+   {
     "databaseName": "(Customer)",
     "groupName": "(Customer)",
     "editorMode": "*",
+    "event": "maskein",
+    "key": "*",
+    "field": "*",
+    "headOrTable": "*",
+    "isContinue": "[C]",
+    "handler": "ow1/S00X.DOCMGT.FO2"
+  },
+    {
+    "databaseName": "(Customer)",
+    "groupName": "(Customer)",
+    "editorMode": "ändern",
+    "event": "buttonnach",
+    "key": "*",
+    "field": "ymydmsseltype",
+    "headOrTable": "K",
+    "isContinue": "[C]",
+    "handler": "ow1/S00X.DOCMGT.FO2"
+  },
+   {
+    "databaseName": "(Vendor)",
+    "groupName": "(Vendor)",
+    "editorMode": "*",
+    "event": "maskein",
+    "key": "*",
+    "field": "*",
+    "headOrTable": "*",
+    "isContinue": "[C]",
+    "handler": "ow1/S00X.DOCMGT.FO2"
+  },
+    {
+    "databaseName": "(Vendor)",
+    "groupName": "(Vendor)",
+    "editorMode": "ändern",
+    "event": "buttonnach",
+    "key": "*",
+    "field": "ymydmsseltype",
+    "headOrTable": "K",
+    "isContinue": "[C]",
+    "handler": "ow1/S00X.DOCMGT.FO2"
+  },
+   {
+    "databaseName": "(Part)",
+    "groupName": "(Product)",
+    "editorMode": "*",
+    "event": "maskein",
+    "key": "*",
+    "field": "*",
+    "headOrTable": "*",
+    "isContinue": "[C]",
+    "handler": "ow1/S00X.DOCMGT.FO2"
+  },
+    {
+    "databaseName": "(Part)",
+    "groupName": "(Product)",
+    "editorMode": "ändern",
     "event": "buttonnach",
     "key": "*",
     "field": "ymydmsseltype",
@@ -47,6 +91,127 @@
     "databaseName": "(Sales)",
     "groupName": "(SalesOrder)",
     "editorMode": "*",
+    "event": "maskein",
+    "key": "*",
+    "field": "*",
+    "headOrTable": "*",
+    "isContinue": "[C]",
+    "handler": "ow1/S00X.DOCMGT.FO2"
+  },
+    {
+    "databaseName": "(Sales)",
+    "groupName": "(SalesOrder)",
+    "editorMode": "ändern",
+    "event": "buttonnach",
+    "key": "*",
+    "field": "ymydmsseltype",
+    "headOrTable": "K",
+    "isContinue": "[C]",
+    "handler": "ow1/S00X.DOCMGT.FO2"
+  },
+    {
+    "databaseName": "(Sales)",
+    "groupName": "(PackingSlip)",
+    "editorMode": "*",
+    "event": "maskein",
+    "key": "*",
+    "field": "*",
+    "headOrTable": "*",
+    "isContinue": "[C]",
+    "handler": "ow1/S00X.DOCMGT.FO2"
+  },
+    {
+    "databaseName": "(Sales)",
+    "groupName": "(PackingSlip)",
+    "editorMode": "ändern",
+    "event": "buttonnach",
+    "key": "*",
+    "field": "ymydmsseltype",
+    "headOrTable": "K",
+    "isContinue": "[C]",
+    "handler": "ow1/S00X.DOCMGT.FO2"
+  },
+    {
+    "databaseName": "(Sales)",
+    "groupName": "(Invoice)",
+    "editorMode": "*",
+    "event": "maskein",
+    "key": "*",
+    "field": "*",
+    "headOrTable": "*",
+    "isContinue": "[C]",
+    "handler": "ow1/S00X.DOCMGT.FO2"
+  },
+    {
+    "databaseName": "(Sales)",
+    "groupName": "(Invoice)",
+    "editorMode": "ändern",
+    "event": "buttonnach",
+    "key": "*",
+    "field": "ymydmsseltype",
+    "headOrTable": "K",
+    "isContinue": "[C]",
+    "handler": "ow1/S00X.DOCMGT.FO2"
+  },
+    {
+    "databaseName": "(Purchasing)",
+    "groupName": "(PurchaseOrder)",
+    "editorMode": "*",
+    "event": "maskein",
+    "key": "*",
+    "field": "*",
+    "headOrTable": "*",
+    "isContinue": "[C]",
+    "handler": "ow1/S00X.DOCMGT.FO2"
+  },
+    {
+    "databaseName": "(Purchasing)",
+    "groupName": "(PurchaseOrder)",
+    "editorMode": "ändern",
+    "event": "buttonnach",
+    "key": "*",
+    "field": "ymydmsseltype",
+    "headOrTable": "K",
+    "isContinue": "[C]",
+    "handler": "ow1/S00X.DOCMGT.FO2"
+  },
+    {
+    "databaseName": "(Purchasing)",
+    "groupName": "(PackingSlip)",
+    "editorMode": "*",
+    "event": "maskein",
+    "key": "*",
+    "field": "*",
+    "headOrTable": "*",
+    "isContinue": "[C]",
+    "handler": "ow1/S00X.DOCMGT.FO2"
+  },
+    {
+    "databaseName": "(Purchasing)",
+    "groupName": "(PackingSlip)",
+    "editorMode": "ändern",
+    "event": "buttonnach",
+    "key": "*",
+    "field": "ymydmsseltype",
+    "headOrTable": "K",
+    "isContinue": "[C]",
+    "handler": "ow1/S00X.DOCMGT.FO2"
+  },
+    {
+    "databaseName": "(Purchasing)",
+    "groupName": "(Invoice)",
+    "editorMode": "*",
+    "event": "maskein",
+    "key": "*",
+    "field": "*",
+    "headOrTable": "*",
+    "isContinue": "[C]",
+    "handler": "ow1/S00X.DOCMGT.FO2"
+  },
+    {
+    "databaseName": "(Purchasing)",
+    "groupName": "(Invoice)",
+    "editorMode": "ändern",
     "event": "buttonnach",
     "key": "*",
     "field": "ymydmsseltype",

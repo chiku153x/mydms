@@ -16,6 +16,8 @@
 .type PS12:3 xtselected  ? _F|defined(U|xtselected)
 
 def main(){
+   .call inputDefaults() 
+   
    if('G|evtmaske' = "50"){
         .call handleCompanyData()
    }
@@ -36,7 +38,7 @@ def handleCompanyData(){
 }
 
 def handleAdditionalFile(){
-    .println Additional file
+    ..//.println Additional file
 }
 
 def handleAllScreens(){
@@ -46,6 +48,13 @@ def handleAllScreens(){
     
     if(G|evtart = "maskein"){
         .protection ymydmstype
+        if(G|evtkommd <> G|kaktname13 ){
+            .protection ymydmssubject
+            .protection ymydmsseltype
+            .protection ymydmssubject
+            .protection ymydmsfile
+            .protection ymydmsattach
+        }
     }
     
     switch(G|evtvar){
@@ -73,6 +82,25 @@ def showMenu(){
             .select line
         }
     }
-    .input 'U|xttmpfile'
-    .formula M|ymydmstype = U|xtselected^namebspr
+    if(U|xicount > 0){
+        .input 'U|xttmpfile'
+        .formula M|ymydmstype = U|xtselected^namebspr
+    }else{
+        .error No menu items to show
+    }
+    
+    
 }
+
+..<BLOCK>
+def inputDefaults( ) {
+    .set demand -
+    .set trans -
+    .input "KAKTNAME.KONST"
+    .input "KDATNAME.KONST"
+    .input "KKOMNAME.KONST"
+}
+..</BLOCK>
+
+
+
