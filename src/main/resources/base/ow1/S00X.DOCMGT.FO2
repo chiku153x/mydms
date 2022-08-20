@@ -13,7 +13,7 @@
 .type text xtfilesel   ? _F|defined(U|xtfilesel)
 .type text xttmpfile   ? _F|defined(U|xttmpfile)
 .type i3 xicount       ? _F|defined(U|xicount)
-.type text xtselected  ? _F|defined(U|xtselected)
+.type PS12:3 xtselected  ? _F|defined(U|xtselected)
 
 def main(){
    if('G|evtmaske' = "50"){
@@ -69,12 +69,10 @@ def showMenu(){
         .select line
         while(G|mehr){
             .formula U|xicount = U|xicount + 1
-            .println 'H|ymydmsitmname' >>.formula U|xtselected = "'H|ymydmsitmno'" + "|" +  "'H|ymydmsitmname'"
+            .println 'H|ymydmsshorttxt^namebspr' >>.formula U|xtselected = "'H|ymydmsshorttxt^id'"
             .select line
         }
     }
     .input 'U|xttmpfile'
-    .box
-    .item "'U|xtselected'"
-    .enditem
+    .formula M|ymydmstype = U|xtselected^namebspr
 }
