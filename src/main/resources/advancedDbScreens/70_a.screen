@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <screen:Screen xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="/de.abas.screen.model.core/model/core.ecore" xmlns:screen="/de.abas.screen.model.screen/model/screen.ecore" xsi:schemaLocation="/de.abas.screen.model.core/model/core.ecore platform:/de.abas.screen.model.core/model/core.ecore" featureType="erpgui" smartScreenId="NG_DATABASE" smartScreenVersion="1.0.0">
-  <variables searchWord="V-33-00    " group="true" name="TypeList">
+  <variables searchWord="V-15-00    " group="true" name="TypeList">
     <entries englishName="" name="grust" type="I9" guiType="INTEGER" description="" width="9" screenProtection="immer geschützt" meaning="Gruppe" changePriority="A" viewPriority="A" primaryName="grust"/>
-    <entries englishName="grpNo" name="gruppe" type="GRN33" guiType="INTEGER" description="" width="2" screenProtection="immer geschützt" alias="true" meaning="Gruppennummer" changePriority="A" viewPriority="A" primaryName="grust"/>
-    <entries englishName="grpDescr" name="grbez" type="GRB33" guiType="INPUT" description="" width="80" screenProtection="immer geschützt" alias="true" meaning="Gruppenbezeichnung" changePriority="A" viewPriority="A" primaryName="grust"/>
-    <entries englishName="recordNo" name="sn" type="P33" guiType="REFERENCE" description="" width="16" screenProtection="immer geschützt" meaning="Satznummer" changePriority="A" viewPriority="A" primaryName="sn"/>
-    <entries englishName="id" name="id" type="ID33" guiType="REFERENCE" description="" width="30" screenProtection="immer geschützt" alias="true" meaning="Datensatz-ID" changePriority="A" viewPriority="A" primaryName="sn"/>
+    <entries englishName="grpNo" name="gruppe" type="GRN15" guiType="INTEGER" description="" width="2" screenProtection="immer geschützt" alias="true" meaning="Gruppennummer" changePriority="A" viewPriority="A" primaryName="grust"/>
+    <entries englishName="grpDescr" name="grbez" type="GRB15" guiType="INPUT" description="" width="80" screenProtection="immer geschützt" alias="true" meaning="Gruppenbezeichnung" changePriority="A" viewPriority="A" primaryName="grust"/>
+    <entries englishName="recordNo" name="sn" type="P15" guiType="REFERENCE" description="" width="16" screenProtection="immer geschützt" meaning="Satznummer" changePriority="A" viewPriority="A" primaryName="sn"/>
+    <entries englishName="id" name="id" type="ID15" guiType="REFERENCE" description="" width="30" screenProtection="immer geschützt" alias="true" meaning="Datensatz-ID" changePriority="A" viewPriority="A" primaryName="sn"/>
     <entries englishName="DBNo" name="dnr" type="AN177" guiType="COMBOBOX" description="" width="3" screenProtection="immer geschützt" meaning="Datenbanknummer" changePriority="A" viewPriority="A" primaryName="dnr"/>
     <entries englishName="DBDescr" name="dbez" type="A177" guiType="COMBOBOX" description="" width="30" screenProtection="immer geschützt" alias="true" meaning="Datenbankbezeichnung" changePriority="A" viewPriority="A" primaryName="dnr"/>
     <entries englishName="schemaVersion" name="schemaversion" type="ZAE1" guiType="INPUT" description="" width="22" screenProtection="immer geschützt" meaning="Schemaversion" changePriority="A" viewPriority="A" primaryName="schemaversion"/>
-    <entries englishName="objectGrpNo" name="objgruppe" type="GRN33" guiType="INTEGER" description="" width="2" screenProtection="immer geschützt" meaning="Gruppennummer der Objektgruppe" changePriority="A" viewPriority="A" primaryName="objgruppe"/>
-    <entries englishName="objectGrpDescr" name="objgrbez" type="GRB33" guiType="INPUT" description="" width="80" screenProtection="immer geschützt" alias="true" meaning="Gruppenbezeichnung der Objektgruppe" changePriority="A" viewPriority="A" primaryName="objgruppe"/>
+    <entries englishName="objectGrpNo" name="objgruppe" type="GRN15" guiType="INTEGER" description="" width="2" screenProtection="immer geschützt" meaning="Gruppennummer der Objektgruppe" changePriority="A" viewPriority="A" primaryName="objgruppe"/>
+    <entries englishName="objectGrpDescr" name="objgrbez" type="GRB15" guiType="INPUT" description="" width="80" screenProtection="immer geschützt" alias="true" meaning="Gruppenbezeichnung der Objektgruppe" changePriority="A" viewPriority="A" primaryName="objgruppe"/>
     <entries englishName="objectDBNo" name="objdnr" type="AN177" guiType="COMBOBOX" description="" width="3" screenProtection="immer geschützt" meaning="Datenbanknummer der Objektgruppe" changePriority="A" viewPriority="A" primaryName="objdnr"/>
     <entries englishName="objectDBDescr" name="objdbez" type="A177" guiType="COMBOBOX" description="" width="30" screenProtection="immer geschützt" alias="true" meaning="Datenbankbezeichnung der Objektgruppe" changePriority="A" viewPriority="A" primaryName="objdnr"/>
     <entries englishName="objectInTable" name="objinzeile" type="B1" guiType="CHECKBOX" description="" width="1" screenProtection="immer geschützt" skip="true" meaning="Gehört das Objekt zur Tabelle?" changePriority="A" viewPriority="A" primaryName="objinzeile"/>
@@ -29,12 +29,12 @@
     <entries englishName="recordFilingVersion" name="ablagen" type="ZAE1" guiType="INPUT" description="" width="22" screenProtection="änderbar" writeable="true" meaning="Zeitstempel der Datensatzablage" changePriority="A" viewPriority="A" primaryName="ablagen"/>
     <entries englishName="recordFiled" name="ablagef" type="ZAE0" guiType="CHECKBOX" description="" width="1" screenProtection="änderbar" writeable="true" alias="true" meaning="Datensatz abgelegt?" changePriority="A" viewPriority="A" primaryName="ablagen"/>
     <entries englishName="type" name="typ" type="K2" guiType="INTEGER" description="" width="2" screenProtection="immer geschützt" meaning="Datensatztyp" changePriority="A" viewPriority="A" primaryName="typ"/>
-    <entries englishName="" name="num33" type="N33" guiType="INPUT" description="" width="15" screenProtection="änderbar" writeable="true" meaning="Identnummer" changePriority="A" viewPriority="A" primaryName="num33"/>
-    <entries englishName="idno" name="nummer" type="NK33" guiType="INPUT" description="" width="15" screenProtection="änderbar" writeable="true" alias="true" meaning="Identnummer" changePriority="A" viewPriority="A" primaryName="num33"/>
-    <entries englishName="idnoPadded" name="nummerb" type="NL33" guiType="INPUT" description="" width="15" screenProtection="änderbar" writeable="true" alias="true" meaning="Identnummer" changePriority="A" viewPriority="A" primaryName="num33"/>
-    <entries englishName="" name="such33" type="SW33" guiType="INPUT" description="" width="30" screenProtection="änderbar" writeable="true" meaning="Suchwort" changePriority="A" viewPriority="A" primaryName="such33"/>
-    <entries englishName="swd" name="such" type="SWK33" guiType="INPUT" description="" width="30" screenProtection="änderbar" writeable="true" alias="true" meaning="Suchwort" changePriority="A" viewPriority="A" primaryName="such33"/>
-    <entries englishName="swdPadded" name="suchb" type="SWL33" guiType="INPUT" description="" width="30" screenProtection="änderbar" writeable="true" alias="true" meaning="Suchwort" changePriority="A" viewPriority="A" primaryName="such33"/>
+    <entries englishName="" name="num15" type="N15" guiType="INPUT" description="" width="15" screenProtection="änderbar" writeable="true" meaning="Identnummer" changePriority="A" viewPriority="A" primaryName="num15"/>
+    <entries englishName="idno" name="nummer" type="NK15" guiType="INPUT" description="" width="15" screenProtection="änderbar" writeable="true" alias="true" meaning="Identnummer" changePriority="A" viewPriority="A" primaryName="num15"/>
+    <entries englishName="idnoPadded" name="nummerb" type="NL15" guiType="INPUT" description="" width="15" screenProtection="änderbar" writeable="true" alias="true" meaning="Identnummer" changePriority="A" viewPriority="A" primaryName="num15"/>
+    <entries englishName="" name="such15" type="SW15" guiType="INPUT" description="" width="30" screenProtection="änderbar" writeable="true" meaning="Suchwort" changePriority="A" viewPriority="A" primaryName="such15"/>
+    <entries englishName="swd" name="such" type="SWK15" guiType="INPUT" description="" width="30" screenProtection="änderbar" writeable="true" alias="true" meaning="Suchwort" changePriority="A" viewPriority="A" primaryName="such15"/>
+    <entries englishName="swdPadded" name="suchb" type="SWL15" guiType="INPUT" description="" width="30" screenProtection="änderbar" writeable="true" alias="true" meaning="Suchwort" changePriority="A" viewPriority="A" primaryName="such15"/>
     <entries englishName="descr" name="name" type="T34" guiType="TEXTAREA" description="" width="34" screenProtection="änderbar" writeable="true" meaning="Bezeichnung" changePriority="A" viewPriority="A" primaryName="name"/>
     <entries englishName="descr1" name="name1" type="T34" guiType="TEXTAREA" description="" width="34" screenProtection="änderbar" writeable="true" alias="true" meaning="Text in Deutsch" changePriority="A" viewPriority="A" primaryName="name"/>
     <entries englishName="descr2" name="name2" type="T34" guiType="TEXTAREA" description="" width="34" screenProtection="änderbar" writeable="true" meaning="Text in Englisch" changePriority="A" viewPriority="A" primaryName="name2"/>
@@ -92,7 +92,7 @@
     <entries englishName="userBar1" name="sres1" type="BU1" description="" width="1" screenProtection="zeigen änderbar" writeable="true" meaning="Reserveleiste" changePriority="A" viewPriority="A" primaryName="sres1"/>
     <entries englishName="ymydmsscrnuum" name="ymydmsscrnuum" type="I3" guiType="INTEGER" description="" width="3" screenProtection="änderbar" writeable="true" custom="true" meaning="Screen Number" changePriority="A" viewPriority="A" primaryName="ymydmsscrnuum"/>
     <entries englishName="rowIdNo" name="tabnr" type="TZN" guiType="INTEGER" description="" tableEntry="true" width="5" screenProtection="immer geschützt" meaning="Zeilen-ID" changePriority="A" viewPriority="A" primaryName="tabnr"/>
-    <entries englishName="rowId" name="zid" type="IDZ33:0" guiType="REFERENCE" description="" tableEntry="true" width="30" screenProtection="immer geschützt" skip="true" meaning="Zeilen-ID" changePriority="A" viewPriority="A" primaryName="zid"/>
+    <entries englishName="rowId" name="zid" type="IDZ15:0" guiType="REFERENCE" description="" tableEntry="true" width="30" screenProtection="immer geschützt" skip="true" meaning="Zeilen-ID" changePriority="A" viewPriority="A" primaryName="zid"/>
     <entries englishName="rowNo" name="zn" type="I5" guiType="INTEGER" description="" tableEntry="true" width="5" screenProtection="immer geschützt" skip="true" meaning="Laufende Zeilennummer" changePriority="A" viewPriority="A" primaryName="zn"/>
     <entries englishName="print" name="budruck" type="BU14" description="" tableEntry="true" width="1" screenProtection="zeigen änderbar" writeable="true" skip="true" meaning="Drucken" changePriority="A" viewPriority="A" primaryName="budruck"/>
     <entries englishName="print2" name="budruck2" type="BU8" description="" tableEntry="true" width="1" screenProtection="zeigen änderbar" writeable="true" skip="true" meaning="Drucken" changePriority="A" viewPriority="A" primaryName="budruck2"/>
@@ -103,15 +103,15 @@
     <entries englishName="freeTextTab" name="tftext" type="TN" guiType="FREETEXT" description="" tableEntry="true" width="80" screenProtection="änderbar" writeable="true" meaning="Freitext 1" changePriority="A" viewPriority="A" primaryName="tftext"/>
     <entries englishName="freeTextTab2" name="tftext2" type="TN" guiType="FREETEXT" description="" tableEntry="true" width="80" screenProtection="änderbar" writeable="true" meaning="Freitext 2" changePriority="A" viewPriority="A" primaryName="tftext2"/>
     <entries englishName="userBarTab1" name="tsres1" type="BU1" description="" tableEntry="true" width="1" screenProtection="zeigen änderbar" writeable="true" meaning="Reserveleiste" changePriority="A" viewPriority="A" primaryName="tsres1"/>
-    <entries englishName="ymydmsitmno" name="ymydmsitmno" type="I3" guiType="INTEGER" description="" tableEntry="true" width="3" screenProtection="änderbar" writeable="true" custom="true" meaning="List Item Number" changePriority="A" viewPriority="A" primaryName="ymydmsitmno"/>
-    <entries englishName="ymydmsitmname" name="ymydmsitmname" type="GL50" guiType="INPUT" description="" tableEntry="true" width="50" screenProtection="änderbar" writeable="true" custom="true" meaning="List Item Name" changePriority="A" viewPriority="A" primaryName="ymydmsitmname"/>
+    <entries englishName="ymydmsshorttxt" name="ymydmsshorttxt" type="PS12:3" guiType="REFERENCE" description="" tableEntry="true" width="11" screenProtection="änderbar" writeable="true" custom="true" meaning="Item" changePriority="A" viewPriority="A" primaryName="ymydmsshorttxt"/>
+    <entries englishName="ymydmsshorttxtname" name="ymydmsshorttxtname" type="PT12:3" guiType="REFERENCE" description="" tableEntry="true" width="64" screenProtection="änderbar" writeable="true" alias="true" custom="true" meaning="Item Text" changePriority="A" viewPriority="A" primaryName="ymydmsshorttxt"/>
   </variables>
   <popups>
     <popup id="menuTable"/>
     <popup id="menuExecute"/>
   </popups>
   <language code="68" text="Deutsch" iso="de"/>
-  <id xsi:type="screen:DatabaseId" name="Type List/DocumentManagement" priority="A" groupName="Type List" number="33" numberName="DocumentManagement" screenNumber="174"/>
+  <id xsi:type="screen:DatabaseId" name="Type List/DocumentManagement" priority="A" groupName="Type List" number="15" numberName="DocumentManagement" screenNumber="70"/>
   <frames standardHelp="2.7">
     <elements xsi:type="core:GridLayout">
       <cells alignmentX="fill" alignmentY="fill">
@@ -131,7 +131,7 @@
                       </cells>
                       <cells column="1" alignmentY="center">
                         <elements xsi:type="core:Input" dimX="15">
-                          <variable englishName="idno" name="nummer" type="NK33" guiType="INPUT" description="" width="15" screenProtection="änderbar" writeable="true" alias="true" meaning="Identnummer" changePriority="A" viewPriority="A" primaryName="num33"/>
+                          <variable englishName="idno" name="nummer" type="NK15" guiType="INPUT" description="" width="15" screenProtection="änderbar" writeable="true" alias="true" meaning="Identnummer" changePriority="A" viewPriority="A" primaryName="num15"/>
                         </elements>
                       </cells>
                       <cells column="2" alignmentY="center">
@@ -143,7 +143,7 @@
                       </cells>
                       <cells column="3" alignmentY="center">
                         <elements xsi:type="core:Input" dimX="30">
-                          <variable englishName="swd" name="such" type="SWK33" guiType="INPUT" description="" width="30" screenProtection="änderbar" writeable="true" alias="true" meaning="Suchwort" changePriority="A" viewPriority="A" primaryName="such33"/>
+                          <variable englishName="swd" name="such" type="SWK15" guiType="INPUT" description="" width="30" screenProtection="änderbar" writeable="true" alias="true" meaning="Suchwort" changePriority="A" viewPriority="A" primaryName="such15"/>
                         </elements>
                       </cells>
                       <cells row="1" alignmentY="center">
@@ -175,19 +175,19 @@
                   <splitPanes>
                     <elements xsi:type="core:Table">
                       <elements xsi:type="core:Column">
-                        <elements xsi:type="core:IntegerInput">
-                          <variable englishName="ymydmsitmno" name="ymydmsitmno" type="I3" guiType="INTEGER" description="" tableEntry="true" width="3" screenProtection="änderbar" writeable="true" custom="true" meaning="List Item Number" changePriority="A" viewPriority="A" primaryName="ymydmsitmno"/>
+                        <elements xsi:type="core:ReferenceInput">
+                          <variable englishName="ymydmsshorttxt" name="ymydmsshorttxt" type="PS12:3" guiType="REFERENCE" description="" tableEntry="true" width="11" screenProtection="änderbar" writeable="true" custom="true" meaning="Item" changePriority="A" viewPriority="A" primaryName="ymydmsshorttxt"/>
                         </elements>
-                        <label viewLanguage="de" key="typelist_ftable_ymydmsitmno">
-                          <value key="de" value="List Item Number"/>
+                        <label viewLanguage="de" key="typelist_ftable_ymydmsshorttxt">
+                          <value key="de" value="Item"/>
                         </label>
                       </elements>
                       <elements xsi:type="core:Column">
-                        <elements xsi:type="core:Input">
-                          <variable englishName="ymydmsitmname" name="ymydmsitmname" type="GL50" guiType="INPUT" description="" tableEntry="true" width="50" screenProtection="änderbar" writeable="true" custom="true" meaning="List Item Name" changePriority="A" viewPriority="A" primaryName="ymydmsitmname"/>
+                        <elements xsi:type="core:ReferenceInput">
+                          <variable englishName="ymydmsshorttxtname" name="ymydmsshorttxtname" type="PT12:3" guiType="REFERENCE" description="" tableEntry="true" width="64" screenProtection="änderbar" writeable="true" alias="true" custom="true" meaning="Item Text" changePriority="A" viewPriority="A" primaryName="ymydmsshorttxt"/>
                         </elements>
-                        <label viewLanguage="de" key="typelist_ftable_ymydmsitmname">
-                          <value key="de" value="List Item Name"/>
+                        <label viewLanguage="de" key="typelist_ftable_ymydmsshorttxtname">
+                          <value key="de" value="Item Text"/>
                         </label>
                       </elements>
                     </elements>
