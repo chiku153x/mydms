@@ -3,11 +3,44 @@
     "databaseName": "(Customer)",
     "groupName": "(Customer)",
     "editorMode": "*",
-    "event": "feldpruef",
+    "event": "maskein",
     "key": "*",
-    "field": "plz",
+    "field": "*",
+    "headOrTable": "*",
+    "isContinue": "[C]",
+    "handler": "ow1/S00X.DOCMGT.FO2"
+  },
+    {
+    "databaseName": "(Company)",
+    "groupName": "(CompanyData)",
+    "editorMode": "ändern",
+    "event": "feldaus",
+    "key": "*",
+    "field": "ymydmsenabled",
     "headOrTable": "K",
     "isContinue": "[C]",
-    "handler": "java:com.chiku.apps.ZipCodeEventHandler@mydms"
+    "handler": "ow1/S00X.DOCMGT.FO2"
+  },
+    {
+    "databaseName": "(File)",
+    "groupName": "{TypeList}",
+    "editorMode": "*",
+    "event": "maskein",
+    "key": "*",
+    "field": "*",
+    "headOrTable": "*",
+    "isContinue": "[C]",
+    "handler": "ow1/S00X.DOCMGT.FO2"
+  },
+    {
+    "databaseName": "(Customer)",
+    "groupName": "(Customer)",
+    "editorMode": "*",
+    "event": "*",
+    "key": "*",
+    "field": "ymydmsseltype",
+    "headOrTable": "K",
+    "isContinue": "[C]",
+    "handler": "ow1/S00X.DOCMGT.FO2"
   }
 ]

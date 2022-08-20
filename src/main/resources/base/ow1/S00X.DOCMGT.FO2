@@ -1,0 +1,80 @@
+..!interpreter english declaration noabbrev 
+..*****************************************************************************
+.. FOP-Name :		S00X.DOCMGT.FO2
+.. Date : 			Aug 20, 2022
+.. Author : 		Chinthaka
+.. Responsible : 	Chinthaka
+.. Supervisor : 	Chinthaka
+.. Copyright : (c)  2022
+.. Function : 
+..*****************************************************************************
+..<META P|='P88:10' >
+
+.type text xtfilesel   ? _F|defined(U|xtfilesel)
+.type text xttmpfile   ? _F|defined(U|xttmpfile)
+.type i3 xicount       ? _F|defined(U|xicount)
+.type text xtselected  ? _F|defined(U|xtselected)
+
+def main(){
+   if('G|evtmaske' = "50"){
+        .call handleCompanyData()
+   }
+   
+   if('M|objdbez' = "DocumentManagement"){
+        .call handleAdditionalFile() 
+   }else{
+        .call handleAllScreens()
+   }
+}
+
+def handleCompanyData(){
+    switch(G|evtvar){
+        case("ymydmsenabled"){
+            .println Conpany data - ymydmsenabled
+        }
+    }
+}
+
+def handleAdditionalFile(){
+    .println Additional file
+}
+
+def handleAllScreens(){
+    if(_F|sysinfo(10)^ymydmsenabled){
+        .return
+    }
+    
+    if(G|evtart = "maskein"){
+        .protection ymydmstype
+    }
+    
+    switch(G|evtvar){
+        case("ymydmsseltype"){
+            if(G|evtart = "buttonnach"){
+                .call showMenu()
+            }  
+        }
+    }
+}
+
+def showMenu(){
+    .file -TEMPNAME U|xttmpfile
+    .formula U|xicount = 0 
+    .formula U|xtfilesel = "select file" + 'F|sysinfo(10)^ymydmsfileno' + dblquote + "$,,ymydmsscrnuum=="+ 'G|evtmaske' +";@ablageart=(Active)" + dblquote
+    .'U|xtfilesel'
+    .output new 'U|xttmpfile'
+    .println ..!interpreter english declaration noabbrev 
+    .println .menu Select Type
+    while(G|mehr){
+        .select line
+        while(G|mehr){
+            .formula U|xicount = U|xicount + 1
+            .println 'H|ymydmsitmname' >>.formula U|xtselected = "'H|ymydmsitmno'" + "|" +  "'H|ymydmsitmname'"
+            .select line
+        }
+    }
+    .input 'U|xttmpfile'
+    .box
+    .item "'U|xtselected'"
+    .enditem
+}
