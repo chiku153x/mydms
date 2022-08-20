@@ -1,0 +1,19 @@
+{
+  "name": "Firma",
+  "number": 12,
+  "isMasterData": true,
+  "classname": "Company",
+  "groups": [{
+    "name": "Betriebsdaten",
+    "number": 10,
+    "classname": "CompanyData",
+    "headFields": [{
+      "name": "enabled",
+      "type": "B",
+      "description": "Is Document Management Enabled ?",
+      "screenVisibility": "Editable",
+      "showPriority": "A",
+      "changePriority": "A"
+    }]
+  }]
+}

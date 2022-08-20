@@ -1,5 +1,5 @@
 plugins {
-    id "de.abas.esdk" version "1.2.5"
+    id "de.abas.esdk" version "1.2.6"
 }
 
 repositories {
@@ -54,13 +54,14 @@ esdk {
         appId = "mydms"
         shared = false
         infosystems = []
-        tables = []
+        tables = ["Firma","Verkauf"]
         screens = [:]
+        advancedScreens=["50":["D"], "32":["A"]]
         data = []
         enums = []
         namedTypes = []
         languages = "DA"
-        essentialsVersions = [ "2017r1-2022r4" ]
+        essentialsVersions = [ "2017r1n00-2017r4n16", "2018r1n00-2018r4n16", "2019r1n00-2019r4n16" ]
     }
 
     abas {
