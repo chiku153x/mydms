@@ -11,6 +11,50 @@
     "handler": "ow1/S00X.DOCMGT.FO2"
   },
     {
+    "databaseName": "(Company)",
+    "groupName": "(CompanyData)",
+    "editorMode": "*",
+    "event": "buttonnach",
+    "key": "*",
+    "field": "ymydmstmpfiletest",
+    "headOrTable": "K",
+    "isContinue": "[C]",
+    "handler": "ow1/S00X.DOCMGT.FO2"
+  },
+    {
+    "databaseName": "(Company)",
+    "groupName": "(CompanyData)",
+    "editorMode": "*",
+    "event": "buttonnach",
+    "key": "*",
+    "field": "ymydmsresttest",
+    "headOrTable": "K",
+    "isContinue": "[C]",
+    "handler": "ow1/S00X.DOCMGT.FO2"
+  },
+    {
+    "databaseName": "(Company)",
+    "groupName": "(CompanyData)",
+    "editorMode": "*",
+    "event": "buttonnach",
+    "key": "*",
+    "field": "ymydmswebuitest",
+    "headOrTable": "K",
+    "isContinue": "[C]",
+    "handler": "ow1/S00X.DOCMGT.FO2"
+  },
+    {
+    "databaseName": "(Company)",
+    "groupName": "(CompanyData)",
+    "editorMode": "*",
+    "event": "buttonnach",
+    "key": "*",
+    "field": "ymydmsfileuptest",
+    "headOrTable": "K",
+    "isContinue": "[C]",
+    "handler": "ow1/S00X.DOCMGT.FO2"
+  },
+    {
     "databaseName": "(File)",
     "groupName": "{TypeList}",
     "editorMode": "*",

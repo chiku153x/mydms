@@ -14,10 +14,16 @@
 .type text xttmpfile   ? _F|defined(U|xttmpfile)
 .type i3 xicount       ? _F|defined(U|xicount)
 .type PS12:3 xtselected  ? _F|defined(U|xtselected)
+.type text xtmand   ? _F|defined(U|xtmand)
+.type text xtscrn   ? _F|defined(U|xtscrn)
+.type text xtunqn   ? _F|defined(U|xtunqn)
+.type text xttmpf   ? _F|defined(U|xttmpf)
+.type text xtcurl1   ? _F|defined(U|xtcurl1)
+.type text xtpath   ? _F|defined(U|xtpath)
+.type text xtfilecopy   ? _F|defined(U|xtfilecopy)
 
 def main(){
    .call inputDefaults() 
-   .call getEnv()
    
    if('G|evtmaske' = "50"){
         .call handleCompanyData()
@@ -30,23 +36,38 @@ def main(){
    }
 }
 
+..<BLOCK>
 def handleCompanyData(){
     switch(G|evtvar){
         case("ymydmsenabled"){
-            .println Conpany data - ymydmsenabled
+            ..//.println Conpany data - ymydmsenabled
+        }
+        case("ymydmstmpfiletest"){
+            .call checkTempFilePath()
+        }
+        case("ymydmsresttest"){
+            .call checkDMSRestService()
+        }
+        case("ymydmswebuitest"){
+            .call checkDMSWebUI()
+        }
+        case("ymydmsfileuptest"){
+            .call checkFileUploader()
         }
     }
 }
+..</BLOCK>
 
 def handleAdditionalFile(){
     ..//.println Additional file
 }
 
+..<BLOCK>
 def handleAllScreens(){
     if(_F|sysinfo(10)^ymydmsenabled){
         .return
     }
-    
+   
     if(G|evtart = "maskein"){
         .protection ymydmstype
         if(G|evtkommd <> G|kaktname13 ){
@@ -71,11 +92,90 @@ def handleAllScreens(){
         }
     }
 }
+..</BLOCK>
 
-def attachFile(){
-    
+..<BLOCK>
+def checkTempFilePath(){
+    if(F|empty(M|ymydmstmpfileloc)){
+        .call invalidTempPath()
+    }
+    if(_F|fileexists(M|ymydmstmpfileloc)){
+        .call invalidTempPath()
+    }  
+}
+..</BLOCK>
+
+..<BLOCK>
+def  invalidTempPath(){
+    .box 
+    .item "Invalid Temp file Path"
+    .item 'M|ymydmstmpfileloc'
+    .enditem
+}
+..</BLOCK>
+
+def checkDMSRestService(){
+    if(F|empty(M|ymydmsresturl)){
+        .call dmsRestNotAvailable()
+        .return
+    }
+
+    .formula U|xtcurl1 = "curl -f -LI " + 'M|ymydmsresturl' 
+    .system 'U|xtcurl1' 
+    ..background
 }
 
+def dmsRestNotAvailable(){
+    .box
+    .item "DMS Rest is not available"
+    .enditem
+}
+
+def checkDMSWebUI(){
+    if(F|empty(M|ymydmswebuiurl)){
+        .call dmsWebUINotAvailable()
+        .return
+    }
+
+    .formula U|xtcurl1 = "curl -f -LI " + 'M|ymydmswebuiurl' 
+    .system 'U|xtcurl1' 
+    ..background
+}
+
+def dmsWebUINotAvailable(){
+    .box
+    .item "DMS Web UI is not available"
+    .enditem
+}
+
+def checkFileUploader(){
+
+}
+
+def attachFile(){
+     
+     if(F|empty(M|ymydmsfile)){
+        .box
+        .item "Select a document first"
+        .enditem
+     }else{
+        .call getEnv()
+        .formula U|xtpath = 'U|xttmpf' + "/"  + ('M|ymydmsfile' >$"\")
+        if(_F|fileexists(U|xtpath)){
+            .system 'F|expr("mkdir -p " + U|xtpath)' background
+            .system 'F|expr("chmod 777 " + U|xtpath)' 
+            ..background
+        }
+        
+
+        .formula U|xtfilecopy = "pc.copy -BIN " + dblquote + 'M|ymydmsfile'  + dblquote + " "  + dblquote + 'U|xtpath'  + dblquote 
+        .'U|xtfilecopy'
+     }
+     
+     
+}
+
+..<BLOCK>
 def showMenu(){
     .file -TEMPNAME U|xttmpfile
     .formula U|xicount = 0 
@@ -98,10 +198,9 @@ def showMenu(){
         .assign M|ymydmstype = U|xtselected^id
     }else{
         .error No menu items to show
-    }
-    
-    
+    }   
 }
+..</BLOCK>
 
 ..<BLOCK>
 def inputDefaults( ) {
@@ -116,7 +215,7 @@ def inputDefaults( ) {
 
 ..<BLOCK>
 def getEnv(){
-    .formula U|xtmand = G|mand
+    .formula U|xtmand = F|regreplaceall(F|tolower(G|mandant)," ","_")
     .formula U|xtscrn = G|evtmaske
     .formula U|xtunqn = M|ymydmsnum
     .formula U|xttmpf = F|sysinfo(10)^ymydmstmpfileloc
