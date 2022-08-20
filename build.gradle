@@ -54,7 +54,7 @@ esdk {
         appId = "mydms"
         shared = false
         infosystems = []
-        tables = ["Firma","Verkauf"]
+        tables = ["Firma","Verkauf","Kunde","Lieferant","Teil:Artikel","Betr-Auftrag","Einkauf","Chargen"]
         screens = [:]
         advancedScreens=["50":["D"], "32":["A"]]
         data = []
