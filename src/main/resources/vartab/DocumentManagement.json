@@ -1,6 +1,6 @@
 {
   "name": "DocumentManagement",
-  "number": 15,
+  "number": 33,
   "isMasterData": true,
   "classname": "DocumentManagement",
   "groups": [{
@@ -16,19 +16,16 @@
       "changePriority": "A"
     }],
     "tableFields": [{
-      "name": "shorttxt",
-      "type": "PS12:3",
-      "description": "Item",
+      "name": "itmno",
+      "type": "I3",
+      "description": "List Item Number",
       "screenVisibility": "Editable",
       "showPriority": "A",
       "changePriority": "A"
     }, {
-      "name": "shorttxt",
-      "newName": "shorttxtname",
-      "isAlias": true,
-      "type": "PS12:3",
-      "newType": "PT12:3",
-      "description": "Item Text",
+      "name": "itmname",
+      "type": "GL50",
+      "description": "List Item Name",
       "screenVisibility": "Editable",
       "showPriority": "A",
       "changePriority": "A"
