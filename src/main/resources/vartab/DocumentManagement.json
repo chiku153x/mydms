@@ -1,0 +1,34 @@
+{
+  "name": "DocumentManagement",
+  "number": 33,
+  "isMasterData": true,
+  "classname": "DocumentManagement",
+  "groups": [{
+    "name": "Type List",
+    "number": 0,
+    "classname": "TypeList",
+    "headFields": [{
+      "name": "scrnuum",
+      "type": "I3",
+      "description": "Screen Number",
+      "screenVisibility": "Editable",
+      "showPriority": "A",
+      "changePriority": "A"
+    }],
+    "tableFields": [{
+      "name": "itmno",
+      "type": "I3",
+      "description": "List Item Number",
+      "screenVisibility": "Editable",
+      "showPriority": "A",
+      "changePriority": "A"
+    }, {
+      "name": "itmname",
+      "type": "GL50",
+      "description": "List Item Name",
+      "screenVisibility": "Editable",
+      "showPriority": "A",
+      "changePriority": "A"
+    }]
+  }]
+}

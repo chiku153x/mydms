@@ -1,68 +1,60 @@
 {
-  "name": "Firma",
-  "number": 12,
+  "name": "Lieferant",
+  "number": 1,
   "isMasterData": true,
-  "classname": "Company",
+  "classname": "Vendor",
   "groups": [{
-    "name": "Betriebsdaten",
-    "number": 10,
-    "classname": "CompanyData",
+    "name": "Lieferant",
+    "number": 1,
+    "classname": "Vendor",
     "headFields": [{
-      "name": "enabled",
-      "type": "B",
-      "description": "Is Document Management Enabled ?",
-      "screenVisibility": "Editable",
-      "showPriority": "A",
-      "changePriority": "A"
-    }, {
-      "name": "resturl",
+      "name": "num",
       "type": "GL50",
-      "description": "DMS Rest Service",
+      "description": "DMS Number",
       "screenVisibility": "Editable",
       "showPriority": "A",
       "changePriority": "A"
     }, {
-      "name": "resttest",
+      "name": "type",
+      "type": "GL50",
+      "description": "Type",
+      "screenVisibility": "Editable",
+      "showPriority": "A",
+      "changePriority": "A"
+    }, {
+      "name": "seltype",
       "isSkip": true,
       "type": "BU3",
-      "description": "DMS Rest Service test",
+      "description": "Select",
       "screenVisibility": "ViewEditable",
       "showPriority": "A",
       "changePriority": "A"
     }, {
-      "name": "webuiurl",
+      "name": "subject",
       "type": "GL50",
-      "description": "DMS Web UI",
+      "description": "Subject",
       "screenVisibility": "Editable",
       "showPriority": "A",
       "changePriority": "A"
     }, {
-      "name": "webuitest",
-      "isSkip": true,
-      "type": "BU3",
-      "description": "DMS Web UI test",
-      "screenVisibility": "ViewEditable",
-      "showPriority": "A",
-      "changePriority": "A"
-    }, {
-      "name": "fileupsrv",
-      "type": "GL50",
-      "description": "DMS File Upload",
+      "name": "file",
+      "type": "DV0",
+      "description": "File",
       "screenVisibility": "Editable",
       "showPriority": "A",
       "changePriority": "A"
     }, {
-      "name": "fileuptest",
+      "name": "attach",
       "isSkip": true,
       "type": "BU3",
-      "description": "DMS File Upload test",
+      "description": "Attach",
       "screenVisibility": "ViewEditable",
       "showPriority": "A",
       "changePriority": "A"
     }, {
-      "name": "fileno",
-      "type": "I3",
-      "description": "DMS Additional File No",
+      "name": "webui",
+      "type": "URL2",
+      "description": "Web UI",
       "screenVisibility": "Editable",
       "showPriority": "A",
       "changePriority": "A"
