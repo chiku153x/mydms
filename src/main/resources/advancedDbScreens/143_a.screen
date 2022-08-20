@@ -77,12 +77,12 @@
     <entries englishName="dragAndDropDocumentType" name="dndbelegart" type="PS88:11" guiType="REFERENCE" description="" width="16" screenProtection="zeigen kerngesteuert" writeable="true" skip="true" meaning="Belegart für Drag und Drop" changePriority="A" viewPriority="A" primaryName="dndbelegart"/>
     <entries englishName="documentTypeLot" name="belartcharge" type="AZL20233" guiType="COMBOBOX" description="" width="35" screenProtection="zeigen kerngesteuert" writeable="true" skip="true" alias="true" meaning="Belegart für Drag und Drop CHARGE" changePriority="A" viewPriority="A" primaryName="dndbelegart"/>
     <entries englishName="ymydmsnum" name="ymydmsnum" type="GL50" guiType="INPUT" description="" width="50" screenProtection="änderbar" writeable="true" custom="true" meaning="DMS Number" changePriority="A" viewPriority="A" primaryName="ymydmsnum"/>
-    <entries englishName="ymydmstype" name="ymydmstype" type="GL50" guiType="INPUT" description="" width="50" screenProtection="änderbar" writeable="true" custom="true" meaning="Type" changePriority="A" viewPriority="A" primaryName="ymydmstype"/>
+    <entries englishName="ymydmstype" name="ymydmstype" type="PT12:3" guiType="REFERENCE" description="" width="64" screenProtection="änderbar" writeable="true" skip="true" custom="true" meaning="Type" changePriority="A" viewPriority="A" primaryName="ymydmstype"/>
     <entries englishName="ymydmsseltype" name="ymydmsseltype" type="BU3" description="" width="1" screenProtection="zeigen änderbar" writeable="true" skip="true" custom="true" meaning="Select" changePriority="A" viewPriority="A" primaryName="ymydmsseltype"/>
-    <entries englishName="ymydmssubject" name="ymydmssubject" type="GL50" guiType="INPUT" description="" width="50" screenProtection="änderbar" writeable="true" custom="true" meaning="Subject" changePriority="A" viewPriority="A" primaryName="ymydmssubject"/>
-    <entries englishName="ymydmsfile" name="ymydmsfile" type="DV0" guiType="FILEREFERENCE" description="" width="255" screenProtection="änderbar" writeable="true" custom="true" meaning="File" changePriority="A" viewPriority="A" primaryName="ymydmsfile"/>
+    <entries englishName="ymydmssubject" name="ymydmssubject" type="GL50" guiType="INPUT" description="" width="50" screenProtection="änderbar" writeable="true" skip="true" custom="true" meaning="Subject" changePriority="A" viewPriority="A" primaryName="ymydmssubject"/>
+    <entries englishName="ymydmsfile" name="ymydmsfile" type="DV0" guiType="FILEREFERENCE" description="" width="255" screenProtection="änderbar" writeable="true" skip="true" custom="true" meaning="File" changePriority="A" viewPriority="A" primaryName="ymydmsfile"/>
     <entries englishName="ymydmsattach" name="ymydmsattach" type="BU3" description="" width="1" screenProtection="zeigen änderbar" writeable="true" skip="true" custom="true" meaning="Attach" changePriority="A" viewPriority="A" primaryName="ymydmsattach"/>
-    <entries englishName="ymydmswebui" name="ymydmswebui" type="URL2" guiType="BROWSER" description="" width="2999" screenProtection="änderbar" writeable="true" custom="true" meaning="Web UI" changePriority="A" viewPriority="A" primaryName="ymydmswebui"/>
+    <entries englishName="ymydmswebui" name="ymydmswebui" type="URL2" guiType="BROWSER" description="" width="2999" screenProtection="änderbar" writeable="true" skip="true" custom="true" meaning="Web UI" changePriority="A" viewPriority="A" primaryName="ymydmswebui"/>
     <entries englishName="rowIdNo" name="tabnr" type="TZN" guiType="INTEGER" description="" tableEntry="true" width="5" screenProtection="immer geschützt" meaning="Zeilen-ID" changePriority="A" viewPriority="A" primaryName="tabnr"/>
     <entries englishName="rowId" name="zid" type="IDZ59:0" guiType="REFERENCE" description="" tableEntry="true" width="30" screenProtection="immer geschützt" skip="true" meaning="Zeilen-ID" changePriority="A" viewPriority="A" primaryName="zid"/>
     <entries englishName="rowNo" name="zn" type="I5" guiType="INTEGER" description="" tableEntry="true" width="5" screenProtection="immer geschützt" skip="true" meaning="Laufende Zeilennummer" changePriority="A" viewPriority="A" primaryName="zn"/>
@@ -437,8 +437,8 @@
                     </elements>
                   </cells>
                   <cells column="1" alignmentY="center">
-                    <elements xsi:type="core:Input" dimX="50">
-                      <variable englishName="ymydmstype" name="ymydmstype" type="GL50" guiType="INPUT" description="" width="50" screenProtection="änderbar" writeable="true" custom="true" meaning="Type" changePriority="A" viewPriority="A" primaryName="ymydmstype"/>
+                    <elements xsi:type="core:ReferenceInput" dimX="64" dimY="1">
+                      <variable englishName="ymydmstype" name="ymydmstype" type="PT12:3" guiType="REFERENCE" description="" width="64" screenProtection="änderbar" writeable="true" skip="true" custom="true" meaning="Type" changePriority="A" viewPriority="A" primaryName="ymydmstype"/>
                     </elements>
                   </cells>
                   <cells column="2" alignmentY="center"/>
@@ -459,7 +459,7 @@
                   </cells>
                   <cells column="1" row="1" alignmentY="center">
                     <elements xsi:type="core:Input" dimX="50">
-                      <variable englishName="ymydmssubject" name="ymydmssubject" type="GL50" guiType="INPUT" description="" width="50" screenProtection="änderbar" writeable="true" custom="true" meaning="Subject" changePriority="A" viewPriority="A" primaryName="ymydmssubject"/>
+                      <variable englishName="ymydmssubject" name="ymydmssubject" type="GL50" guiType="INPUT" description="" width="50" screenProtection="änderbar" writeable="true" skip="true" custom="true" meaning="Subject" changePriority="A" viewPriority="A" primaryName="ymydmssubject"/>
                     </elements>
                   </cells>
                   <cells column="2" row="1" alignmentY="center"/>
@@ -473,7 +473,7 @@
                   </cells>
                   <cells column="1" row="2" alignmentY="center">
                     <elements xsi:type="core:FileReferenceInput" dimX="50" dimY="1">
-                      <variable englishName="ymydmsfile" name="ymydmsfile" type="DV0" guiType="FILEREFERENCE" description="" width="255" screenProtection="änderbar" writeable="true" custom="true" meaning="File" changePriority="A" viewPriority="A" primaryName="ymydmsfile"/>
+                      <variable englishName="ymydmsfile" name="ymydmsfile" type="DV0" guiType="FILEREFERENCE" description="" width="255" screenProtection="änderbar" writeable="true" skip="true" custom="true" meaning="File" changePriority="A" viewPriority="A" primaryName="ymydmsfile"/>
                     </elements>
                   </cells>
                   <cells column="2" row="2" alignmentY="center"/>
@@ -494,7 +494,7 @@
                   </cells>
                   <cells row="4" columnSpan="4" alignmentX="fill" alignmentY="fill">
                     <elements xsi:type="core:Browser" dimX="200" dimY="50">
-                      <variable englishName="ymydmswebui" name="ymydmswebui" type="URL2" guiType="BROWSER" description="" width="2999" screenProtection="änderbar" writeable="true" custom="true" meaning="Web UI" changePriority="A" viewPriority="A" primaryName="ymydmswebui"/>
+                      <variable englishName="ymydmswebui" name="ymydmswebui" type="URL2" guiType="BROWSER" description="" width="2999" screenProtection="änderbar" writeable="true" skip="true" custom="true" meaning="Web UI" changePriority="A" viewPriority="A" primaryName="ymydmswebui"/>
                     </elements>
                   </cells>
                 </elements>

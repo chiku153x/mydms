@@ -17,6 +17,7 @@
 
 def main(){
    .call inputDefaults() 
+   .call getEnv()
    
    if('G|evtmaske' = "50"){
         .call handleCompanyData()
@@ -63,7 +64,16 @@ def handleAllScreens(){
                 .call showMenu()
             }  
         }
+        case("ymydmsattach"){
+            if(G|evtart = "buttonnach"){
+                .call attachFile()
+            }  
+        }
     }
+}
+
+def attachFile(){
+    
 }
 
 def showMenu(){
@@ -82,9 +92,10 @@ def showMenu(){
             .select line
         }
     }
+    
     if(U|xicount > 0){
         .input 'U|xttmpfile'
-        .formula M|ymydmstype = U|xtselected^namebspr
+        .assign M|ymydmstype = U|xtselected^id
     }else{
         .error No menu items to show
     }
@@ -99,6 +110,16 @@ def inputDefaults( ) {
     .input "KAKTNAME.KONST"
     .input "KDATNAME.KONST"
     .input "KKOMNAME.KONST"
+}
+..</BLOCK>
+
+
+..<BLOCK>
+def getEnv(){
+    .formula U|xtmand = G|mand
+    .formula U|xtscrn = G|evtmaske
+    .formula U|xtunqn = M|ymydmsnum
+    .formula U|xttmpf = F|sysinfo(10)^ymydmstmpfileloc
 }
 ..</BLOCK>
 

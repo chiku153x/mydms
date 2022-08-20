@@ -43,6 +43,17 @@
     "isContinue": "[C]",
     "handler": "ow1/S00X.DOCMGT.FO2"
   },
+    {
+    "databaseName": "(Customer)",
+    "groupName": "(Customer)",
+    "editorMode": "ändern",
+    "event": "buttonnach",
+    "key": "*",
+    "field": "ymydmsattach",
+    "headOrTable": "K",
+    "isContinue": "[C]",
+    "handler": "ow1/S00X.DOCMGT.FO2"
+  },
    {
     "databaseName": "(Vendor)",
     "groupName": "(Vendor)",

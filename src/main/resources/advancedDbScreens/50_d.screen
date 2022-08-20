@@ -424,6 +424,8 @@
     <entries englishName="ymydmsfileupsrv" name="ymydmsfileupsrv" type="GL50" guiType="INPUT" description="" width="50" screenProtection="änderbar" writeable="true" custom="true" meaning="DMS File Upload" changePriority="A" viewPriority="A" primaryName="ymydmsfileupsrv"/>
     <entries englishName="ymydmsfileuptest" name="ymydmsfileuptest" type="BU3" description="" width="1" screenProtection="zeigen änderbar" writeable="true" skip="true" custom="true" meaning="DMS File Upload test" changePriority="A" viewPriority="A" primaryName="ymydmsfileuptest"/>
     <entries englishName="ymydmsfileno" name="ymydmsfileno" type="I3" guiType="INTEGER" description="" width="3" screenProtection="änderbar" writeable="true" custom="true" meaning="DMS Additional File No" changePriority="A" viewPriority="A" primaryName="ymydmsfileno"/>
+    <entries englishName="ymydmstmpfileloc" name="ymydmstmpfileloc" type="GL50" guiType="INPUT" description="" width="50" screenProtection="änderbar" writeable="true" custom="true" meaning="DMS Temp File Location" changePriority="A" viewPriority="A" primaryName="ymydmstmpfileloc"/>
+    <entries englishName="ymydmstmpfiletest" name="ymydmstmpfiletest" type="BU3" description="" width="1" screenProtection="zeigen änderbar" writeable="true" skip="true" custom="true" meaning="DMS Temp File Location test" changePriority="A" viewPriority="A" primaryName="ymydmstmpfiletest"/>
   </variables>
   <popups>
     <popup id="menuTable"/>
@@ -3814,20 +3816,20 @@
               </cells>
               <cells row="3" alignmentY="center">
                 <elements xsi:type="core:Label">
-                  <label viewLanguage="de" key="companydata_fhead_ymydmsresturl">
-                    <value key="de" value="DMS Rest Service"/>
+                  <label viewLanguage="de" key="companydata_fhead_ymydmstmpfileloc">
+                    <value key="de" value="DMS Temp File Location"/>
                   </label>
                 </elements>
               </cells>
               <cells column="1" row="3" alignmentY="center">
                 <elements xsi:type="core:Input" dimX="50">
-                  <variable englishName="ymydmsresturl" name="ymydmsresturl" type="GL50" guiType="INPUT" description="" width="50" screenProtection="änderbar" writeable="true" custom="true" meaning="DMS Rest Service" changePriority="A" viewPriority="A" primaryName="ymydmsresturl"/>
+                  <variable englishName="ymydmstmpfileloc" name="ymydmstmpfileloc" type="GL50" guiType="INPUT" description="" width="50" screenProtection="änderbar" writeable="true" custom="true" meaning="DMS Temp File Location" changePriority="A" viewPriority="A" primaryName="ymydmstmpfileloc"/>
                 </elements>
               </cells>
               <cells column="2" row="3" alignmentY="center">
                 <elements xsi:type="core:Button">
-                  <variable englishName="ymydmsresttest" name="ymydmsresttest" type="BU3" description="" width="1" screenProtection="zeigen änderbar" writeable="true" skip="true" custom="true" meaning="DMS Rest Service test" changePriority="A" viewPriority="A" primaryName="ymydmsresttest"/>
-                  <label viewLanguage="de" key="companydata_fhead_ymydmsresttest">
+                  <variable englishName="ymydmstmpfiletest" name="ymydmstmpfiletest" type="BU3" description="" width="1" screenProtection="zeigen änderbar" writeable="true" skip="true" custom="true" meaning="DMS Temp File Location test" changePriority="A" viewPriority="A" primaryName="ymydmstmpfiletest"/>
+                  <label viewLanguage="de" key="companydata_fhead_ymydmstmpfiletest">
                     <value key="de" value="Test"/>
                   </label>
                 </elements>
@@ -3835,20 +3837,20 @@
               <cells column="3" row="3" alignmentY="center"/>
               <cells row="4" alignmentY="center">
                 <elements xsi:type="core:Label">
-                  <label viewLanguage="de" key="companydata_fhead_ymydmswebuiurl">
-                    <value key="de" value="DMS Web UI"/>
+                  <label viewLanguage="de" key="companydata_fhead_ymydmsresturl">
+                    <value key="de" value="DMS Rest Service"/>
                   </label>
                 </elements>
               </cells>
               <cells column="1" row="4" alignmentY="center">
                 <elements xsi:type="core:Input" dimX="50">
-                  <variable englishName="ymydmswebuiurl" name="ymydmswebuiurl" type="GL50" guiType="INPUT" description="" width="50" screenProtection="änderbar" writeable="true" custom="true" meaning="DMS Web UI" changePriority="A" viewPriority="A" primaryName="ymydmswebuiurl"/>
+                  <variable englishName="ymydmsresturl" name="ymydmsresturl" type="GL50" guiType="INPUT" description="" width="50" screenProtection="änderbar" writeable="true" custom="true" meaning="DMS Rest Service" changePriority="A" viewPriority="A" primaryName="ymydmsresturl"/>
                 </elements>
               </cells>
               <cells column="2" row="4" alignmentY="center">
                 <elements xsi:type="core:Button">
-                  <variable englishName="ymydmswebuitest" name="ymydmswebuitest" type="BU3" description="" width="1" screenProtection="zeigen änderbar" writeable="true" skip="true" custom="true" meaning="DMS Web UI test" changePriority="A" viewPriority="A" primaryName="ymydmswebuitest"/>
-                  <label viewLanguage="de" key="companydata_fhead_ymydmswebuitest">
+                  <variable englishName="ymydmsresttest" name="ymydmsresttest" type="BU3" description="" width="1" screenProtection="zeigen änderbar" writeable="true" skip="true" custom="true" meaning="DMS Rest Service test" changePriority="A" viewPriority="A" primaryName="ymydmsresttest"/>
+                  <label viewLanguage="de" key="companydata_fhead_ymydmsresttest">
                     <value key="de" value="Test"/>
                   </label>
                 </elements>
@@ -3856,17 +3858,38 @@
               <cells column="3" row="4" alignmentY="center"/>
               <cells row="5" alignmentY="center">
                 <elements xsi:type="core:Label">
-                  <label viewLanguage="de" key="companydata_fhead_ymydmsfileupsrv">
-                    <value key="de" value="DMS File Upload"/>
+                  <label viewLanguage="de" key="companydata_fhead_ymydmswebuiurl">
+                    <value key="de" value="DMS Web UI"/>
                   </label>
                 </elements>
               </cells>
               <cells column="1" row="5" alignmentY="center">
                 <elements xsi:type="core:Input" dimX="50">
-                  <variable englishName="ymydmsfileupsrv" name="ymydmsfileupsrv" type="GL50" guiType="INPUT" description="" width="50" screenProtection="änderbar" writeable="true" custom="true" meaning="DMS File Upload" changePriority="A" viewPriority="A" primaryName="ymydmsfileupsrv"/>
+                  <variable englishName="ymydmswebuiurl" name="ymydmswebuiurl" type="GL50" guiType="INPUT" description="" width="50" screenProtection="änderbar" writeable="true" custom="true" meaning="DMS Web UI" changePriority="A" viewPriority="A" primaryName="ymydmswebuiurl"/>
                 </elements>
               </cells>
               <cells column="2" row="5" alignmentY="center">
+                <elements xsi:type="core:Button">
+                  <variable englishName="ymydmswebuitest" name="ymydmswebuitest" type="BU3" description="" width="1" screenProtection="zeigen änderbar" writeable="true" skip="true" custom="true" meaning="DMS Web UI test" changePriority="A" viewPriority="A" primaryName="ymydmswebuitest"/>
+                  <label viewLanguage="de" key="companydata_fhead_ymydmswebuitest">
+                    <value key="de" value="Test"/>
+                  </label>
+                </elements>
+              </cells>
+              <cells column="3" row="5" alignmentY="center"/>
+              <cells row="6" alignmentY="center">
+                <elements xsi:type="core:Label">
+                  <label viewLanguage="de" key="companydata_fhead_ymydmsfileupsrv">
+                    <value key="de" value="DMS File Upload"/>
+                  </label>
+                </elements>
+              </cells>
+              <cells column="1" row="6" alignmentY="center">
+                <elements xsi:type="core:Input" dimX="50">
+                  <variable englishName="ymydmsfileupsrv" name="ymydmsfileupsrv" type="GL50" guiType="INPUT" description="" width="50" screenProtection="änderbar" writeable="true" custom="true" meaning="DMS File Upload" changePriority="A" viewPriority="A" primaryName="ymydmsfileupsrv"/>
+                </elements>
+              </cells>
+              <cells column="2" row="6" alignmentY="center">
                 <elements xsi:type="core:Button">
                   <variable englishName="ymydmsfileuptest" name="ymydmsfileuptest" type="BU3" description="" width="1" screenProtection="zeigen änderbar" writeable="true" skip="true" custom="true" meaning="DMS File Upload test" changePriority="A" viewPriority="A" primaryName="ymydmsfileuptest"/>
                   <label viewLanguage="de" key="companydata_fhead_ymydmsfileuptest">
@@ -3874,7 +3897,7 @@
                   </label>
                 </elements>
               </cells>
-              <cells column="3" row="5" alignmentY="center"/>
+              <cells column="3" row="6" alignmentY="center"/>
             </elements>
             <label viewLanguage="de" key="companydata$2">
               <value key="de" value="Doc Mgt"/>

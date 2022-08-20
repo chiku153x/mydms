@@ -66,6 +66,20 @@
       "screenVisibility": "Editable",
       "showPriority": "A",
       "changePriority": "A"
+    }, {
+      "name": "tmpfileloc",
+      "type": "GL50",
+      "description": "DMS Temp File Location",
+      "screenVisibility": "Editable",
+      "showPriority": "A",
+      "changePriority": "A"
+    }, {
+      "name": "tmpfiletest",
+      "type": "BU3",
+      "description": "DMS Temp File Location test",
+      "screenVisibility": "Editable",
+      "showPriority": "A",
+      "changePriority": "A"
     }]
   }]
 }
