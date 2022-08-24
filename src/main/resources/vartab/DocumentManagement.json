@@ -1,6 +1,6 @@
 {
   "name": "DocumentManagement",
-  "number": 33,
+  "number": 15,
   "isMasterData": true,
   "classname": "DocumentManagement",
   "groups": [{
@@ -12,6 +12,22 @@
       "type": "I3",
       "description": "Screen Number",
       "screenVisibility": "Editable",
+      "showPriority": "A",
+      "changePriority": "A"
+    }, {
+      "name": "module",
+      "isSkip": true,
+      "type": "GL30",
+      "description": "Module",
+      "screenVisibility": "ViewEditable",
+      "showPriority": "A",
+      "changePriority": "A"
+    }, {
+      "name": "select",
+      "isSkip": true,
+      "type": "BU3",
+      "description": "Select",
+      "screenVisibility": "ViewEditable",
       "showPriority": "A",
       "changePriority": "A"
     }],

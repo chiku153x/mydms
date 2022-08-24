@@ -91,6 +91,8 @@
     <entries englishName="freeText2" name="ftext2" type="TN" guiType="FREETEXT" description="" width="80" screenProtection="änderbar" writeable="true" meaning="Freitext 2" changePriority="A" viewPriority="A" primaryName="ftext2"/>
     <entries englishName="userBar1" name="sres1" type="BU1" description="" width="1" screenProtection="zeigen änderbar" writeable="true" meaning="Reserveleiste" changePriority="A" viewPriority="A" primaryName="sres1"/>
     <entries englishName="ymydmsscrnuum" name="ymydmsscrnuum" type="I3" guiType="INTEGER" description="" width="3" screenProtection="änderbar" writeable="true" custom="true" meaning="Screen Number" changePriority="A" viewPriority="A" primaryName="ymydmsscrnuum"/>
+    <entries englishName="ymydmsmodule" name="ymydmsmodule" type="GL30" guiType="INPUT" description="" width="30" screenProtection="zeigen änderbar" writeable="true" skip="true" custom="true" meaning="Module" changePriority="A" viewPriority="A" primaryName="ymydmsmodule"/>
+    <entries englishName="ymydmsselect" name="ymydmsselect" type="BU3" description="" width="1" screenProtection="zeigen änderbar" writeable="true" skip="true" custom="true" meaning="Select" changePriority="A" viewPriority="A" primaryName="ymydmsselect"/>
     <entries englishName="rowIdNo" name="tabnr" type="TZN" guiType="INTEGER" description="" tableEntry="true" width="5" screenProtection="immer geschützt" meaning="Zeilen-ID" changePriority="A" viewPriority="A" primaryName="tabnr"/>
     <entries englishName="rowId" name="zid" type="IDZ15:0" guiType="REFERENCE" description="" tableEntry="true" width="30" screenProtection="immer geschützt" skip="true" meaning="Zeilen-ID" changePriority="A" viewPriority="A" primaryName="zid"/>
     <entries englishName="rowNo" name="zn" type="I5" guiType="INTEGER" description="" tableEntry="true" width="5" screenProtection="immer geschützt" skip="true" meaning="Laufende Zeilennummer" changePriority="A" viewPriority="A" primaryName="zn"/>
@@ -130,7 +132,7 @@
                         </elements>
                       </cells>
                       <cells column="1" alignmentY="center">
-                        <elements xsi:type="core:Input" dimX="15">
+                        <elements xsi:type="core:Input" dimX="15" accessType="readonly">
                           <variable englishName="idno" name="nummer" type="NK15" guiType="INPUT" description="" width="15" screenProtection="änderbar" writeable="true" alias="true" meaning="Identnummer" changePriority="A" viewPriority="A" primaryName="num15"/>
                         </elements>
                       </cells>
@@ -142,31 +144,64 @@
                         </elements>
                       </cells>
                       <cells column="3" alignmentY="center">
-                        <elements xsi:type="core:Input" dimX="30">
+                        <elements xsi:type="core:Input" dimX="30" accessType="readonly">
                           <variable englishName="swd" name="such" type="SWK15" guiType="INPUT" description="" width="30" screenProtection="änderbar" writeable="true" alias="true" meaning="Suchwort" changePriority="A" viewPriority="A" primaryName="such15"/>
                         </elements>
                       </cells>
+                      <cells column="4" alignmentY="center"/>
+                      <cells column="5" alignmentY="center"/>
                       <cells row="1" alignmentY="center">
+                        <elements xsi:type="core:Label">
+                          <label viewLanguage="de" key="typelist_fhead_ymydmsselect">
+                            <value key="de" value="Select"/>
+                          </label>
+                        </elements>
+                      </cells>
+                      <cells column="1" row="1" alignmentY="center">
+                        <elements xsi:type="core:Button">
+                          <variable englishName="ymydmsselect" name="ymydmsselect" type="BU3" description="" width="1" screenProtection="zeigen änderbar" writeable="true" skip="true" custom="true" meaning="Select" changePriority="A" viewPriority="A" primaryName="ymydmsselect"/>
+                          <label viewLanguage="de" key="typelist_fhead_ymydmsselect">
+                            <value key="de" value="Select"/>
+                          </label>
+                        </elements>
+                      </cells>
+                      <cells column="2" row="1" alignmentY="center"/>
+                      <cells column="3" row="1" alignmentY="center"/>
+                      <cells column="4" row="1" alignmentY="center"/>
+                      <cells column="5" row="1" alignmentY="center"/>
+                      <cells row="2" alignmentY="center">
                         <elements xsi:type="core:Label">
                           <label viewLanguage="de" key="typelist_fhead_ymydmsscrnuum">
                             <value key="de" value="Screen Number"/>
                           </label>
                         </elements>
                       </cells>
-                      <cells column="1" row="1" alignmentY="center">
-                        <elements xsi:type="core:IntegerInput" dimX="3" dimY="1">
+                      <cells column="1" row="2" alignmentY="center">
+                        <elements xsi:type="core:IntegerInput" dimX="3" dimY="1" accessType="readonly">
                           <variable englishName="ymydmsscrnuum" name="ymydmsscrnuum" type="I3" guiType="INTEGER" description="" width="3" screenProtection="änderbar" writeable="true" custom="true" meaning="Screen Number" changePriority="A" viewPriority="A" primaryName="ymydmsscrnuum"/>
                         </elements>
                       </cells>
-                      <cells column="2" row="1" alignmentY="center">
+                      <cells column="2" row="2" alignmentY="center">
                         <elements xsi:type="core:Label">
-                          <label viewLanguage="de" key="typelist_fhead_descr">
-                            <value key="de" value="Bezeichnung"/>
+                          <label viewLanguage="de" key="typelist_fhead_ymydmsmodule">
+                            <value key="de" value="Module"/>
                           </label>
                         </elements>
                       </cells>
-                      <cells column="3" row="1" alignmentY="center">
-                        <elements xsi:type="core:TextAreaInput" dimX="34" dimY="3">
+                      <cells column="3" row="2" alignmentY="center">
+                        <elements xsi:type="core:Input" dimX="30" accessType="readonly">
+                          <variable englishName="ymydmsmodule" name="ymydmsmodule" type="GL30" guiType="INPUT" description="" width="30" screenProtection="zeigen änderbar" writeable="true" skip="true" custom="true" meaning="Module" changePriority="A" viewPriority="A" primaryName="ymydmsmodule"/>
+                        </elements>
+                      </cells>
+                      <cells column="4" row="2" alignmentY="center">
+                        <elements xsi:type="core:Label">
+                          <label viewLanguage="de" key="typelist_fhead_descr">
+                            <value key="de" value="Screen Name"/>
+                          </label>
+                        </elements>
+                      </cells>
+                      <cells column="5" row="2" alignmentY="center">
+                        <elements xsi:type="core:TextAreaInput" dimX="34" dimY="1" accessType="readonly">
                           <variable englishName="descr" name="name" type="T34" guiType="TEXTAREA" description="" width="34" screenProtection="änderbar" writeable="true" meaning="Bezeichnung" changePriority="A" viewPriority="A" primaryName="name"/>
                         </elements>
                       </cells>
