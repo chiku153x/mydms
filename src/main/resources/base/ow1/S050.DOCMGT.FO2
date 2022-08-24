@@ -1,0 +1,110 @@
+..!interpreter english declaration noabbrev
+
+..============================================================================
+..  Author             : Chinthaka
+..  Date of Creation   : Aug 15, 2022
+..  Name               : S050.DOCMGT.FO2
+..  Path/Pfad          : ow1/S050.DOCMGT.FO2
+..  Function           :
+..  required Paths     :
+..  Menu Items         :
+..  Mask Priority      :
+..  for EFOP           :
+..  Starting Ticket    :
+..                     History of Changes
+..                     ==================
+.. Ticket of Change    : Handle Company Data screen for Document Management
+..
+..============================================================================
+..<META P|='P88:10' >
+
+..<VAR folded>
+.var text xtcurl
+..</VAR>
+
+def main() {
+    .call inputDefaults( )
+    switch (G|evtvar) {
+        case ("ymydmsenabled") {
+            .call validateAll()
+        }
+        case ("ymydmstmpfiletest") {
+            .call checkTempFilePath()
+        }
+        case ("ymydmsresttest") {
+            .call checkDMSRestService()
+        }
+        case ("ymydmswebuitest") {
+            .call checkDMSWebUI()
+        }
+        case ("ymydmsfileuptest") {
+            .call checkFileUploader()
+        }
+    }
+}
+
+
+def validateAll( ) { } 
+
+def checkTempFilePath() {
+    if (F|empty(M|ymydmstmpfileloc)) {
+        .call invalidTempPath()
+    }
+    if (_F|fileexists(M|ymydmstmpfileloc)) {
+        .call invalidTempPath()
+    }  
+}
+
+def invalidTempPath() {
+    .box 
+    .item "Invalid Temp file Path"
+    .item 'M|ymydmstmpfileloc'
+    .enditem
+}
+
+def checkDMSRestService() {
+    if (F|empty(M|ymydmsresturl)) {
+        .call dmsRestNotAvailable()
+        .return
+    }
+
+    .formula U|xtcurl = "curl -f -LI " + 'M|ymydmsresturl' 
+    .system 'U|xtcurl' 
+    ..background
+}
+
+def dmsRestNotAvailable() {
+    .box 
+    .item "DMS Rest is not available"
+    .enditem
+}
+
+def checkDMSWebUI() {
+    if (F|empty(M|ymydmswebuiurl)) {
+        .call dmsWebUINotAvailable()
+        .return
+    }
+
+    .formula U|xtcurl = "curl -f -LI " + 'M|ymydmswebuiurl' 
+    .system 'U|xtcurl' 
+    ..background
+}
+
+def dmsWebUINotAvailable() {
+    .box 
+    .item "DMS Web UI is not available"
+    .enditem
+}
+
+def checkFileUploader() {
+
+}
+
+
+def inputDefaults( ) {
+    .set demand -
+    .set trans -
+    .input "KAKTNAME.KONST"
+    .input "KDATNAME.KONST"
+    .input "KKOMNAME.KONST"
+}

@@ -1,0 +1,26 @@
+{
+  "handlers": [
+    {
+      "id": {
+        "searchWord": "DOCHANDLER",
+        "workingDir": "ow1"
+      },
+      "name": "com.chiku.apps.DocHandlerEventHandler",
+      "globalScreenEvents": {
+        "events": ""
+      },
+      "globalRowEvents": {
+        "events": ""
+      },
+      "headerFieldEvents": {
+        "fields": [
+          {
+            "name": "start",
+            "events": "BUTTON_AFTER"
+          }
+        ]
+      },
+      "tableFieldEvents": {}
+    }
+  ]
+}

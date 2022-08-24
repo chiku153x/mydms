@@ -8,7 +8,7 @@
     "field": "ymydmsenabled",
     "headOrTable": "K",
     "isContinue": "[C]",
-    "handler": "ow1/S00X.DOCMGT.FO2"
+    "handler": "ow1/S050.DOCMGT.FO2"
   },
     {
     "databaseName": "(Company)",
@@ -19,7 +19,7 @@
     "field": "ymydmstmpfiletest",
     "headOrTable": "K",
     "isContinue": "[C]",
-    "handler": "ow1/S00X.DOCMGT.FO2"
+    "handler": "ow1/S050.DOCMGT.FO2"
   },
     {
     "databaseName": "(Company)",
@@ -30,7 +30,7 @@
     "field": "ymydmsresttest",
     "headOrTable": "K",
     "isContinue": "[C]",
-    "handler": "ow1/S00X.DOCMGT.FO2"
+    "handler": "ow1/S050.DOCMGT.FO2"
   },
     {
     "databaseName": "(Company)",
@@ -41,7 +41,7 @@
     "field": "ymydmswebuitest",
     "headOrTable": "K",
     "isContinue": "[C]",
-    "handler": "ow1/S00X.DOCMGT.FO2"
+    "handler": "ow1/S050.DOCMGT.FO2"
   },
     {
     "databaseName": "(Company)",
@@ -52,7 +52,7 @@
     "field": "ymydmsfileuptest",
     "headOrTable": "K",
     "isContinue": "[C]",
-    "handler": "ow1/S00X.DOCMGT.FO2"
+    "handler": "ow1/S050.DOCMGT.FO2"
   },
     {
     "databaseName": "(File)",
@@ -63,8 +63,21 @@
     "field": "*",
     "headOrTable": "*",
     "isContinue": "[C]",
-    "handler": "ow1/S00X.DOCMGT.FO2"
+    "handler": "ow1/S00X.DOCMGT.FILE.FO2"
   },
+  
+  {
+    "databaseName": "(File)",
+    "groupName": "{TypeList}",
+    "editorMode": "*",
+    "event": "buttonnach",
+    "key": "*",
+    "field": "ymydmsselect",
+    "headOrTable": "K",
+    "isContinue": "[C]",
+    "handler": "ow1/S00X.DOCMGT.FILE.FO2"
+  },
+   
    {
     "databaseName": "(Customer)",
     "groupName": "(Customer)",
@@ -74,7 +87,7 @@
     "field": "*",
     "headOrTable": "*",
     "isContinue": "[C]",
-    "handler": "ow1/S00X.DOCMGT.FO2"
+    "handler": "ow1/S00X.DOCMGT.UI.FO2"
   },
     {
     "databaseName": "(Customer)",
@@ -85,7 +98,7 @@
     "field": "ymydmsseltype",
     "headOrTable": "K",
     "isContinue": "[C]",
-    "handler": "ow1/S00X.DOCMGT.FO2"
+    "handler": "ow1/S00X.DOCMGT.UI.FO2"
   },
     {
     "databaseName": "(Customer)",
@@ -96,7 +109,7 @@
     "field": "ymydmsattach",
     "headOrTable": "K",
     "isContinue": "[C]",
-    "handler": "ow1/S00X.DOCMGT.FO2"
+    "handler": "ow1/S00X.DOCMGT.UI.FO2"
   },
    {
     "databaseName": "(Vendor)",
@@ -107,7 +120,7 @@
     "field": "*",
     "headOrTable": "*",
     "isContinue": "[C]",
-    "handler": "ow1/S00X.DOCMGT.FO2"
+    "handler": "ow1/S00X.DOCMGT.UI.FO2"
   },
     {
     "databaseName": "(Vendor)",
@@ -118,7 +131,7 @@
     "field": "ymydmsseltype",
     "headOrTable": "K",
     "isContinue": "[C]",
-    "handler": "ow1/S00X.DOCMGT.FO2"
+    "handler": "ow1/S00X.DOCMGT.UI.FO2"
   },
    {
     "databaseName": "(Part)",
@@ -129,7 +142,7 @@
     "field": "*",
     "headOrTable": "*",
     "isContinue": "[C]",
-    "handler": "ow1/S00X.DOCMGT.FO2"
+    "handler": "ow1/S00X.DOCMGT.UI.FO2"
   },
     {
     "databaseName": "(Part)",
@@ -140,7 +153,7 @@
     "field": "ymydmsseltype",
     "headOrTable": "K",
     "isContinue": "[C]",
-    "handler": "ow1/S00X.DOCMGT.FO2"
+    "handler": "ow1/S00X.DOCMGT.UI.FO2"
   },
     {
     "databaseName": "(Sales)",
@@ -151,7 +164,7 @@
     "field": "*",
     "headOrTable": "*",
     "isContinue": "[C]",
-    "handler": "ow1/S00X.DOCMGT.FO2"
+    "handler": "ow1/S00X.DOCMGT.UI.FO2"
   },
     {
     "databaseName": "(Sales)",
@@ -162,7 +175,7 @@
     "field": "ymydmsseltype",
     "headOrTable": "K",
     "isContinue": "[C]",
-    "handler": "ow1/S00X.DOCMGT.FO2"
+    "handler": "ow1/S00X.DOCMGT.UI.FO2"
   },
     {
     "databaseName": "(Sales)",
@@ -173,7 +186,7 @@
     "field": "*",
     "headOrTable": "*",
     "isContinue": "[C]",
-    "handler": "ow1/S00X.DOCMGT.FO2"
+    "handler": "ow1/S00X.DOCMGT.UI.FO2"
   },
     {
     "databaseName": "(Sales)",
@@ -184,7 +197,7 @@
     "field": "ymydmsseltype",
     "headOrTable": "K",
     "isContinue": "[C]",
-    "handler": "ow1/S00X.DOCMGT.FO2"
+    "handler": "ow1/S00X.DOCMGT.UI.FO2"
   },
     {
     "databaseName": "(Sales)",
@@ -195,7 +208,7 @@
     "field": "*",
     "headOrTable": "*",
     "isContinue": "[C]",
-    "handler": "ow1/S00X.DOCMGT.FO2"
+    "handler": "ow1/S00X.DOCMGT.UI.FO2"
   },
     {
     "databaseName": "(Sales)",
@@ -206,7 +219,7 @@
     "field": "ymydmsseltype",
     "headOrTable": "K",
     "isContinue": "[C]",
-    "handler": "ow1/S00X.DOCMGT.FO2"
+    "handler": "ow1/S00X.DOCMGT.UI.FO2"
   },
     {
     "databaseName": "(Purchasing)",
@@ -217,7 +230,7 @@
     "field": "*",
     "headOrTable": "*",
     "isContinue": "[C]",
-    "handler": "ow1/S00X.DOCMGT.FO2"
+    "handler": "ow1/S00X.DOCMGT.UI.FO2"
   },
     {
     "databaseName": "(Purchasing)",
@@ -228,7 +241,7 @@
     "field": "ymydmsseltype",
     "headOrTable": "K",
     "isContinue": "[C]",
-    "handler": "ow1/S00X.DOCMGT.FO2"
+    "handler": "ow1/S00X.DOCMGT.UI.FO2"
   },
     {
     "databaseName": "(Purchasing)",
@@ -239,7 +252,7 @@
     "field": "*",
     "headOrTable": "*",
     "isContinue": "[C]",
-    "handler": "ow1/S00X.DOCMGT.FO2"
+    "handler": "ow1/S00X.DOCMGT.UI.FO2"
   },
     {
     "databaseName": "(Purchasing)",
@@ -250,7 +263,7 @@
     "field": "ymydmsseltype",
     "headOrTable": "K",
     "isContinue": "[C]",
-    "handler": "ow1/S00X.DOCMGT.FO2"
+    "handler": "ow1/S00X.DOCMGT.UI.FO2"
   },
     {
     "databaseName": "(Purchasing)",
@@ -261,7 +274,7 @@
     "field": "*",
     "headOrTable": "*",
     "isContinue": "[C]",
-    "handler": "ow1/S00X.DOCMGT.FO2"
+    "handler": "ow1/S00X.DOCMGT.UI.FO2"
   },
     {
     "databaseName": "(Purchasing)",
@@ -272,6 +285,6 @@
     "field": "ymydmsseltype",
     "headOrTable": "K",
     "isContinue": "[C]",
-    "handler": "ow1/S00X.DOCMGT.FO2"
+    "handler": "ow1/S00X.DOCMGT.UI.FO2"
   }
 ]
