@@ -1,0 +1,7 @@
+language.source=de
+dochandler_$0=Document Handler
+dochandler_$1=Seite 1
+dochandler_$2=Seite 1
+dochandler__fhead_idno=Identnummer
+dochandler__fhead_swd=Suchwort
+dochandler__ftable_rowno=Laufende Zeilennummer

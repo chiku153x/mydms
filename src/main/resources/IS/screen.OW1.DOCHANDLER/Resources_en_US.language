@@ -1,0 +1,7 @@
+language.source=en-US
+dochandler_$0=Document Handler
+dochandler_$1=Page 1
+dochandler_$2=Page 1
+dochandler__fhead_idno=Identity number
+dochandler__fhead_swd=Search word
+dochandler__ftable_rowno=Current row number

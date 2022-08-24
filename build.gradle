@@ -53,7 +53,7 @@ esdk {
         vendorId = "xx"
         appId = "mydms"
         shared = false
-        infosystems = []
+        infosystems = ["IS.OW1.DOCHANDLER"]
         tables = ["Firma","Verkauf","Kunde","Lieferant","Teil:Artikel","Betr-Auftrag","Einkauf","Chargen","DocumentManagement"]
         screens = [:]
         advancedScreens=["50":["D"], "32":["A"], "0":["D"],"1":["D"],"2":["D"],"77":["A"],"35":["A"],"36":["A"],"42":["A"],"45":["A"],"46":["A"],"143":["A"],"70":["A"]]
