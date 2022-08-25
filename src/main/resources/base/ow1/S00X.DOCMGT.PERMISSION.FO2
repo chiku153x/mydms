@@ -89,11 +89,13 @@ def handleScreenValidation( ) {
             .end 1
             .cursor ymydmsemployee 0
         }
+        
         if (F|empty(M|ymydmswebun)) {
             .error Username is required
             .end 1
             .cursor ymydmswebun 0
         }
+        
         if (F|empty(M|ymydmswebpw)) {
             .error Password is required
             .end 1
