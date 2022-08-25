@@ -198,6 +198,17 @@
     "isContinue": "[C]",
     "handler": "ow1/S00X.DOCMGT.PERMISSION.FO2"
   },
+  {
+    "databaseName": "(File)",
+    "groupName": "{Permission}",
+    "editorMode": "*",
+    "event": "feldaus",
+    "key": "*",
+    "field": "*",
+    "headOrTable": "T",
+    "isContinue": "[C]",
+    "handler": "ow1/S00X.DOCMGT.PERMISSION.FO2"
+  },
    {
     "databaseName": "(Customer)",
     "groupName": "(Customer)",

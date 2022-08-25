@@ -47,7 +47,16 @@ def handleFieldEvents( ) {
         case ("ymydmswebpwmask") {
             .call handlePasswordMask()
         }
+        case ("ymydmsscrn") {
+            .call setTableFields()
+        }
     }
+} 
+
+def setTableFields( ) { 
+    .formula M|ymydmsscrnnum = M|ymydmsscrn^kbezbspr
+    .formula M|ymydmsmodule = M|ymydmsscrn^langtxt
+    .formula M|ymydmsscrnname = M|ymydmsscrn^namebspr
 } 
 
 def handleScreenEvents( ) { 
