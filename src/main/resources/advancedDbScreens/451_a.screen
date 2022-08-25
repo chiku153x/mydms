@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <screen:Screen xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="/de.abas.screen.model.core/model/core.ecore" xmlns:screen="/de.abas.screen.model.screen/model/screen.ecore" xsi:schemaLocation="/de.abas.screen.model.core/model/core.ecore platform:/de.abas.screen.model.core/model/core.ecore" featureType="erpgui" smartScreenId="NG_DATABASE" smartScreenVersion="1.0.0">
-  <variables searchWord="V-15-00    " group="true" name="TypeList">
+  <variables searchWord="V-15-01    " group="true" name="Permission">
     <entries englishName="" name="grust" type="I9" guiType="INTEGER" description="" width="9" screenProtection="immer geschützt" meaning="Gruppe" changePriority="A" viewPriority="A" primaryName="grust"/>
     <entries englishName="grpNo" name="gruppe" type="GRN15" guiType="INTEGER" description="" width="2" screenProtection="immer geschützt" alias="true" meaning="Gruppennummer" changePriority="A" viewPriority="A" primaryName="grust"/>
     <entries englishName="grpDescr" name="grbez" type="GRB15" guiType="INPUT" description="" width="80" screenProtection="immer geschützt" alias="true" meaning="Gruppenbezeichnung" changePriority="A" viewPriority="A" primaryName="grust"/>
@@ -90,12 +90,14 @@
     <entries englishName="freeText" name="ftext" type="TN" guiType="FREETEXT" description="" width="80" screenProtection="änderbar" writeable="true" meaning="Freitext 1" changePriority="A" viewPriority="A" primaryName="ftext"/>
     <entries englishName="freeText2" name="ftext2" type="TN" guiType="FREETEXT" description="" width="80" screenProtection="änderbar" writeable="true" meaning="Freitext 2" changePriority="A" viewPriority="A" primaryName="ftext2"/>
     <entries englishName="userBar1" name="sres1" type="BU1" description="" width="1" screenProtection="zeigen änderbar" writeable="true" meaning="Reserveleiste" changePriority="A" viewPriority="A" primaryName="sres1"/>
-    <entries englishName="ymydmsscrnuum" name="ymydmsscrnuum" type="I3" guiType="INTEGER" description="" width="3" screenProtection="änderbar" writeable="true" custom="true" meaning="Screen Number" changePriority="A" viewPriority="A" primaryName="ymydmsscrnuum"/>
-    <entries englishName="ymydmsmodule" name="ymydmsmodule" type="GL30" guiType="INPUT" description="" width="30" screenProtection="zeigen änderbar" writeable="true" custom="true" meaning="Module" changePriority="A" viewPriority="A" primaryName="ymydmsmodule"/>
-    <entries englishName="ymydmsselect" name="ymydmsselect" type="BU3" description="" width="1" screenProtection="zeigen änderbar" writeable="true" skip="true" custom="true" meaning="Select" changePriority="A" viewPriority="A" primaryName="ymydmsselect"/>
-    <entries englishName="ymydmsscrn" name="ymydmsscrn" type="AZL1000007" guiType="COMBOBOX" description="" width="30" screenProtection="änderbar" writeable="true" custom="true" meaning="Screen" changePriority="A" viewPriority="A" primaryName="ymydmsscrn"/>
+    <entries englishName="ymydmsadd" name="ymydmsadd" type="BU3" description="" width="1" screenProtection="zeigen änderbar" writeable="true" skip="true" custom="true" meaning="Add Permission" changePriority="A" viewPriority="A" primaryName="ymydmsadd"/>
+    <entries englishName="ymydmsemployee" name="ymydmsemployee" type="PS11:1" guiType="REFERENCE" description="" width="9" screenProtection="änderbar" writeable="true" custom="true" meaning="Employee" changePriority="A" viewPriority="A" primaryName="ymydmsemployee"/>
+    <entries englishName="ymydmswebun" name="ymydmswebun" type="GL20" guiType="INPUT" description="" width="20" screenProtection="änderbar" writeable="true" custom="true" meaning="Web UI username" changePriority="A" viewPriority="A" primaryName="ymydmswebun"/>
+    <entries englishName="ymydmswebpwmask" name="ymydmswebpwmask" type="GL20" guiType="INPUT" description="" width="20" screenProtection="änderbar" writeable="true" skip="true" custom="true" meaning="Web UI password" changePriority="A" viewPriority="A" primaryName="ymydmswebpwmask"/>
+    <entries englishName="ymydmswebpw" name="ymydmswebpw" type="GL20" guiType="INPUT" description="" width="20" screenProtection="änderbar" writeable="true" custom="true" meaning="Web UI Password enc" changePriority="A" viewPriority="A" primaryName="ymydmswebpw"/>
+    <entries englishName="ymydmsactive" name="ymydmsactive" type="B1" guiType="CHECKBOX" description="" width="1" screenProtection="änderbar" writeable="true" custom="true" meaning="Is Active User" changePriority="A" viewPriority="A" primaryName="ymydmsactive"/>
     <entries englishName="rowIdNo" name="tabnr" type="TZN" guiType="INTEGER" description="" tableEntry="true" width="5" screenProtection="immer geschützt" meaning="Zeilen-ID" changePriority="A" viewPriority="A" primaryName="tabnr"/>
-    <entries englishName="rowId" name="zid" type="IDZ15:0" guiType="REFERENCE" description="" tableEntry="true" width="30" screenProtection="immer geschützt" skip="true" meaning="Zeilen-ID" changePriority="A" viewPriority="A" primaryName="zid"/>
+    <entries englishName="rowId" name="zid" type="IDZ15:1" guiType="REFERENCE" description="" tableEntry="true" width="30" screenProtection="immer geschützt" skip="true" meaning="Zeilen-ID" changePriority="A" viewPriority="A" primaryName="zid"/>
     <entries englishName="rowNo" name="zn" type="I5" guiType="INTEGER" description="" tableEntry="true" width="5" screenProtection="immer geschützt" skip="true" meaning="Laufende Zeilennummer" changePriority="A" viewPriority="A" primaryName="zn"/>
     <entries englishName="print" name="budruck" type="BU14" description="" tableEntry="true" width="1" screenProtection="zeigen änderbar" writeable="true" skip="true" meaning="Drucken" changePriority="A" viewPriority="A" primaryName="budruck"/>
     <entries englishName="print2" name="budruck2" type="BU8" description="" tableEntry="true" width="1" screenProtection="zeigen änderbar" writeable="true" skip="true" meaning="Drucken" changePriority="A" viewPriority="A" primaryName="budruck2"/>
@@ -106,132 +108,145 @@
     <entries englishName="freeTextTab" name="tftext" type="TN" guiType="FREETEXT" description="" tableEntry="true" width="80" screenProtection="änderbar" writeable="true" meaning="Freitext 1" changePriority="A" viewPriority="A" primaryName="tftext"/>
     <entries englishName="freeTextTab2" name="tftext2" type="TN" guiType="FREETEXT" description="" tableEntry="true" width="80" screenProtection="änderbar" writeable="true" meaning="Freitext 2" changePriority="A" viewPriority="A" primaryName="tftext2"/>
     <entries englishName="userBarTab1" name="tsres1" type="BU1" description="" tableEntry="true" width="1" screenProtection="zeigen änderbar" writeable="true" meaning="Reserveleiste" changePriority="A" viewPriority="A" primaryName="tsres1"/>
-    <entries englishName="ymydmsshorttxt" name="ymydmsshorttxt" type="PS12:3" guiType="REFERENCE" description="" tableEntry="true" width="11" screenProtection="änderbar" writeable="true" custom="true" meaning="Item" changePriority="A" viewPriority="A" primaryName="ymydmsshorttxt"/>
-    <entries englishName="ymydmsshorttxtname" name="ymydmsshorttxtname" type="PT12:3" guiType="REFERENCE" description="" tableEntry="true" width="64" screenProtection="änderbar" writeable="true" alias="true" custom="true" meaning="Item Text" changePriority="A" viewPriority="A" primaryName="ymydmsshorttxt"/>
+    <entries englishName="ymydmsscrnnum" name="ymydmsscrnnum" type="I3" guiType="INTEGER" description="" tableEntry="true" width="3" screenProtection="änderbar" writeable="true" custom="true" meaning="Screen Number" changePriority="A" viewPriority="A" primaryName="ymydmsscrnnum"/>
+    <entries englishName="ymydmsmodule" name="ymydmsmodule" type="GL30" guiType="INPUT" description="" tableEntry="true" width="30" screenProtection="änderbar" writeable="true" custom="true" meaning="Module" changePriority="A" viewPriority="A" primaryName="ymydmsmodule"/>
+    <entries englishName="ymydmsscrnname" name="ymydmsscrnname" type="GL30" guiType="INPUT" description="" tableEntry="true" width="30" screenProtection="änderbar" writeable="true" custom="true" meaning="Screen Name" changePriority="A" viewPriority="A" primaryName="ymydmsscrnname"/>
+    <entries englishName="ymydmsscrn" name="ymydmsscrn" type="AZL1000007" guiType="COMBOBOX" description="" tableEntry="true" width="30" screenProtection="änderbar" writeable="true" custom="true" meaning="Screen" changePriority="A" viewPriority="A" primaryName="ymydmsscrn"/>
   </variables>
   <popups>
     <popup id="menuTable"/>
     <popup id="menuExecute"/>
   </popups>
   <language code="68" text="Deutsch" iso="de"/>
-  <id xsi:type="screen:DatabaseId" name="Type List/DocumentManagement" priority="A" groupName="Type List" number="15" numberName="DocumentManagement" screenNumber="70"/>
+  <id xsi:type="screen:DatabaseId" name="Permission/DocumentManagement" priority="A" groupName="Permission" group="1" number="15" numberName="DocumentManagement" screenNumber="451"/>
   <frames standardHelp="2.7">
     <elements xsi:type="core:GridLayout">
       <cells alignmentX="fill" alignmentY="fill">
         <elements xsi:type="core:NotebookLayout">
           <notebookPanes>
-            <elements xsi:type="core:GridLayout">
-              <cells alignmentX="fill" alignmentY="fill">
-                <elements xsi:type="core:SplitLayout">
-                  <splitPanes>
-                    <elements xsi:type="core:GridLayout">
-                      <cells alignmentY="center">
-                        <elements xsi:type="core:Label">
-                          <label viewLanguage="de" key="typelist_fhead_idno">
-                            <value key="de" value="Identnummer"/>
-                          </label>
-                        </elements>
-                      </cells>
-                      <cells column="1" alignmentY="center">
-                        <elements xsi:type="core:Input" dimX="15" accessType="readonly">
-                          <variable englishName="idno" name="nummer" type="NK15" guiType="INPUT" description="" width="15" screenProtection="änderbar" writeable="true" alias="true" meaning="Identnummer" changePriority="A" viewPriority="A" primaryName="num15"/>
-                        </elements>
-                      </cells>
-                      <cells column="2" alignmentY="center">
-                        <elements xsi:type="core:Label">
-                          <label viewLanguage="de" key="typelist_fhead_swd">
-                            <value key="de" value="Suchwort"/>
-                          </label>
-                        </elements>
-                      </cells>
-                      <cells column="3" alignmentY="center">
-                        <elements xsi:type="core:Input" dimX="30" accessType="readonly">
-                          <variable englishName="swd" name="such" type="SWK15" guiType="INPUT" description="" width="30" screenProtection="änderbar" writeable="true" alias="true" meaning="Suchwort" changePriority="A" viewPriority="A" primaryName="such15"/>
-                        </elements>
-                      </cells>
-                      <cells column="4" alignmentY="center"/>
-                      <cells column="5" alignmentY="center"/>
-                      <cells row="1" alignmentY="center">
-                        <elements xsi:type="core:Label">
-                          <label viewLanguage="de" key="typelist_fhead_ymydmsscrn">
-                            <value key="de" value="Screen"/>
-                          </label>
-                        </elements>
-                      </cells>
-                      <cells column="1" row="1" alignmentY="center">
-                        <elements xsi:type="core:ComboBox" dimX="30">
-                          <variable englishName="ymydmsscrn" name="ymydmsscrn" type="AZL1000007" guiType="COMBOBOX" description="" width="30" screenProtection="änderbar" writeable="true" custom="true" meaning="Screen" changePriority="A" viewPriority="A" primaryName="ymydmsscrn"/>
-                        </elements>
-                      </cells>
-                      <cells column="2" row="1" alignmentY="center"/>
-                      <cells column="3" row="1" alignmentY="center"/>
-                      <cells column="4" row="1" alignmentY="center"/>
-                      <cells column="5" row="1" alignmentY="center"/>
-                      <cells row="2" alignmentY="center">
-                        <elements xsi:type="core:Label">
-                          <label viewLanguage="de" key="typelist_fhead_ymydmsscrnuum">
-                            <value key="de" value="Screen Number"/>
-                          </label>
-                        </elements>
-                      </cells>
-                      <cells column="1" row="2" alignmentY="center">
-                        <elements xsi:type="core:IntegerInput" dimX="3" dimY="1" accessType="readonly">
-                          <variable englishName="ymydmsscrnuum" name="ymydmsscrnuum" type="I3" guiType="INTEGER" description="" width="3" screenProtection="änderbar" writeable="true" custom="true" meaning="Screen Number" changePriority="A" viewPriority="A" primaryName="ymydmsscrnuum"/>
-                        </elements>
-                      </cells>
-                      <cells column="2" row="2" alignmentY="center">
-                        <elements xsi:type="core:Label">
-                          <label viewLanguage="de" key="typelist_fhead_ymydmsmodule">
-                            <value key="de" value="Module"/>
-                          </label>
-                        </elements>
-                      </cells>
-                      <cells column="3" row="2" alignmentY="center">
-                        <elements xsi:type="core:Input" dimX="30" accessType="readonly">
-                          <variable englishName="ymydmsmodule" name="ymydmsmodule" type="GL30" guiType="INPUT" description="" width="30" screenProtection="zeigen änderbar" writeable="true" custom="true" meaning="Module" changePriority="A" viewPriority="A" primaryName="ymydmsmodule"/>
-                        </elements>
-                      </cells>
-                      <cells column="4" row="2" alignmentY="center">
-                        <elements xsi:type="core:Label">
-                          <label viewLanguage="de" key="typelist_fhead_descr">
-                            <value key="de" value="Screen Name"/>
-                          </label>
-                        </elements>
-                      </cells>
-                      <cells column="5" row="2" alignmentY="center">
-                        <elements xsi:type="core:TextAreaInput" dimX="34" dimY="1" accessType="readonly">
-                          <variable englishName="descr" name="name" type="T34" guiType="TEXTAREA" description="" width="34" screenProtection="änderbar" writeable="true" meaning="Bezeichnung" changePriority="A" viewPriority="A" primaryName="name"/>
-                        </elements>
-                      </cells>
+            <elements xsi:type="core:SplitLayout">
+              <splitPanes>
+                <elements xsi:type="core:GridLayout">
+                  <cells alignmentY="center">
+                    <elements xsi:type="core:Label">
+                      <label viewLanguage="de" key="permission_fhead_idno">
+                        <value key="de" value="Identnummer"/>
+                      </label>
                     </elements>
-                  </splitPanes>
-                  <splitPanes>
-                    <elements xsi:type="core:Table">
-                      <elements xsi:type="core:Column">
-                        <elements xsi:type="core:ReferenceInput">
-                          <variable englishName="ymydmsshorttxt" name="ymydmsshorttxt" type="PS12:3" guiType="REFERENCE" description="" tableEntry="true" width="11" screenProtection="änderbar" writeable="true" custom="true" meaning="Item" changePriority="A" viewPriority="A" primaryName="ymydmsshorttxt"/>
-                        </elements>
-                        <label viewLanguage="de" key="typelist_ftable_ymydmsshorttxt">
-                          <value key="de" value="Item"/>
-                        </label>
-                      </elements>
-                      <elements xsi:type="core:Column">
-                        <elements xsi:type="core:ReferenceInput">
-                          <variable englishName="ymydmsshorttxtname" name="ymydmsshorttxtname" type="PT12:3" guiType="REFERENCE" description="" tableEntry="true" width="64" screenProtection="änderbar" writeable="true" alias="true" custom="true" meaning="Item Text" changePriority="A" viewPriority="A" primaryName="ymydmsshorttxt"/>
-                        </elements>
-                        <label viewLanguage="de" key="typelist_ftable_ymydmsshorttxtname">
-                          <value key="de" value="Item Text"/>
-                        </label>
-                      </elements>
+                  </cells>
+                  <cells column="1" alignmentY="center">
+                    <elements xsi:type="core:Input" dimX="15" accessType="readonly">
+                      <variable englishName="idno" name="nummer" type="NK15" guiType="INPUT" description="" width="15" screenProtection="änderbar" writeable="true" alias="true" meaning="Identnummer" changePriority="A" viewPriority="A" primaryName="num15"/>
                     </elements>
-                  </splitPanes>
+                  </cells>
+                  <cells column="2" alignmentY="center">
+                    <elements xsi:type="core:Label">
+                      <label viewLanguage="de" key="permission_fhead_swd">
+                        <value key="de" value="Suchwort"/>
+                      </label>
+                    </elements>
+                  </cells>
+                  <cells column="3" alignmentY="center">
+                    <elements xsi:type="core:Input" dimX="30" accessType="readonly">
+                      <variable englishName="swd" name="such" type="SWK15" guiType="INPUT" description="" width="30" screenProtection="änderbar" writeable="true" alias="true" meaning="Suchwort" changePriority="A" viewPriority="A" primaryName="such15"/>
+                    </elements>
+                  </cells>
+                  <cells row="1" columnSpan="4" alignmentY="center">
+                    <elements xsi:type="core:Groupline">
+                      <label viewLanguage="de" key="permission$1">
+                        <value key="de" value="Web UI Credentials"/>
+                      </label>
+                    </elements>
+                  </cells>
+                  <cells row="2" alignmentY="center">
+                    <elements xsi:type="core:Label">
+                      <label viewLanguage="de" key="permission_fhead_ymydmsemployee">
+                        <value key="de" value="Employee"/>
+                      </label>
+                    </elements>
+                  </cells>
+                  <cells column="1" row="2" alignmentY="center">
+                    <elements xsi:type="core:ReferenceInput" dimX="9" dimY="1">
+                      <variable englishName="ymydmsemployee" name="ymydmsemployee" type="PS11:1" guiType="REFERENCE" description="" width="9" screenProtection="änderbar" writeable="true" custom="true" meaning="Employee" changePriority="A" viewPriority="A" primaryName="ymydmsemployee"/>
+                    </elements>
+                  </cells>
+                  <cells column="2" row="2" alignmentY="center">
+                    <elements xsi:type="core:Label">
+                      <label viewLanguage="de" key="permission_fhead_ymydmsactive">
+                        <value key="de" value="Is Active User"/>
+                      </label>
+                    </elements>
+                  </cells>
+                  <cells column="3" row="2" alignmentY="center">
+                    <elements xsi:type="core:CheckBox">
+                      <variable englishName="ymydmsactive" name="ymydmsactive" type="B1" guiType="CHECKBOX" description="" width="1" screenProtection="änderbar" writeable="true" custom="true" meaning="Is Active User" changePriority="A" viewPriority="A" primaryName="ymydmsactive"/>
+                    </elements>
+                  </cells>
+                  <cells row="3" alignmentY="center">
+                    <elements xsi:type="core:Label">
+                      <label viewLanguage="de" key="permission_fhead_ymydmswebun">
+                        <value key="de" value="Username"/>
+                      </label>
+                    </elements>
+                  </cells>
+                  <cells column="1" row="3">
+                    <elements xsi:type="core:Input" dimX="20">
+                      <variable englishName="ymydmswebun" name="ymydmswebun" type="GL20" guiType="INPUT" description="" width="20" screenProtection="änderbar" writeable="true" custom="true" meaning="Web UI username" changePriority="A" viewPriority="A" primaryName="ymydmswebun"/>
+                    </elements>
+                  </cells>
+                  <cells column="2" row="3">
+                    <elements xsi:type="core:Label">
+                      <label viewLanguage="de" key="permission_fhead_ymydmswebpwmask">
+                        <value key="de" value="Password"/>
+                      </label>
+                    </elements>
+                  </cells>
+                  <cells column="3" row="3">
+                    <elements xsi:type="core:Input" dimX="20">
+                      <variable englishName="ymydmswebpwmask" name="ymydmswebpwmask" type="GL20" guiType="INPUT" description="" width="20" screenProtection="änderbar" writeable="true" skip="true" custom="true" meaning="Web UI password" changePriority="A" viewPriority="A" primaryName="ymydmswebpwmask"/>
+                    </elements>
+                  </cells>
                 </elements>
-              </cells>
-              <metaInfo stretch="zoom"/>
-              <metaInfo axis="column" stretch="zoom"/>
+              </splitPanes>
+              <splitPanes>
+                <elements xsi:type="core:Table">
+                  <elements xsi:type="core:Column">
+                    <elements xsi:type="core:ComboBox">
+                      <variable englishName="ymydmsscrn" name="ymydmsscrn" type="AZL1000007" guiType="COMBOBOX" description="" tableEntry="true" width="30" screenProtection="änderbar" writeable="true" custom="true" meaning="Screen" changePriority="A" viewPriority="A" primaryName="ymydmsscrn"/>
+                    </elements>
+                    <label viewLanguage="de" key="permission_ftable_ymydmsscrn">
+                      <value key="de" value="Screen"/>
+                    </label>
+                  </elements>
+                  <elements xsi:type="core:Column">
+                    <elements xsi:type="core:IntegerInput" accessType="readonly">
+                      <variable englishName="ymydmsscrnnum" name="ymydmsscrnnum" type="I3" guiType="INTEGER" description="" tableEntry="true" width="3" screenProtection="änderbar" writeable="true" custom="true" meaning="Screen Number" changePriority="A" viewPriority="A" primaryName="ymydmsscrnnum"/>
+                    </elements>
+                    <label viewLanguage="de" key="permission_ftable_ymydmsscrnnum">
+                      <value key="de" value="Screen Number"/>
+                    </label>
+                  </elements>
+                  <elements xsi:type="core:Column">
+                    <elements xsi:type="core:Input" accessType="readonly">
+                      <variable englishName="ymydmsmodule" name="ymydmsmodule" type="GL30" guiType="INPUT" description="" tableEntry="true" width="30" screenProtection="änderbar" writeable="true" custom="true" meaning="Module" changePriority="A" viewPriority="A" primaryName="ymydmsmodule"/>
+                    </elements>
+                    <label viewLanguage="de" key="permission_ftable_ymydmsmodule">
+                      <value key="de" value="Module"/>
+                    </label>
+                  </elements>
+                  <elements xsi:type="core:Column">
+                    <elements xsi:type="core:Input" accessType="readonly">
+                      <variable englishName="ymydmsscrnname" name="ymydmsscrnname" type="GL30" guiType="INPUT" description="" tableEntry="true" width="30" screenProtection="änderbar" writeable="true" custom="true" meaning="Screen Name" changePriority="A" viewPriority="A" primaryName="ymydmsscrnname"/>
+                    </elements>
+                    <label viewLanguage="de" key="permission_ftable_ymydmsscrnname">
+                      <value key="de" value="Screen Name"/>
+                    </label>
+                  </elements>
+                </elements>
+              </splitPanes>
             </elements>
-            <label viewLanguage="de" key="typelist$0">
-              <value key="de" value="Page 1"/>
+            <label viewLanguage="de" key="d95984c6da90849d3f88401c8ff68171">
+              <value key="de" value="Seite 1"/>
             </label>
           </notebookPanes>
         </elements>
@@ -240,7 +255,7 @@
       <metaInfo stretch="zoom"/>
     </elements>
     <label viewLanguage="de" key="e826e633db426697a3d42be9755b5ace">
-      <value key="de" value="Zusatztabelle 15 - Gruppe 0"/>
+      <value key="de" value="Zusatztabelle 1 - Gruppe 1"/>
     </label>
   </frames>
 </screen:Screen>

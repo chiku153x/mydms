@@ -16,7 +16,6 @@
       "changePriority": "A"
     }, {
       "name": "module",
-      "isSkip": true,
       "type": "GL30",
       "description": "Module",
       "screenVisibility": "ViewEditable",
@@ -28,6 +27,13 @@
       "type": "BU3",
       "description": "Select",
       "screenVisibility": "ViewEditable",
+      "showPriority": "A",
+      "changePriority": "A"
+    }, {
+      "name": "scrn",
+      "type": "AZL1000007",
+      "description": "Screen",
+      "screenVisibility": "Editable",
       "showPriority": "A",
       "changePriority": "A"
     }],
@@ -45,6 +51,84 @@
       "type": "PS12:3",
       "newType": "PT12:3",
       "description": "Item Text",
+      "screenVisibility": "Editable",
+      "showPriority": "A",
+      "changePriority": "A"
+    }]
+  }, {
+    "name": "Permission",
+    "number": 1,
+    "classname": "Permission",
+    "headFields": [{
+      "name": "add",
+      "isSkip": true,
+      "type": "BU3",
+      "description": "Add Permission",
+      "screenVisibility": "ViewEditable",
+      "showPriority": "A",
+      "changePriority": "A"
+    }, {
+      "name": "employee",
+      "type": "PS11:1",
+      "description": "Employee",
+      "screenVisibility": "Editable",
+      "showPriority": "A",
+      "changePriority": "A"
+    }, {
+      "name": "webun",
+      "type": "GL20",
+      "description": "Web UI username",
+      "screenVisibility": "Editable",
+      "showPriority": "A",
+      "changePriority": "A"
+    }, {
+      "name": "webpwmask",
+      "isSkip": true,
+      "type": "GL20",
+      "description": "Web UI password",
+      "screenVisibility": "Editable",
+      "showPriority": "A",
+      "changePriority": "A"
+    }, {
+      "name": "webpw",
+      "type": "GL20",
+      "description": "Web UI Password enc",
+      "screenVisibility": "Editable",
+      "showPriority": "A",
+      "changePriority": "A"
+    }, {
+      "name": "active",
+      "type": "B",
+      "description": "Is Active User",
+      "screenVisibility": "Editable",
+      "showPriority": "A",
+      "changePriority": "A"
+    }],
+    "tableFields": [{
+      "name": "scrnnum",
+      "type": "I3",
+      "description": "Screen Number",
+      "screenVisibility": "Editable",
+      "showPriority": "A",
+      "changePriority": "A"
+    }, {
+      "name": "module",
+      "type": "GL30",
+      "description": "Module",
+      "screenVisibility": "Editable",
+      "showPriority": "A",
+      "changePriority": "A"
+    }, {
+      "name": "scrnname",
+      "type": "GL30",
+      "description": "Screen Name",
+      "screenVisibility": "Editable",
+      "showPriority": "A",
+      "changePriority": "A"
+    }, {
+      "name": "scrn",
+      "type": "AZL1000007",
+      "description": "Screen",
       "screenVisibility": "Editable",
       "showPriority": "A",
       "changePriority": "A"

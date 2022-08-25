@@ -35,23 +35,16 @@
 ..</VAR>
 
 def main() {
-    .call inputDefaults() 
-
     if (_F|sysinfo(10)^ymydmsenabled) {
         .return
     }
-    
-    if (G|evtart = "maskein") {
-        .protection ymydmstype
-        if (G|evtkommd <> G|kaktname13 ) {
-            .protection ymydmssubject
-            .protection ymydmsseltype
-            .protection ymydmssubject
-            .protection ymydmsfile
-            .protection ymydmsattach
-        }
-    }
-    
+    .call inputDefaults() 
+    .call handleScreenEvents()
+    .call handleFieldEvents()
+}
+
+
+def handleFieldEvents( ) { 
     switch (G|evtvar) {
         case ("ymydmsseltype") {
             if (G|evtart = "buttonnach") {
@@ -64,8 +57,22 @@ def main() {
             }  
         }
     }
-}
+} 
 
+def handleScreenEvents( ) { 
+    switch (G|evtart) {
+        case ("maskein") {
+            .protection ymydmstype
+            if (G|evtkommd <> G|kaktname13 ) {
+                .protection ymydmssubject
+                .protection ymydmsseltype
+                .protection ymydmssubject
+                .protection ymydmsfile
+                .protection ymydmsattach
+            }
+        }
+    }
+} 
 
 def attachFile() {
     if (F|empty(M|ymydmsfile)) {

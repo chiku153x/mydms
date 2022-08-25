@@ -63,7 +63,7 @@
     "field": "*",
     "headOrTable": "*",
     "isContinue": "[C]",
-    "handler": "ow1/S00X.DOCMGT.FILE.FO2"
+    "handler": "ow1/S00X.DOCMGT.TYPELIST.FO2"
   },
   
   {
@@ -75,9 +75,129 @@
     "field": "ymydmsselect",
     "headOrTable": "K",
     "isContinue": "[C]",
-    "handler": "ow1/S00X.DOCMGT.FILE.FO2"
+    "handler": "ow1/S00X.DOCMGT.TYPELIST.FO2"
   },
-   
+  {
+    "databaseName": "(File)",
+    "groupName": "{TypeList}",
+    "editorMode": "neu",
+    "event": "maskpruef",
+    "key": "*",
+    "field": "*",
+    "headOrTable": "*",
+    "isContinue": "[C]",
+    "handler": "ow1/S00X.DOCMGT.TYPELIST.FO2"
+  },
+  {
+    "databaseName": "(File)",
+    "groupName": "{TypeList}",
+    "editorMode": "ändern",
+    "event": "maskpruef",
+    "key": "*",
+    "field": "*",
+    "headOrTable": "*",
+    "isContinue": "[C]",
+    "handler": "ow1/S00X.DOCMGT.TYPELIST.FO2"
+  },
+  {
+    "databaseName": "(File)",
+    "groupName": "{TypeList}",
+    "editorMode": "*",
+    "event": "feldaus",
+    "key": "*",
+    "field": "ymydmsscrn",
+    "headOrTable": "K",
+    "isContinue": "[C]",
+    "handler": "ow1/S00X.DOCMGT.TYPELIST.FO2"
+  },
+  {
+    "databaseName": "(File)",
+    "groupName": "{Permission}",
+    "editorMode": "neu",
+    "event": "buttonnach",
+    "key": "*",
+    "field": "ymydmsadd",
+    "headOrTable": "K",
+    "isContinue": "[C]",
+    "handler": "ow1/S00X.DOCMGT.PERMISSION.FO2"
+  },
+  {
+    "databaseName": "(File)",
+    "groupName": "{Permission}",
+    "editorMode": "ändern",
+    "event": "buttonnach",
+    "key": "*",
+    "field": "ymydmsadd",
+    "headOrTable": "K",
+    "isContinue": "[C]",
+    "handler": "ow1/S00X.DOCMGT.PERMISSION.FO2"
+  },
+  {
+    "databaseName": "(File)",
+    "groupName": "{Permission}",
+    "editorMode": "neu",
+    "event": "feldaus",
+    "key": "*",
+    "field": "ymydmsemployee",
+    "headOrTable": "K",
+    "isContinue": "[C]",
+    "handler": "ow1/S00X.DOCMGT.PERMISSION.FO2"
+  },
+  {
+    "databaseName": "(File)",
+    "groupName": "{Permission}",
+    "editorMode": "ändern",
+    "event": "feldaus",
+    "key": "*",
+    "field": "ymydmsemployee",
+    "headOrTable": "K",
+    "isContinue": "[C]",
+    "handler": "ow1/S00X.DOCMGT.PERMISSION.FO2"
+  },
+  {
+    "databaseName": "(File)",
+    "groupName": "{Permission}",
+    "editorMode": "neu",
+    "event": "feldaus",
+    "key": "*",
+    "field": "ymydmswebpwmask",
+    "headOrTable": "K",
+    "isContinue": "[C]",
+    "handler": "ow1/S00X.DOCMGT.PERMISSION.FO2"
+  },
+  {
+    "databaseName": "(File)",
+    "groupName": "{Permission}",
+    "editorMode": "ändern",
+    "event": "feldaus",
+    "key": "*",
+    "field": "ymydmswebpwmask",
+    "headOrTable": "K",
+    "isContinue": "[C]",
+    "handler": "ow1/S00X.DOCMGT.PERMISSION.FO2"
+  },
+  {
+    "databaseName": "(File)",
+    "groupName": "{Permission}",
+    "editorMode": "*",
+    "event": "maskein",
+    "key": "*",
+    "field": "*",
+    "headOrTable": "*",
+    "isContinue": "[C]",
+    "handler": "ow1/S00X.DOCMGT.PERMISSION.FO2"
+  },
+  {
+    "databaseName": "(File)",
+    "groupName": "{Permission}",
+    "editorMode": "*",
+    "event": "maskpruef",
+    "key": "*",
+    "field": "*",
+    "headOrTable": "*",
+    "isContinue": "[C]",
+    "handler": "ow1/S00X.DOCMGT.PERMISSION.FO2"
+  },
    {
     "databaseName": "(Customer)",
     "groupName": "(Customer)",

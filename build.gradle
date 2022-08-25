@@ -56,9 +56,9 @@ esdk {
         infosystems = ["IS.OW1.DOCHANDLER"]
         tables = ["Firma","Verkauf","Kunde","Lieferant","Teil:Artikel","Betr-Auftrag","Einkauf","Chargen","DocumentManagement"]
         screens = [:]
-        advancedScreens=["50":["D"], "32":["A"], "0":["D"],"1":["D"],"2":["D"],"77":["A"],"35":["A"],"36":["A"],"42":["A"],"45":["A"],"46":["A"],"143":["A"],"70":["A"]]
+        advancedScreens=["50":["D"], "32":["A"], "0":["D"],"1":["D"],"2":["D"],"77":["A"],"35":["A"],"36":["A"],"42":["A"],"45":["A"],"46":["A"],"143":["A"],"70":["A"],"451":["A"]]
         data = []
-        enums = []
+        enums = ["DocumentManagementScreens"]
         namedTypes = []
         languages = "DA"
         essentialsVersions = [ "2017r1n00-2017r4n16", "2018r1n00-2018r4n16", "2019r1n00-2019r4n16" ]

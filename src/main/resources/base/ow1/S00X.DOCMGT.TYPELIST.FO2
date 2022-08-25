@@ -1,0 +1,137 @@
+..!interpreter english declaration noabbrev
+
+..============================================================================
+..  Author             : Chinthaka
+..  Date of Creation   : Aug 15, 2022
+..  Name               : S00X.DOCMGT.TYPELIST.FO2
+..  Path/Pfad          : ow1/S00X.DOCMGT.TYPELIST.FO2
+..  Function           :
+..  required Paths     :
+..  Menu Items         :
+..  Mask Priority      :
+..  for EFOP           :
+..  Starting Ticket    :
+..                     History of Changes
+..                     ==================
+.. Ticket of Change    : 
+..
+..============================================================================
+..<META P|='P88:10' >
+
+..<VAR folded>
+.var text xttmpfile
+.var text xtscrname
+.var text xtmodule
+.var text xtscrnno
+.var text xtselected
+..</VAR>
+
+def main() {
+    .call inputDefaults( )
+    .call handleScreenEvents()
+    .call handleFieldEvents()
+}
+
+def handleFieldEvents( ) { 
+    switch (G|evtvar) {
+        case ("ymydmsselect") {
+            .call handleSelectButton()
+        }
+        case ("ymydmsscrn") {
+            .call handleSelectScrn()
+        }
+    }
+} 
+
+def handleSelectScrn( ) { 
+    if (G|evtkommd = G|kaktname13 ; G|evtkommd = G|kaktname14  ) {
+         .formula M|ymydmsmodule = M|ymydmsscrn^langtxt
+        .formula M|ymydmsscrnuum = M|ymydmsscrn^kbezbspr
+        .formula M|name =  M|ymydmsscrn^namebspr
+    }
+} 
+
+def handleScreenEvents( ) { 
+    switch (G|evtart) {
+        case ("maskpruef") {
+            .call handleScreenValidation()
+        }
+    }
+} 
+
+def handleScreenValidation( ) { 
+    .call setSearchword()
+    .call checkSearchwordDuplicates()
+    .call checkNumberOfLines()
+} 
+
+def checkNumberOfLines( ) { 
+    ..//TODO
+} 
+
+def checkSearchwordDuplicates( ) { 
+    ..//TODO
+} 
+
+def setSearchword( ) { 
+    ..<Block>
+    ..Set Searchword automatacally in New mode and Edit mode
+    ..S + [0] + <Screen Nummer> ie S000, S023, S345
+    ..</Block>
+    if (G|evtkommd = G|kaktname13 ; G|evtkommd = G|kaktname14) {
+        if (_F|empty(M|ymydmsscrnuum)) {
+            switch (F|length('M|ymydmsscrnuum')) {
+                case (1) {
+                    .formula M|such = "S00" + 'M|ymydmsscrnuum'
+                }
+                case (2) {
+                    .formula M|such = "S0" + 'M|ymydmsscrnuum'
+                }
+                case (3) {
+                    .formula M|such = "S" + 'M|ymydmsscrnuum'
+                }
+            }  
+        }
+    }
+} 
+
+def handleSelectButton( ) { 
+    switch (G|evtart) {
+        case ("buttonnach") {
+            .call handleSelectButtonAfter()
+        }
+    }
+} 
+
+def handleSelectButtonAfter( ) { 
+    ..<Block>
+    ..Select options for the menu from ow1/DOCMGT.INF
+    ..</Block>
+    if (G|evtkommd = G|kaktname13 ; G|evtkommd = G|kaktname14  ) {
+        .file -TEMPNAME U|xttmpfile
+        .output new 'U|xttmpfile'
+        .input datei.f
+        .println ..!interpreter english declaration noabbrev 
+        .println .menu Select Screen
+        .select from "ow1/DOCMGT.INI" U|xtscrnno , U|xtmodule , U|xtscrname ,
+        while (G|mehr) {
+            .println 'U|xtscrnno' - 'U|xtscrname' >>.formula U|xtselected = "'U|xtscrnno'|'U|xtmodule'|'U|xtscrname'"
+            .select from "ow1/DOCMGT.INI" U|xtscrnno , U|xtmodule , U|xtscrname , 
+        }
+        .output terminal
+        .input 'U|xttmpfile'
+        .formula M|ymydmsmodule = 'U|xtselected' >> "|" << "|"
+        .formula M|ymydmsscrnuum = 'U|xtselected' << "|" << "|"
+        .formula M|name = 'U|xtselected' >> "|" >> "|"
+    }
+} 
+
+
+
+def inputDefaults( ) {
+    .set demand -
+    .set trans -
+    .input "KAKTNAME.KONST"
+    .input "KDATNAME.KONST"
+    .input "KKOMNAME.KONST"
+}

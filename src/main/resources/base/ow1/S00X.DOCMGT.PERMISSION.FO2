@@ -1,0 +1,184 @@
+..!interpreter english declaration noabbrev
+
+..============================================================================
+..  Author             : Chinthaka
+..  Date of Creation   : Aug 25, 2022
+..  Name               : S00X.DOCMGT.PERMISSION.FO2
+..  Path/Pfad          : ow1/S00X.DOCMGT.PERMISSION.FO2
+..  Function           :
+..  required Paths     :
+..  Menu Items         :
+..  Mask Priority      :
+..  for EFOP           :
+..  Starting Ticket    :
+..                     History of Changes
+..                     ==================
+.. Ticket of Change    : Handle Document Management Permission screen
+..
+..============================================================================
+..<META P|='P88:10' >
+
+..<VAR folded>
+.var bool isusernameduplicate
+.var text xtpermobj
+.var text xtdupsel
+.var bool isemplduplicate
+.var text xtselected
+.var text xtscrname
+.var text xtmodule
+.var text xtscrnno
+.var text xttmpfile
+..</VAR>
+
+def main() {
+    .call inputDefaults( )
+    .call handleScreenEvents()
+    .call handleFieldEvents()
+}
+
+def handleFieldEvents( ) { 
+    switch (G|evtvar) {
+        case ("ymydmsadd") {
+            .call handleAddButton()
+        }
+        case ("ymydmsemployee") {
+            .call handleEmployeeField()
+        }
+        case ("ymydmswebpwmask") {
+            .call handlePasswordMask()
+        }
+    }
+} 
+
+def handleScreenEvents( ) { 
+    switch (G|evtart) {
+        case ("maskpruef") {
+            .call handleScreenValidation()
+        }
+        case ("maskein") {
+            .call handleEnterScreen()
+        }
+    }
+}
+
+def handleEnterScreen( ) { 
+    if (G|evtkommd = G|kaktname12 ; G|evtkommd = G|kaktname13) {
+        if (_F|empty(M|ymydmswebpw)) {
+            .formula M|ymydmswebpwmask = "**********"
+        }
+    }
+    if (G|evtkommd = G|kaktname13) {
+        .protection ymydmsemployee 0
+        .protection ymydmswebun 0
+    }
+} 
+
+def handleScreenValidation( ) { 
+    if (G|evtkommd = G|kaktname13 ; G|evtkommd = G|kaktname14) {
+        if (F|empty(M|ymydmsemployee)) {
+            .error Employee is required
+            .end 1
+            .cursor ymydmsemployee 0
+        }
+        if (F|empty(M|ymydmswebun)) {
+            .error Username is required
+            .end 1
+            .cursor ymydmswebun 0
+        }
+        if (F|empty(M|ymydmswebpw)) {
+            .error Password is required
+            .end 1
+            .cursor ymydmswebpwmask 0
+        }  
+        
+        .call checkEmployeeDuplicate()
+        .call checkUserNameDuplicate()
+        
+        if (U|isemplduplicate) {
+            .error Permission object for the employee is already exist. ('U|xtpermobj')
+            .end 1
+            .cursor ymydmsemployee 0
+        }
+        
+        if (U|isusernameduplicate) {
+            .error Duplicated username. ('U|xtpermobj')
+            .end 1
+            .cursor ymydmswebun 0
+        }
+    }
+} 
+
+def checkUserNameDuplicate( ) { 
+    .formula U|xtdupsel = "select file" + 'F|sysinfo(10)^ymydmsfileno' + dblquote + "$,,ymydmswebun==" + 'M|ymydmswebun' + ";@gruppe=1" + dblquote
+    .'U|xtdupsel'
+    while (G|mehr) {
+        if (H|nummer <> M|nummer) {
+            .formula U|isusernameduplicate = G|true
+            .formula U|xtpermobj = H|nummer
+        }
+        .select continue
+    }
+} 
+
+def checkEmployeeDuplicate( ) { 
+    .formula U|xtdupsel = "select file" + 'F|sysinfo(10)^ymydmsfileno' + dblquote + "$,,ymydmsemployee==" + 'M|ymydmsemployee^id' + ";@gruppe=1" + dblquote
+    .'U|xtdupsel'
+    while (G|mehr) {
+        if (H|nummer <> M|nummer) {
+            .formula U|isemplduplicate = G|true
+            .formula U|xtpermobj = H|nummer
+        }
+        .select continue
+    }
+} 
+
+def handleEmployeeField( ) { 
+    switch (G|evtart) {
+        case ("feldaus") {
+            .call handleEmployeeExitField()
+        }
+    }
+} 
+
+def handleEmployeeExitField( ) { 
+    if (G|evtkommd = G|kaktname13 ; G|evtkommd = G|kaktname14) {
+        .formula M|such = M|ymydmsemployee^such
+    }
+} 
+
+def handlePasswordMask( ) { 
+    .formula M|ymydmswebpw = M|ymydmswebpwmask
+} 
+
+def handleAddButton( ) { 
+    .file -TEMPNAME U|xttmpfile
+    .output new 'U|xttmpfile'
+    .input datei.f
+    .println ..!interpreter english declaration noabbrev 
+    .println .menu Select Screen
+    .select from "ow1/DOCMGT.INI" U|xtscrnno , U|xtmodule , U|xtscrname ,
+    while (G|mehr) {
+        .println 'U|xtscrnno' - 'U|xtscrname' >>.formula U|xtselected = "'U|xtscrnno'|'U|xtmodule'|'U|xtscrname'"
+        .select from "ow1/DOCMGT.INI" U|xtscrnno , U|xtmodule , U|xtscrname , 
+    }
+    .output terminal
+    .input 'U|xttmpfile'
+    .select screen line 'M|tzeilen'
+    if (G|mehr) {
+        if (F|empty(M|ymydmsmodule)) {
+            .make screen line --
+        }
+    }
+    .make screen line +o
+    .formula M|ymydmsscrnnum = 'U|xtselected' << "|" << "|"
+    .formula M|ymydmsmodule = 'U|xtselected' >> "|" << "|"
+    .formula M|ymydmsscrnname = 'U|xtselected' >> "|" >> "|"
+} 
+
+def inputDefaults( ) {
+    .set demand -
+    .set trans -
+    .input "KAKTNAME.KONST"
+    .input "KDATNAME.KONST"
+    .input "KKOMNAME.KONST"
+}

@@ -425,7 +425,7 @@
     <entries englishName="ymydmsfileuptest" name="ymydmsfileuptest" type="BU3" description="" width="1" screenProtection="zeigen änderbar" writeable="true" skip="true" custom="true" meaning="DMS File Upload test" changePriority="A" viewPriority="A" primaryName="ymydmsfileuptest"/>
     <entries englishName="ymydmsfileno" name="ymydmsfileno" type="I3" guiType="INTEGER" description="" width="3" screenProtection="änderbar" writeable="true" custom="true" meaning="DMS Additional File No" changePriority="A" viewPriority="A" primaryName="ymydmsfileno"/>
     <entries englishName="ymydmstmpfileloc" name="ymydmstmpfileloc" type="GL50" guiType="INPUT" description="" width="50" screenProtection="änderbar" writeable="true" custom="true" meaning="DMS Temp File Location" changePriority="A" viewPriority="A" primaryName="ymydmstmpfileloc"/>
-    <entries englishName="ymydmstmpfiletest" name="ymydmstmpfiletest" type="BU3" description="" width="1" screenProtection="zeigen änderbar" writeable="true" skip="true" custom="true" meaning="DMS Temp File Location test" changePriority="A" viewPriority="A" primaryName="ymydmstmpfiletest"/>
+    <entries englishName="ymydmstmpfiletest" name="ymydmstmpfiletest" type="BU3" description="" width="1" screenProtection="änderbar" writeable="true" skip="true" custom="true" meaning="DMS Temp File Location test" changePriority="A" viewPriority="A" primaryName="ymydmstmpfiletest"/>
   </variables>
   <popups>
     <popup id="menuTable"/>
@@ -3828,7 +3828,7 @@
               </cells>
               <cells column="2" row="3" alignmentY="center">
                 <elements xsi:type="core:Button">
-                  <variable englishName="ymydmstmpfiletest" name="ymydmstmpfiletest" type="BU3" description="" width="1" screenProtection="zeigen änderbar" writeable="true" skip="true" custom="true" meaning="DMS Temp File Location test" changePriority="A" viewPriority="A" primaryName="ymydmstmpfiletest"/>
+                  <variable englishName="ymydmstmpfiletest" name="ymydmstmpfiletest" type="BU3" description="" width="1" screenProtection="änderbar" writeable="true" skip="true" custom="true" meaning="DMS Temp File Location test" changePriority="A" viewPriority="A" primaryName="ymydmstmpfiletest"/>
                   <label viewLanguage="de" key="companydata_fhead_ymydmstmpfiletest">
                     <value key="de" value="Test"/>
                   </label>
