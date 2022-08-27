@@ -69,9 +69,13 @@ Z#0#isisref##0####(0)######0#0#0#0##0##
 Z#0#isselect##0####(1)######0#0#0#0##0##
 Z#0#isauswahl##0####(1)######0#0#0#0##0##
 Z#0#isstufe##0####(1)######0#0#0#0##0##
-Z#0#isbstart##0####(0)######0#0#0#0##0##
+Z#0#isbstart##0####(1)##java:com.chiku.apps.DocHandlerEventHandler@mydms####0#0#0#0##0##
 Z#0#isstartzeit##0####(0)######0#0#0#0##0##
-Z#1#isymydmsfilepath#GL100#0#File Path#(65)#(65)#(2)######0#1#0#0##0##
+Z#1#xxymydmsfilepath#GL100#0#File Path#(65)#(65)#(2)######1#1#1#0##1##
+Z#1#xxymydmsurl#GL100#0#URL#(65)#(65)#(2)######1#1#1#0##1##
+Z#1#xxymydmsmethod#GL10#0#Method#(65)#(65)#(2)######1#1#1#0##1##
+Z#1#xxmydmsjson#BT100#0#Json Payload#(65)#(65)#(2)######1#1#1#0##1##
+Z#1#xxmydmsheaders#BT100#0#Headers#(65)#(65)#(2)######1#1#1#0##1##
 Z#0#ittabnr##1####(0)######0#0#0#0##0##
 Z#0#itzid##1####(0)######0#0#0#0##0##
 Z#0#itzn##1####(0)######0#0#0#0##0##

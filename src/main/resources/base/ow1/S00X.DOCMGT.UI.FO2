@@ -76,19 +76,17 @@ def handleScreenEvents( ) {
 
 def attachFile() {
     if (F|empty(M|ymydmsfile)) {
-        .box 
-        .item "Select a document first"
-        .enditem
+        .error "Select a document first"
     } else {
         .call getEnv()
         .formula U|xtfilename = M|ymydmsfile >$ "\"
         .formula U|xtfiletype = U|xtfilename >$ "."
-        .formula U|xtfinaldest = dblquote + 'U|xtfilename' + dblquote
+        .formula U|xtfinaldest = dblquote + U|xttmpf + 'U|xtfilename' + dblquote
         .formula U|xtd = dblquote + 'M|ymydmsfile' + dblquote
         .pc.copy -BIN 'U|xtd' 'U|xtfinaldest'
         .formula U|xtperm = "chmod -R 777 " + 'U|xtfinaldest'
         .system 'U|xtperm' background
-        .input "java:com.chiku.apps.FileUploader@mydms"
+
     }    
 }
 

@@ -202,4 +202,12 @@ dependencies {
             }
         }
     }
+    
+    // https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient
+    implementation group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5'
+    // https://mvnrepository.com/artifact/org.apache.httpcomponents/httpmime
+    implementation group: 'org.apache.httpcomponents', name: 'httpmime', version: '4.3.1'
+    
+    implementation 'org.json:json:20171018'
+    
 }

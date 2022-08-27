@@ -1,7 +1,8 @@
 language.source=en-US
-dochandler_$0=Document Handler
-dochandler_$1=Page 1
-dochandler_$2=Page 1
-dochandler__fhead_idno=Identity number
-dochandler__fhead_swd=Search word
-dochandler__ftable_rowno=Current row number
+dochandler_ow1$0=Document Handler
+dochandler_ow1$1=Page 1
+dochandler_ow1_fhead_mydmsheaders=Headers
+dochandler_ow1_fhead_mydmsjson=Json Payload
+dochandler_ow1_fhead_ymydmsfilepath=File Path
+dochandler_ow1_fhead_ymydmsmethod=Method
+dochandler_ow1_fhead_ymydmsurl=URL
