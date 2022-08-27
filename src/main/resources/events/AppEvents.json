@@ -7,7 +7,7 @@
       },
       "name": "com.chiku.apps.DocHandlerEventHandler",
       "globalScreenEvents": {
-        "events": ""
+        "events": "SCREEN_ENTER"
       },
       "globalRowEvents": {
         "events": ""

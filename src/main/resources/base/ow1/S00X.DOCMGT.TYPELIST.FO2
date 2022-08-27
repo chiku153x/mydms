@@ -79,19 +79,18 @@ def setSearchword( ) {
     ..S + [0] + <Screen Nummer> ie S000, S023, S345
     ..</Block>
     if (G|evtkommd = G|kaktname13 ; G|evtkommd = G|kaktname14) {
-        if (_F|empty(M|ymydmsscrnuum)) {
-            switch (F|length('M|ymydmsscrnuum')) {
-                case (1) {
-                    .formula M|such = "S00" + 'M|ymydmsscrnuum'
-                }
-                case (2) {
-                    .formula M|such = "S0" + 'M|ymydmsscrnuum'
-                }
-                case (3) {
-                    .formula M|such = "S" + 'M|ymydmsscrnuum'
-                }
-            }  
-        }
+        switch (F|length('M|ymydmsscrnuum')) {
+            case (1) {
+                .formula M|such = "S00" + 'M|ymydmsscrnuum'
+            }
+            case (2) {
+                .formula M|such = "S0" + 'M|ymydmsscrnuum'
+            }
+            case (3) {
+                .formula M|such = "S" + 'M|ymydmsscrnuum'
+            }
+        }  
+        
     }
 } 
 

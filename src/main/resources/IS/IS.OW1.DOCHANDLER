@@ -2,7 +2,7 @@ V#21
 K#0#DOCHANDLER#Document Handler#(65)#isrein/screen.OW1.DOCHANDLER#25B.1##
 K#(0)#(0)#100000##0#0#DocHandler#1
 K#0#(1)#
-K######
+K#java:com.chiku.apps.DocHandlerEventHandler@mydms#####
 K#######
 K#ow1#(127)##(116)#(98)###0#0#
 K#########
@@ -74,8 +74,8 @@ Z#0#isstartzeit##0####(0)######0#0#0#0##0##
 Z#1#xxymydmsfilepath#GL100#0#File Path#(65)#(65)#(2)######1#1#1#0##1##
 Z#1#xxymydmsurl#GL100#0#URL#(65)#(65)#(2)######1#1#1#0##1##
 Z#1#xxymydmsmethod#GL10#0#Method#(65)#(65)#(2)######1#1#1#0##1##
-Z#1#xxmydmsjson#BT100#0#Json Payload#(65)#(65)#(2)######1#1#1#0##1##
-Z#1#xxmydmsheaders#BT100#0#Headers#(65)#(65)#(2)######1#1#1#0##1##
+Z#1#xxymydmsjson#BT100#0#Json Payload#(65)#(65)#(2)######1#1#1#0##1##
+Z#1#xxymydmsheaders#BT100#0#Headers#(65)#(65)#(2)######1#1#1#0##1##
 Z#0#ittabnr##1####(0)######0#0#0#0##0##
 Z#0#itzid##1####(0)######0#0#0#0##0##
 Z#0#itzn##1####(0)######0#0#0#0##0##

@@ -19,6 +19,7 @@
 ..<META P|='P88:10' >
 
 ..<VAR folded>
+.var text xtfileupload
 .var P12:3 xpselected
 .var text xttmpf
 .var text xtunqn
@@ -86,10 +87,16 @@ def attachFile() {
         .pc.copy -BIN 'U|xtd' 'U|xtfinaldest'
         .formula U|xtperm = "chmod -R 777 " + 'U|xtfinaldest'
         .system 'U|xtperm' background
-
+        .call uploadFile()
     }    
 }
 
+def uploadFile( ) { 
+    .input datei.f
+    .formula U|xtfileupload = "edpinfosys.sh -n DOCHANDLER -p " + 'G|einmalpw' + " -s ymydmsfilepath,ymydmsjson,bstart -w " + 'U|xtfinaldest' + "\;aabb\;1" 
+    .system 'U|xtfileupload' background
+}
+ 
 ..<BLOCK>
 def showMenu() {
     .file -TEMPNAME U|xttmpfile
