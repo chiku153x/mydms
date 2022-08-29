@@ -19,6 +19,8 @@
 ..<META P|='P88:10' >
 
 ..<VAR folded>
+.var text xtpermissionsel
+.var text xtusername
 .var text xtcurl
 .var text xtunqdirname
 .var text xtfileupload
@@ -124,7 +126,19 @@ def updateRegistry( ) {
 } 
 
 def loadDMSUI( ) { 
-    .formula M|ymydmswebui = 'F|sysinfo(10)^ymydmswebuiurl' + "/index.html?instance=" + 'U|xtmand' + "&screen=" + 'G|evtmaske' + "&number=" + 'M|ymydmsnum' + "&user=" + 'G|passw^mitarb^nummer'
+    .call getUserName()
+    .formula M|ymydmswebui = 'F|sysinfo(10)^ymydmswebuiurl' + "/index.html?instance=" + 'U|xtmand' + "&screen=" + 'G|evtmaske' + "&number=" + 'M|ymydmsnum' + "&user=" + 'U|xtusername' + "&v=" + 'G|versionneu'
+} 
+
+def getUserName( ) { 
+    .formula U|xtpermissionsel = "select file" + 'F|sysinfo(10)^ymydmsfileno' + " " + dblquote + "$,,ymydmsemployee=" + 'G|passw^mitarb^nummer' + ";@gruppe=1" + dblquote
+    .'U|xtpermissionsel'
+    if (G|mehr) {
+        .formula U|xtusername = "gchinthaka"
+    } else {
+        .formula U|xtusername = "admin"
+    }
+    
 } 
 
 def copyFile( ) { 
