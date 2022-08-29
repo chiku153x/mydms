@@ -19,6 +19,7 @@
 ..<META P|='P88:10' >
 
 ..<VAR folded>
+.var text xtpasssel
 .var text xtun
 .var text xtmand
 .var text xtcurl
@@ -121,8 +122,19 @@ def handleScreenValidation( ) {
         }
         
         .call updateDMSRestService()
+        .call updatePasswordDefinition()
     }
 } 
+
+def updatePasswordDefinition( ) { 
+    .formula U|xtpasssel = "select lock no wait Company " + dblquote + "$,,@gruppe=11;passmitarb^nummer=="+'M|ymydmsemployee^nummer' + dblquote
+    .'U|xtpasssel'
+    if(G|mehr){
+        .formula H|startseite = "(URL)"
+        .formula H|starturl = 'F|sysinfo(10)^ymydmswebuiurl' + "/search.html?user=" + 'M|ymydmswebun'
+        .rewrite
+    }
+}
 
 def updateDMSRestService( ) {
     .call getEnv()
