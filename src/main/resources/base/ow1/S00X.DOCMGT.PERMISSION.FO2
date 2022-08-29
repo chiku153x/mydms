@@ -19,6 +19,9 @@
 ..<META P|='P88:10' >
 
 ..<VAR folded>
+.var text xtun
+.var text xtmand
+.var text xtcurl
 .var bool isusernameduplicate
 .var text xtpermobj
 .var text xtdupsel
@@ -116,8 +119,68 @@ def handleScreenValidation( ) {
             .end 1
             .cursor ymydmswebun 0
         }
+        
+        .call updateDMSRestService()
     }
 } 
+
+def updateDMSRestService( ) {
+    .call getEnv()
+    .call updateUser()
+    .call updatePermission()  
+}
+
+
+def updateUser( ) { 
+    .select screen header
+    if (G|mehr) {
+        .formula U|xtcurl = "curl -X POST "
+        .formula U|xtcurl = U|xtcurl + 'F|sysinfo(10)^ymydmsresturl' + "/api/v1/user/add "
+        .formula U|xtcurl = U|xtcurl + "  -H " + apostroph + "cache-control: no-cache" + apostroph + " "
+        .formula U|xtcurl = U|xtcurl + "  -H " + apostroph + "content-type: application/json" + apostroph + " "
+        .formula U|xtcurl = U|xtcurl + "  -d " + apostroph + "{ "
+        .formula U|xtcurl = U|xtcurl + "  " + dblquote + "instance" + dblquote + ":" + dblquote + 'U|xtmand' + dblquote + ", "
+        .formula U|xtcurl = U|xtcurl + "  " + dblquote + "userName" + dblquote + ":" + dblquote + 'M|ymydmswebun' + dblquote + ", "
+        .formula U|xtcurl = U|xtcurl + "  " + dblquote + "email" + dblquote + ":" + dblquote + 'M|ymydmsemployee^email' + dblquote + ", "
+        if (M|ymydmsactive) {
+            .formula U|xtcurl = U|xtcurl + "  " + dblquote + "active" + dblquote + ":true" + ", "
+        } else {
+            .formula U|xtcurl = U|xtcurl + "  " + dblquote + "active" + dblquote + ":false" + ", "
+        }
+        .formula U|xtcurl = U|xtcurl + "  " + dblquote + "password" + dblquote + ":" + dblquote + 'M|ymydmswebpw' + dblquote 
+        .formula U|xtcurl = U|xtcurl + "}" + apostroph + " "
+        .system 'U|xtcurl' background    
+    }
+} 
+
+def updatePermission( ) { 
+    .input datei.f
+    .select screen header
+    .formula U|xtun = 'M|ymydmswebun'
+    .formula U|xtcurl = "curl -X POST "
+    .formula U|xtcurl = U|xtcurl + 'F|sysinfo(10)^ymydmsresturl' + "/api/v1/permission/add "
+    .formula U|xtcurl = U|xtcurl + "  -H " + apostroph + "cache-control: no-cache" + apostroph + " "
+    .formula U|xtcurl = U|xtcurl + "  -H " + apostroph + "content-type: application/json" + apostroph + " "
+    .formula U|xtcurl = U|xtcurl + "  -d " + apostroph + "["
+    if (G|mehr) {
+        .select screen line
+        while (G|mehr) {
+            .formula U|xtcurl = U|xtcurl + "{"
+            .formula U|xtcurl = U|xtcurl + "  " + dblquote + "instance" + dblquote + ":" + dblquote + 'U|xtmand' + dblquote + ", "
+            .formula U|xtcurl = U|xtcurl + "  " + dblquote + "userName" + dblquote + ":" + dblquote + 'U|xtun' + dblquote + ", "
+            .formula U|xtcurl = U|xtcurl + "  " + dblquote + "screen" + dblquote + ":" + dblquote + 'M|ymydmsscrnnum' + dblquote + ", "
+            .formula U|xtcurl = U|xtcurl + "  " + dblquote + "active" + dblquote + ":true"
+            .formula U|xtcurl = U|xtcurl + "},"
+            .select screen line continue
+        }
+    }
+    .formula U|xtcurl = 'U|xtcurl'  + "]" + apostroph + " "
+    .formula U|xtcurl = F|regreplace('U|xtcurl',"\},\]","\}\]")
+    ..//.println 'U|xtcurl'
+    .system 'U|xtcurl' background  
+} 
+
+
 
 def checkUserNameDuplicate( ) { 
     .formula U|xtdupsel = "select file" + 'F|sysinfo(10)^ymydmsfileno' + dblquote + "$,,ymydmswebun==" + 'M|ymydmswebun' + ";@gruppe=1" + dblquote
@@ -193,3 +256,9 @@ def inputDefaults( ) {
     .input "KDATNAME.KONST"
     .input "KKOMNAME.KONST"
 }
+
+..<BLOCK>
+def getEnv() {
+    .formula U|xtmand = F|regreplaceall(F|tolower(G|mandant), " ", "_")
+}
+..</BLOCK>

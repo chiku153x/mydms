@@ -212,7 +212,7 @@
         <Field name="such" abasType="SWK109">DMS_S035</Field>
         <Field name="name" abasType="GL50"></Field>
         <Field name="name14" abasType="GL50">Sales Packing Slip</Field>
-        <Field name="langtxt" abasType="GL"></Field>
+        <Field name="langtxt" abasType="GL">Sales</Field>
         <Field name="kbezbspr" abasType="GL15">35</Field>
         <Field name="katego" abasType="NT15"></Field>
         <Field name="icontxt" abasType="DV1"></Field>

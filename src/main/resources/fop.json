@@ -55,6 +55,17 @@
     "handler": "ow1/S050.DOCMGT.FO2"
   },
     {
+    "databaseName": "(Company)",
+    "groupName": "(CompanyData)",
+    "editorMode": "*",
+    "event": "buttonnach",
+    "key": "*",
+    "field": "ymydmsupdatescr",
+    "headOrTable": "K",
+    "isContinue": "[C]",
+    "handler": "ow1/S050.DOCMGT.FO2"
+  },
+    {
     "databaseName": "(File)",
     "groupName": "{TypeList}",
     "editorMode": "*",

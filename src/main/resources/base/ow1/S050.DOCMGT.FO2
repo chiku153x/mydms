@@ -19,6 +19,7 @@
 ..<META P|='P88:10' >
 
 ..<VAR folded>
+.var text xtmand
 .var text xtcurl
 ..</VAR>
 
@@ -40,9 +41,34 @@ def main() {
         case ("ymydmsfileuptest") {
             .call checkFileUploader()
         }
+        case ("ymydmsupdatescr") {
+            .call updateWebUIScreenList()
+        }
     }
 }
 
+
+def updateWebUIScreenList( ) { 
+    .call getEnv()
+    .select Enumeration "$,,classname==DocumentManagementScreens"
+    if (G|mehr) {
+        .select line
+        while (G|mehr) {
+            .formula U|xtcurl = "curl -X POST "
+            .formula U|xtcurl = U|xtcurl + 'F|sysinfo(10)^ymydmsresturl' + "/api/v1/screen/add "
+            .formula U|xtcurl = U|xtcurl + "  -H " + apostroph + "cache-control: no-cache" + apostroph + " "
+            .formula U|xtcurl = U|xtcurl + "  -H " + apostroph + "content-type: application/json" + apostroph + " "
+            .formula U|xtcurl = U|xtcurl + "  -d " + apostroph + "{ "
+            .formula U|xtcurl = U|xtcurl + "  " + dblquote + "instance" + dblquote + ":" + dblquote + 'U|xtmand' + dblquote + ", "
+            .formula U|xtcurl = U|xtcurl + "  " + dblquote + "screenNumber" + dblquote + ":" + dblquote + 'H|vaufzelem^kbezbspr' + dblquote + ", "
+            .formula U|xtcurl = U|xtcurl + "  " + dblquote + "screenName" + dblquote + ":" + dblquote + 'H|vaufzelem^namebspr' + dblquote + ", "
+            .formula U|xtcurl = U|xtcurl + "  " + dblquote + "module" + dblquote + ":" + dblquote + 'H|vaufzelem^langtxt' + dblquote 
+            .formula U|xtcurl = U|xtcurl + "}" + apostroph + " "
+            .system 'U|xtcurl' background    
+            .select line continue
+        }
+    }
+} 
 
 def validateAll( ) { } 
 
@@ -97,7 +123,7 @@ def dmsWebUINotAvailable() {
 }
 
 def checkFileUploader() {
-
+    ..TODO
 }
 
 
@@ -108,3 +134,9 @@ def inputDefaults( ) {
     .input "KDATNAME.KONST"
     .input "KKOMNAME.KONST"
 }
+
+..<BLOCK>
+def getEnv() {
+    .formula U|xtmand = F|regreplaceall(F|tolower(G|mandant), " ", "_")
+}
+..</BLOCK>

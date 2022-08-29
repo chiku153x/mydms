@@ -426,6 +426,7 @@
     <entries englishName="ymydmsfileno" name="ymydmsfileno" type="I3" guiType="INTEGER" description="" width="3" screenProtection="änderbar" writeable="true" custom="true" meaning="DMS Additional File No" changePriority="A" viewPriority="A" primaryName="ymydmsfileno"/>
     <entries englishName="ymydmstmpfileloc" name="ymydmstmpfileloc" type="GL50" guiType="INPUT" description="" width="50" screenProtection="änderbar" writeable="true" custom="true" meaning="DMS Temp File Location" changePriority="A" viewPriority="A" primaryName="ymydmstmpfileloc"/>
     <entries englishName="ymydmstmpfiletest" name="ymydmstmpfiletest" type="BU3" description="" width="1" screenProtection="änderbar" writeable="true" skip="true" custom="true" meaning="DMS Temp File Location test" changePriority="A" viewPriority="A" primaryName="ymydmstmpfiletest"/>
+    <entries englishName="ymydmsupdatescr" name="ymydmsupdatescr" type="BU3" description="" width="1" screenProtection="zeigen änderbar" writeable="true" skip="true" custom="true" meaning="Update Web UI Screen List" changePriority="A" viewPriority="A" primaryName="ymydmsupdatescr"/>
   </variables>
   <popups>
     <popup id="menuTable"/>
@@ -3898,6 +3899,30 @@
                 </elements>
               </cells>
               <cells column="3" row="6" alignmentY="center"/>
+              <cells row="7" columnSpan="4" alignmentY="center">
+                <elements xsi:type="core:Groupline">
+                  <label viewLanguage="de" key="companydata$4">
+                    <value key="de" value=""/>
+                  </label>
+                </elements>
+              </cells>
+              <cells row="8" alignmentY="center">
+                <elements xsi:type="core:Label">
+                  <label viewLanguage="de" key="companydata_fhead_ymydmsupdatescr">
+                    <value key="de" value="Update Web UI Screen List"/>
+                  </label>
+                </elements>
+              </cells>
+              <cells column="1" row="8" alignmentY="center">
+                <elements xsi:type="core:Button">
+                  <variable englishName="ymydmsupdatescr" name="ymydmsupdatescr" type="BU3" description="" width="1" screenProtection="zeigen änderbar" writeable="true" skip="true" custom="true" meaning="Update Web UI Screen List" changePriority="A" viewPriority="A" primaryName="ymydmsupdatescr"/>
+                  <label viewLanguage="de" key="companydata_fhead_ymydmsupdatescr">
+                    <value key="de" value="Update Web UI Screen List"/>
+                  </label>
+                </elements>
+              </cells>
+              <cells column="2" row="8" alignmentY="center"/>
+              <cells column="3" row="8" alignmentY="center"/>
             </elements>
             <label viewLanguage="de" key="companydata$2">
               <value key="de" value="Doc Mgt"/>
