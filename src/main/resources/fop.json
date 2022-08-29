@@ -264,6 +264,17 @@
     "isContinue": "[C]",
     "handler": "ow1/S00X.DOCMGT.UI.FO2"
   },
+    {
+    "databaseName": "(Vendor)",
+    "groupName": "(Vendor)",
+    "editorMode": "ändern",
+    "event": "buttonnach",
+    "key": "*",
+    "field": "ymydmsattach",
+    "headOrTable": "K",
+    "isContinue": "[C]",
+    "handler": "ow1/S00X.DOCMGT.UI.FO2"
+  },
    {
     "databaseName": "(Part)",
     "groupName": "(Product)",

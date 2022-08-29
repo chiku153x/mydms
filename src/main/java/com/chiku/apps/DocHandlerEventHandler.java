@@ -39,9 +39,8 @@ public class DocHandlerEventHandler {
 			throws EventException {
 		CloseableHttpClient httpClient = HttpClients.createDefault();
 		// HttpPost uploadFile = new HttpPost("http://192.168.1.71:8080");
-		HttpPost uploadFile = new HttpPost(head.getYmydmsurl());
+		HttpPost uploadFile = new HttpPost(head.getYmydmsurl() + "?dir=" + head.getYmydmsjson());
 		MultipartEntityBuilder builder = MultipartEntityBuilder.create();
-		builder.addTextBody("payload", head.getYmydmsjson(), ContentType.TEXT_PLAIN);
 
 		File f = new File(head.getYmydmsfilepath());
 		try {

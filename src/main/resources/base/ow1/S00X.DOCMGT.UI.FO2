@@ -19,6 +19,8 @@
 ..<META P|='P88:10' >
 
 ..<VAR folded>
+.var text xtcurl
+.var text xtunqdirname
 .var text xtfileupload
 .var P12:3 xpselected
 .var text xttmpf
@@ -71,7 +73,16 @@ def handleScreenEvents( ) {
                 .protection ymydmsfile
                 .protection ymydmsattach
             }
+            .call setUniqNum()
+            .call getEnv()
+            .call loadDMSUI()
         }
+    }
+} 
+
+def setUniqNum( ) { 
+    if (G|evtkommd = 'G|kaktname14' ; (G|evtkommd = 'G|kaktname13' & F|empty(M|ymydmsnum))) {
+        .formula M|ymydmsnum = 'G|versionneu'
     }
 } 
 
@@ -80,20 +91,55 @@ def attachFile() {
         .error "Select a document first"
     } else {
         .call getEnv()
-        .formula U|xtfilename = M|ymydmsfile >$ "\"
-        .formula U|xtfiletype = U|xtfilename >$ "."
-        .formula U|xtfinaldest = dblquote + U|xttmpf + 'U|xtfilename' + dblquote
-        .formula U|xtd = dblquote + 'M|ymydmsfile' + dblquote
-        .pc.copy -BIN 'U|xtd' 'U|xtfinaldest'
-        .formula U|xtperm = "chmod -R 777 " + 'U|xtfinaldest'
-        .system 'U|xtperm' background
+        .call copyFile()
+        .call createUniqueDirName()
         .call uploadFile()
+        .call updateRegistry()
+        .call loadDMSUI()
     }    
 }
 
+def createUniqueDirName( ) { 
+    .formula U|xtunqdirname = "S" + 'G|versionneu'
+} 
+
+def updateRegistry( ) { 
+    .formula U|xtcurl = "curl -X POST "
+    .formula U|xtcurl = U|xtcurl + 'F|sysinfo(10)^ymydmsresturl' + "/api/v1/document/add "
+    .formula U|xtcurl = U|xtcurl + "  -H " + apostroph + "cache-control: no-cache" + apostroph + " "
+    .formula U|xtcurl = U|xtcurl + "  -H " + apostroph + "content-type: application/json" + apostroph + " "
+    .formula U|xtcurl = U|xtcurl + "  -d " + apostroph + "{ "
+    .formula U|xtcurl = U|xtcurl + "  " + dblquote + "instance" + dblquote + ":" + dblquote + 'U|xtmand' + dblquote + ", "
+    .formula U|xtcurl = U|xtcurl + "  " + dblquote + "number" + dblquote + ":" + dblquote + 'M|ymydmsnum' + dblquote + ", "
+    .formula U|xtcurl = U|xtcurl + "  " + dblquote + "objectNumber" + dblquote + ":" + dblquote + 'M|nummer' + dblquote + ", "
+    .formula U|xtcurl = U|xtcurl + "  " + dblquote + "dir" + dblquote + ":" + dblquote + 'U|xtunqdirname' + dblquote + ", "
+    .formula U|xtcurl = U|xtcurl + "  " + dblquote + "screen" + dblquote + ":" + dblquote + 'G|evtmaske' + dblquote + ", "
+    .formula U|xtcurl = U|xtcurl + "  " + dblquote + "docName" + dblquote + ":" + dblquote + 'U|xtfilename' + dblquote + ", "
+    .formula U|xtcurl = U|xtcurl + "  " + dblquote + "category" + dblquote + ": " + dblquote + 'M|ymydmstype' + dblquote + ", "
+    .formula U|xtcurl = U|xtcurl + "  " + dblquote + "subject" + dblquote + ": " + dblquote + 'M|ymydmssubject' + dblquote + ", "
+    .formula U|xtcurl = U|xtcurl + "  " + dblquote + "user" + dblquote + ": " + 'G|passw^mitarb^nummer' + ", "
+    .formula U|xtcurl = U|xtcurl + "  " + dblquote + "docType" + dblquote + ": " + dblquote + 'U|xtfiletype' + dblquote + " "
+    .formula U|xtcurl = U|xtcurl + "}" + apostroph + " "
+    .system 'U|xtcurl' background    
+} 
+
+def loadDMSUI( ) { 
+    .formula M|ymydmswebui = 'F|sysinfo(10)^ymydmswebuiurl' + "/index.html?instance=" + 'U|xtmand' + "&screen=" + 'G|evtmaske' + "&number=" + 'M|ymydmsnum' + "&user=" + 'G|passw^mitarb^nummer'
+} 
+
+def copyFile( ) { 
+    .formula U|xtfilename = M|ymydmsfile >$ "\"
+    .formula U|xtfiletype = U|xtfilename >$ "."
+    .formula U|xtfinaldest = dblquote + U|xttmpf + 'U|xtfilename' + dblquote
+    .formula U|xtd = dblquote + 'M|ymydmsfile' + dblquote
+    .pc.copy -BIN 'U|xtd' 'U|xtfinaldest'
+    .formula U|xtperm = "chmod -R 777 " + 'U|xtfinaldest'
+    .system 'U|xtperm' background
+} 
+
 def uploadFile( ) { 
     .input datei.f
-    .formula U|xtfileupload = "edpinfosys.sh -n DOCHANDLER -p " + 'G|einmalpw' + " -s ymydmsfilepath,ymydmsjson,bstart -w " + 'U|xtfinaldest' + "\;aabb\;1" 
+    .formula U|xtfileupload = "edpinfosys.sh -n DOCHANDLER -p " + 'G|einmalpw' + " -s ymydmsfilepath,ymydmsjson,bstart -w " + 'U|xtfinaldest' + "\;" + U|xtunqdirname + "\;1" 
     .system 'U|xtfileupload' background
 }
  
