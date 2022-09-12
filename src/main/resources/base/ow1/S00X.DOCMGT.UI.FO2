@@ -87,7 +87,7 @@ def removeKeywords( ) {
     .output new 'U|xttmpfile'
     .input datei.f
     .println ..!interpreter english declaration noabbrev 
-    .println .menu Select Type
+    .println .menu Select a keyword to remove
     .formula U|xtleft = 'M|ymydmskeywords'
     while (F|strindex('U|xtleft', ",") > 0) {
         .formula U|xtright = 'U|xtleft' << "," 
