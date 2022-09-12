@@ -253,6 +253,28 @@
     "isContinue": "[C]",
     "handler": "ow1/S00X.DOCMGT.UI.FO2"
   },
+    {
+    "databaseName": "(Customer)",
+    "groupName": "(Customer)",
+    "editorMode": "ändern",
+    "event": "buttonnach",
+    "key": "*",
+    "field": "ymydmsaddkey",
+    "headOrTable": "K",
+    "isContinue": "[C]",
+    "handler": "ow1/S00X.DOCMGT.UI.FO2"
+  },
+    {
+    "databaseName": "(Customer)",
+    "groupName": "(Customer)",
+    "editorMode": "ändern",
+    "event": "buttonnach",
+    "key": "*",
+    "field": "ymydmsremkey",
+    "headOrTable": "K",
+    "isContinue": "[C]",
+    "handler": "ow1/S00X.DOCMGT.UI.FO2"
+  },
    {
     "databaseName": "(Vendor)",
     "groupName": "(Vendor)",
@@ -282,6 +304,28 @@
     "event": "buttonnach",
     "key": "*",
     "field": "ymydmsattach",
+    "headOrTable": "K",
+    "isContinue": "[C]",
+    "handler": "ow1/S00X.DOCMGT.UI.FO2"
+  },
+    {
+    "databaseName": "(Vendor)",
+    "groupName": "(Vendor)",
+    "editorMode": "ändern",
+    "event": "buttonnach",
+    "key": "*",
+    "field": "ymydmsaddkey",
+    "headOrTable": "K",
+    "isContinue": "[C]",
+    "handler": "ow1/S00X.DOCMGT.UI.FO2"
+  },
+    {
+    "databaseName": "(Vendor)",
+    "groupName": "(Vendor)",
+    "editorMode": "ändern",
+    "event": "buttonnach",
+    "key": "*",
+    "field": "ymydmsremkey",
     "headOrTable": "K",
     "isContinue": "[C]",
     "handler": "ow1/S00X.DOCMGT.UI.FO2"
@@ -337,6 +381,28 @@
     "event": "buttonnach",
     "key": "*",
     "field": "ymydmsattach",
+    "headOrTable": "K",
+    "isContinue": "[C]",
+    "handler": "ow1/S00X.DOCMGT.UI.FO2"
+  },
+    {
+    "databaseName": "(Sales)",
+    "groupName": "(SalesOrder)",
+    "editorMode": "ändern",
+    "event": "buttonnach",
+    "key": "*",
+    "field": "ymydmsaddkey",
+    "headOrTable": "K",
+    "isContinue": "[C]",
+    "handler": "ow1/S00X.DOCMGT.UI.FO2"
+  },
+    {
+    "databaseName": "(Sales)",
+    "groupName": "(SalesOrder)",
+    "editorMode": "ändern",
+    "event": "buttonnach",
+    "key": "*",
+    "field": "ymydmsremkey",
     "headOrTable": "K",
     "isContinue": "[C]",
     "handler": "ow1/S00X.DOCMGT.UI.FO2"

@@ -19,6 +19,10 @@
 ..<META P|='P88:10' >
 
 ..<VAR folded>
+.var text xtselectedkey
+.var text xtright
+.var text xtleft
+.var text xtkeyword
 .var text xtpermissionsel
 .var text xtusername
 .var text xtcurl
@@ -61,6 +65,46 @@ def handleFieldEvents( ) {
                 .call attachFile()
             }  
         }
+        case ("ymydmsaddkey") {
+            if (G|evtart = "buttonnach") {
+                .call addKeywords()
+            }  
+        }
+        case ("ymydmsremkey") {
+            if (G|evtart = "buttonnach") {
+                .call removeKeywords()
+            }  
+        }
+    }
+} 
+
+def removeKeywords( ) { 
+    if (F|empty(M|ymydmskeywords)) {
+        .return
+    }
+    
+    .file -TEMPNAME U|xttmpfile
+    .output new 'U|xttmpfile'
+    .input datei.f
+    .println ..!interpreter english declaration noabbrev 
+    .println .menu Select Type
+    .formula U|xtleft = 'M|ymydmskeywords'
+    while (F|strindex('U|xtleft', ",") > 0) {
+        .formula U|xtright = 'U|xtleft' << "," 
+        .formula U|xtleft = 'U|xtleft' >> "," 
+        if (_F|empty(U|xtright)) {
+            .println 'U|xtright' >>.formula U|xtselectedkey = "'U|xtright'"
+        } 
+    }
+    .output terminal
+    .input 'U|xttmpfile'
+    .formula M|ymydmskeywords = F|regreplace('M|ymydmskeywords','U|xtselectedkey' + ",","")
+} 
+
+def addKeywords( ) { 
+    .read "Enter a keyword" U|xtkeyword
+    if (_F|empty(U|xtkeyword)) {
+        .formula M|ymydmskeywords = M|ymydmskeywords + U|xtkeyword + ","
     }
 } 
 
@@ -68,12 +112,16 @@ def handleScreenEvents( ) {
     switch (G|evtart) {
         case ("maskein") {
             .protection ymydmstype
+            .protection ymydmskeywords
             if (G|evtkommd <> G|kaktname13 ) {
                 .protection ymydmssubject
                 .protection ymydmsseltype
                 .protection ymydmssubject
                 .protection ymydmsfile
                 .protection ymydmsattach
+                .protection ymydmskeywords
+                .protection ymydmsaddkey
+                .protection ymydmsremkey
             }
             .call setUniqNum()
             .call getEnv()
