@@ -66,8 +66,8 @@
     "handler": "ow1/S050.DOCMGT.FO2"
   },
     {
-    "databaseName": "(File)",
-    "groupName": "{TypeList}",
+    "databaseName": "DocumentManagement",
+    "groupName": "Type List",
     "editorMode": "*",
     "event": "maskein",
     "key": "*",
@@ -78,8 +78,8 @@
   },
   
   {
-    "databaseName": "(File)",
-    "groupName": "{TypeList}",
+    "databaseName": "DocumentManagement",
+    "groupName": "Type List",
     "editorMode": "*",
     "event": "buttonnach",
     "key": "*",
@@ -89,8 +89,8 @@
     "handler": "ow1/S00X.DOCMGT.TYPELIST.FO2"
   },
   {
-    "databaseName": "(File)",
-    "groupName": "{TypeList}",
+    "databaseName": "DocumentManagement",
+    "groupName": "Type List",
     "editorMode": "neu",
     "event": "maskpruef",
     "key": "*",
@@ -100,8 +100,8 @@
     "handler": "ow1/S00X.DOCMGT.TYPELIST.FO2"
   },
   {
-    "databaseName": "(File)",
-    "groupName": "{TypeList}",
+    "databaseName": "DocumentManagement",
+    "groupName": "Type List",
     "editorMode": "ändern",
     "event": "maskpruef",
     "key": "*",
@@ -111,8 +111,8 @@
     "handler": "ow1/S00X.DOCMGT.TYPELIST.FO2"
   },
   {
-    "databaseName": "(File)",
-    "groupName": "{TypeList}",
+    "databaseName": "DocumentManagement",
+    "groupName": "Type List",
     "editorMode": "*",
     "event": "feldaus",
     "key": "*",
@@ -122,8 +122,8 @@
     "handler": "ow1/S00X.DOCMGT.TYPELIST.FO2"
   },
   {
-    "databaseName": "(File)",
-    "groupName": "{Permission}",
+    "databaseName": "DocumentManagement",
+    "groupName": "Permission",
     "editorMode": "neu",
     "event": "buttonnach",
     "key": "*",
@@ -133,8 +133,8 @@
     "handler": "ow1/S00X.DOCMGT.PERMISSION.FO2"
   },
   {
-    "databaseName": "(File)",
-    "groupName": "{Permission}",
+    "databaseName": "DocumentManagement",
+    "groupName": "Permission",
     "editorMode": "ändern",
     "event": "buttonnach",
     "key": "*",
@@ -144,8 +144,8 @@
     "handler": "ow1/S00X.DOCMGT.PERMISSION.FO2"
   },
   {
-    "databaseName": "(File)",
-    "groupName": "{Permission}",
+    "databaseName": "DocumentManagement",
+    "groupName": "Permission",
     "editorMode": "neu",
     "event": "feldaus",
     "key": "*",
@@ -155,8 +155,8 @@
     "handler": "ow1/S00X.DOCMGT.PERMISSION.FO2"
   },
   {
-    "databaseName": "(File)",
-    "groupName": "{Permission}",
+    "databaseName": "DocumentManagement",
+    "groupName": "Permission",
     "editorMode": "ändern",
     "event": "feldaus",
     "key": "*",
@@ -166,8 +166,8 @@
     "handler": "ow1/S00X.DOCMGT.PERMISSION.FO2"
   },
   {
-    "databaseName": "(File)",
-    "groupName": "{Permission}",
+    "databaseName": "DocumentManagement",
+    "groupName": "Permission",
     "editorMode": "neu",
     "event": "feldaus",
     "key": "*",
@@ -177,8 +177,8 @@
     "handler": "ow1/S00X.DOCMGT.PERMISSION.FO2"
   },
   {
-    "databaseName": "(File)",
-    "groupName": "{Permission}",
+    "databaseName": "DocumentManagement",
+    "groupName": "Permission",
     "editorMode": "ändern",
     "event": "feldaus",
     "key": "*",
@@ -188,8 +188,8 @@
     "handler": "ow1/S00X.DOCMGT.PERMISSION.FO2"
   },
   {
-    "databaseName": "(File)",
-    "groupName": "{Permission}",
+    "databaseName": "DocumentManagement",
+    "groupName": "Permission",
     "editorMode": "*",
     "event": "maskein",
     "key": "*",
@@ -199,8 +199,8 @@
     "handler": "ow1/S00X.DOCMGT.PERMISSION.FO2"
   },
   {
-    "databaseName": "(File)",
-    "groupName": "{Permission}",
+    "databaseName": "DocumentManagement",
+    "groupName": "Permission",
     "editorMode": "*",
     "event": "maskpruef",
     "key": "*",
@@ -210,8 +210,8 @@
     "handler": "ow1/S00X.DOCMGT.PERMISSION.FO2"
   },
   {
-    "databaseName": "(File)",
-    "groupName": "{Permission}",
+    "databaseName": "DocumentManagement",
+    "groupName": "Permission",
     "editorMode": "*",
     "event": "feldaus",
     "key": "*",
@@ -326,6 +326,17 @@
     "event": "buttonnach",
     "key": "*",
     "field": "ymydmsseltype",
+    "headOrTable": "K",
+    "isContinue": "[C]",
+    "handler": "ow1/S00X.DOCMGT.UI.FO2"
+  },
+    {
+    "databaseName": "(Sales)",
+    "groupName": "(SalesOrder)",
+    "editorMode": "ändern",
+    "event": "buttonnach",
+    "key": "*",
+    "field": "ymydmsattach",
     "headOrTable": "K",
     "isContinue": "[C]",
     "handler": "ow1/S00X.DOCMGT.UI.FO2"

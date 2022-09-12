@@ -80,6 +80,13 @@
       "screenVisibility": "Editable",
       "showPriority": "A",
       "changePriority": "A"
+    }, {
+      "name": "updatescr",
+      "type": "BU3",
+      "description": "Update Web UI Screens List",
+      "screenVisibility": "Editable",
+      "showPriority": "A",
+      "changePriority": "A"
     }]
   }]
 }

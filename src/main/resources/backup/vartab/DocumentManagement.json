@@ -125,6 +125,13 @@
       "screenVisibility": "Editable",
       "showPriority": "A",
       "changePriority": "A"
+    }, {
+      "name": "scrn",
+      "type": "AZL1000007",
+      "description": "Screen",
+      "screenVisibility": "Editable",
+      "showPriority": "A",
+      "changePriority": "A"
     }]
   }]
 }

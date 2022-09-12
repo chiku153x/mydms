@@ -62,6 +62,30 @@
       "screenVisibility": "Editable",
       "showPriority": "A",
       "changePriority": "A"
+    }, {
+      "name": "keywords",
+      "type": "GL100",
+      "isSkip": true,
+      "description": "Keywords",
+      "screenVisibility": "Editable",
+      "showPriority": "A",
+      "changePriority": "A"
+    }, {
+      "name": "addkey",
+      "isSkip": true,
+      "type": "BU3",
+      "description": "Add",
+      "screenVisibility": "ViewEditable",
+      "showPriority": "A",
+      "changePriority": "A"
+    }, {
+      "name": "remkey",
+      "isSkip": true,
+      "type": "BU3",
+      "description": "Remove",
+      "screenVisibility": "ViewEditable",
+      "showPriority": "A",
+      "changePriority": "A"
     }]
   }]
 }

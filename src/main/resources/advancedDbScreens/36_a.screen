@@ -474,6 +474,9 @@
     <entries englishName="ymydmsfile" name="ymydmsfile" type="DV0" guiType="FILEREFERENCE" description="" width="255" screenProtection="änderbar" writeable="true" skip="true" custom="true" meaning="File" changePriority="A" viewPriority="A" primaryName="ymydmsfile"/>
     <entries englishName="ymydmsattach" name="ymydmsattach" type="BU3" description="" width="1" screenProtection="zeigen änderbar" writeable="true" skip="true" custom="true" meaning="Attach" changePriority="A" viewPriority="A" primaryName="ymydmsattach"/>
     <entries englishName="ymydmswebui" name="ymydmswebui" type="URL2" guiType="BROWSER" description="" width="2999" screenProtection="änderbar" writeable="true" skip="true" custom="true" meaning="Web UI" changePriority="A" viewPriority="A" primaryName="ymydmswebui"/>
+    <entries englishName="ymydmskeywords" name="ymydmskeywords" type="GL100" guiType="INPUT" description="" width="100" screenProtection="änderbar" writeable="true" skip="true" custom="true" meaning="Keywords" changePriority="A" viewPriority="A" primaryName="ymydmskeywords"/>
+    <entries englishName="ymydmsaddkey" name="ymydmsaddkey" type="BU3" description="" width="1" screenProtection="zeigen änderbar" writeable="true" skip="true" custom="true" meaning="Add" changePriority="A" viewPriority="A" primaryName="ymydmsaddkey"/>
+    <entries englishName="ymydmsremkey" name="ymydmsremkey" type="BU3" description="" width="1" screenProtection="zeigen änderbar" writeable="true" skip="true" custom="true" meaning="Remove" changePriority="A" viewPriority="A" primaryName="ymydmsremkey"/>
     <entries englishName="" name="grust" type="I9" guiType="INTEGER" description="" tableEntry="true" width="9" screenProtection="immer geschützt" meaning="Gruppe" changePriority="A" viewPriority="A" primaryName="grust"/>
     <entries englishName="grpNo" name="gruppe" type="GRN3" guiType="INTEGER" description="" tableEntry="true" width="2" screenProtection="immer geschützt" alias="true" meaning="Gruppennummer" changePriority="A" viewPriority="A" primaryName="grust"/>
     <entries englishName="grpDescr" name="grbez" type="GRB3" guiType="INPUT" description="" tableEntry="true" width="80" screenProtection="immer geschützt" alias="true" meaning="Gruppenbezeichnung" changePriority="A" viewPriority="A" primaryName="grust"/>
@@ -3751,12 +3754,11 @@
                                     </elements>
                                   </cells>
                                   <cells column="1" alignmentY="center">
-                                    <elements xsi:type="core:ReferenceInput" dimX="64" dimY="1">
+                                    <elements xsi:type="core:ReferenceInput" dimX="50" dimY="1">
                                       <variable englishName="ymydmstype" name="ymydmstype" type="PT12:3" guiType="REFERENCE" description="" width="64" screenProtection="änderbar" writeable="true" skip="true" custom="true" meaning="Type" changePriority="A" viewPriority="A" primaryName="ymydmstype"/>
                                     </elements>
                                   </cells>
-                                  <cells column="2" alignmentY="center"/>
-                                  <cells column="3" alignmentY="center">
+                                  <cells column="2" alignmentY="center">
                                     <elements xsi:type="core:Button">
                                       <variable englishName="ymydmsseltype" name="ymydmsseltype" type="BU3" description="" width="1" screenProtection="zeigen änderbar" writeable="true" skip="true" custom="true" meaning="Select" changePriority="A" viewPriority="A" primaryName="ymydmsseltype"/>
                                       <label viewLanguage="de" key="invoice_fhead_ymydmsseltype">
@@ -3777,21 +3779,45 @@
                                     </elements>
                                   </cells>
                                   <cells column="2" row="1" alignmentY="center"/>
-                                  <cells column="3" row="1" alignmentY="center"/>
                                   <cells row="2" alignmentY="center">
+                                    <elements xsi:type="core:Label">
+                                      <label viewLanguage="de" key="invoice_fhead_ymydmskeywords">
+                                        <value key="de" value="Keywords"/>
+                                      </label>
+                                    </elements>
+                                  </cells>
+                                  <cells column="1" row="2" alignmentY="center">
+                                    <elements xsi:type="core:Input" dimX="50">
+                                      <variable englishName="ymydmskeywords" name="ymydmskeywords" type="GL100" guiType="INPUT" description="" width="100" screenProtection="änderbar" writeable="true" skip="true" custom="true" meaning="Keywords" changePriority="A" viewPriority="A" primaryName="ymydmskeywords"/>
+                                    </elements>
+                                  </cells>
+                                  <cells column="2" row="2" alignmentY="center">
+                                    <elements xsi:type="core:Button">
+                                      <variable englishName="ymydmsaddkey" name="ymydmsaddkey" type="BU3" description="" width="1" screenProtection="zeigen änderbar" writeable="true" skip="true" custom="true" meaning="Add" changePriority="A" viewPriority="A" primaryName="ymydmsaddkey"/>
+                                      <label viewLanguage="de" key="invoice_fhead_ymydmsaddkey">
+                                        <value key="de" value="Add"/>
+                                      </label>
+                                    </elements>
+                                    <elements xsi:type="core:Button">
+                                      <variable englishName="ymydmsremkey" name="ymydmsremkey" type="BU3" description="" width="1" screenProtection="zeigen änderbar" writeable="true" skip="true" custom="true" meaning="Remove" changePriority="A" viewPriority="A" primaryName="ymydmsremkey"/>
+                                      <label viewLanguage="de" key="invoice_fhead_ymydmsremkey">
+                                        <value key="de" value="Remove"/>
+                                      </label>
+                                    </elements>
+                                  </cells>
+                                  <cells row="3" alignmentY="center">
                                     <elements xsi:type="core:Label">
                                       <label viewLanguage="de" key="invoice_fhead_ymydmsfile">
                                         <value key="de" value="File"/>
                                       </label>
                                     </elements>
                                   </cells>
-                                  <cells column="1" row="2" alignmentY="center">
+                                  <cells column="1" row="3" alignmentY="center">
                                     <elements xsi:type="core:FileReferenceInput" dimX="50" dimY="1">
                                       <variable englishName="ymydmsfile" name="ymydmsfile" type="DV0" guiType="FILEREFERENCE" description="" width="255" screenProtection="änderbar" writeable="true" skip="true" custom="true" meaning="File" changePriority="A" viewPriority="A" primaryName="ymydmsfile"/>
                                     </elements>
                                   </cells>
-                                  <cells column="2" row="2" alignmentY="center"/>
-                                  <cells column="3" row="2" alignmentY="center">
+                                  <cells column="2" row="3" alignmentY="center">
                                     <elements xsi:type="core:Button">
                                       <variable englishName="ymydmsattach" name="ymydmsattach" type="BU3" description="" width="1" screenProtection="zeigen änderbar" writeable="true" skip="true" custom="true" meaning="Attach" changePriority="A" viewPriority="A" primaryName="ymydmsattach"/>
                                       <label viewLanguage="de" key="invoice_fhead_ymydmsattach">
@@ -3799,14 +3825,14 @@
                                       </label>
                                     </elements>
                                   </cells>
-                                  <cells row="3" columnSpan="4" alignmentY="center">
+                                  <cells row="4" columnSpan="3" alignmentY="center">
                                     <elements xsi:type="core:Groupline">
                                       <label viewLanguage="de" key="invoice$1">
                                         <value key="de" value=""/>
                                       </label>
                                     </elements>
                                   </cells>
-                                  <cells row="4" columnSpan="4" alignmentX="fill" alignmentY="fill">
+                                  <cells row="5" columnSpan="3" alignmentX="fill" alignmentY="fill">
                                     <elements xsi:type="core:Browser" dimX="200" dimY="50">
                                       <variable englishName="ymydmswebui" name="ymydmswebui" type="URL2" guiType="BROWSER" description="" width="2999" screenProtection="änderbar" writeable="true" skip="true" custom="true" meaning="Web UI" changePriority="A" viewPriority="A" primaryName="ymydmswebui"/>
                                     </elements>
