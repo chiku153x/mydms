@@ -19,6 +19,8 @@
 ..<META P|='P88:10' >
 
 ..<VAR folded>
+.var text xtscrnname
+.var text xtcurl
 .var text xttmpfile
 .var text xtscrname
 .var text xtmodule
@@ -45,9 +47,9 @@ def handleFieldEvents( ) {
 
 def handleSelectScrn( ) { 
     if (G|evtkommd = G|kaktname13 ; G|evtkommd = G|kaktname14  ) {
-         .formula M|ymydmsmodule = M|ymydmsscrn^langtxt
+        .formula M|ymydmsmodule = M|ymydmsscrn^langtxt
         .formula M|ymydmsscrnuum = M|ymydmsscrn^kbezbspr
-        .formula M|name =  M|ymydmsscrn^namebspr
+        .formula M|name = M|ymydmsscrn^namebspr
     }
 } 
 
@@ -63,6 +65,29 @@ def handleScreenValidation( ) {
     .call setSearchword()
     .call checkSearchwordDuplicates()
     .call checkNumberOfLines()
+    .call updateRestService()
+} 
+
+def updateRestService( ) { 
+    .select screen header
+    .formula U|xtscrnno = M|ymydmsscrnuum
+    .formula U|xtscrnname = M|name
+    .select screen line
+    while (G|mehr) {
+        .formula U|xtcurl = "curl -X POST "
+        .formula U|xtcurl = U|xtcurl + 'F|sysinfo(10)^ymydmsresturl' + "/api/v1/type/add "
+        .formula U|xtcurl = U|xtcurl + "  -H " + apostroph + "cache-control: no-cache" + apostroph + " "
+        .formula U|xtcurl = U|xtcurl + "  -H " + apostroph + "content-type: application/json" + apostroph + " "
+        .formula U|xtcurl = U|xtcurl + "  -d " + apostroph + "{ "
+        .formula U|xtcurl = U|xtcurl + "  " + dblquote + "screenNo" + dblquote + ":" + dblquote + 'U|xtscrnno' + dblquote + ", "
+        .formula U|xtcurl = U|xtcurl + "  " + dblquote + "screenName" + dblquote + ":" + dblquote + 'U|xtscrnname' + dblquote + ", "
+        .formula U|xtcurl = U|xtcurl + "  " + dblquote + "itemNo" + dblquote + ":" + dblquote + 'M|ymydmsshorttxt^nummer' + dblquote + ", "
+        .formula U|xtcurl = U|xtcurl + "  " + dblquote + "itemText" + dblquote + ":" + dblquote + 'M|ymydmsshorttxt^namebspr' + dblquote 
+        .formula U|xtcurl = U|xtcurl + "}" + apostroph + " "
+        .system 'U|xtcurl' background    
+        .select screen line continue
+    }
+    
 } 
 
 def checkNumberOfLines( ) { 

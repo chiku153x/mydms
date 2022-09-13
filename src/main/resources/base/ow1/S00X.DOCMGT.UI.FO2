@@ -98,7 +98,7 @@ def removeKeywords( ) {
     }
     .output terminal
     .input 'U|xttmpfile'
-    .formula M|ymydmskeywords = F|regreplace('M|ymydmskeywords','U|xtselectedkey' + ",","")
+    .formula M|ymydmskeywords = F|regreplace('M|ymydmskeywords', 'U|xtselectedkey' + ",", "")
 } 
 
 def addKeywords( ) { 
@@ -167,6 +167,7 @@ def updateRegistry( ) {
     .formula U|xtcurl = U|xtcurl + "  " + dblquote + "docName" + dblquote + ":" + dblquote + 'U|xtfilename' + dblquote + ", "
     .formula U|xtcurl = U|xtcurl + "  " + dblquote + "category" + dblquote + ": " + dblquote + 'M|ymydmstype' + dblquote + ", "
     .formula U|xtcurl = U|xtcurl + "  " + dblquote + "subject" + dblquote + ": " + dblquote + 'M|ymydmssubject' + dblquote + ", "
+    .formula U|xtcurl = U|xtcurl + "  " + dblquote + "keywords" + dblquote + ": " + dblquote + 'M|ymydmskeywords' + dblquote + ", "
     .formula U|xtcurl = U|xtcurl + "  " + dblquote + "user" + dblquote + ": " + 'G|passw^mitarb^nummer' + ", "
     .formula U|xtcurl = U|xtcurl + "  " + dblquote + "docType" + dblquote + ": " + dblquote + 'U|xtfiletype' + dblquote + " "
     .formula U|xtcurl = U|xtcurl + "}" + apostroph + " "
