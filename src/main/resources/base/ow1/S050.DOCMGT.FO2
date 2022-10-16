@@ -19,6 +19,7 @@
 ..<META P|='P88:10' >
 
 ..<VAR folded>
+.var text xtfilepathcheck
 .var text xtmand
 .var text xtcurl
 ..</VAR>
@@ -79,6 +80,10 @@ def checkTempFilePath() {
     if (_F|fileexists(M|ymydmstmpfileloc)) {
         .call invalidTempPath()
     }  
+    
+    .formula U|xtfilepathcheck = "cd " + 'M|ymydmstmpfileloc' + " && cd .. && ls -lrt"
+    .system 'U|xtfilepathcheck' 
+    
 }
 
 def invalidTempPath() {
@@ -123,9 +128,21 @@ def dmsWebUINotAvailable() {
 }
 
 def checkFileUploader() {
-    ..TODO
+    if (F|empty(M|ymydmsfileupsrv)) {
+        .call dmsFileServerNotAvailable()
+        .return
+    }
+
+    .formula U|xtcurl = "curl -f -LI " + 'M|ymydmsfileupsrv' 
+    .system 'U|xtcurl'
 }
 
+
+def dmsFileServerNotAvailable( ) { 
+    .box 
+    .item "DMS File server is not available"
+    .enditem
+} 
 
 def inputDefaults( ) {
     .set demand -

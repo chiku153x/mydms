@@ -1,0 +1,44 @@
+..!interpreter english declaration noabbrev englvar
+
+..============================================================================
+..  Author             : Chinthaka
+..  Date of Creation   : Oct 16, 2022
+..  Name               : S00X.DOCMGT.PERMISSON.UCM.FO2
+..  Path/Pfad          : ow1/S00X.DOCMGT.PERMISSON.UCM.FO2
+..  Function           :
+..  required Paths     :
+..  Menu Items         :
+..  Mask Priority      :
+..  for EFOP           :
+..  Starting Ticket    :
+..                     History of Changes
+..                     ==================
+.. Ticket of Change    : 
+..
+..============================================================================
+..<META P|='P88:10' >
+
+..<VAR folded>
+.var text xtcmd
+.var integer xtfile
+..</VAR>
+
+def main(){
+     .formula U|xtfile = F|sysinfo(10)^ymydmsfileno
+    if(U|xtfile = 0){
+        .box 
+        .item "Document management settings in company data is missing."
+        .enditem
+        .return
+    }
+    
+    if(U|xtfile = 1){
+        .formula U|xtcmd = "<(File)>"
+    }else{
+        .formula U|xtcmd = "<(File" + U|xtfile +")>"
+    }
+    
+    .formula U|xtcmd = U|xtcmd + " <(Empty)>,Permission"
+
+    .command -parallel 'U|xtcmd'
+}

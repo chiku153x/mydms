@@ -151,12 +151,14 @@ def attachFile() {
 
 def createUniqueDirName( ) { 
     .formula U|xtunqdirname = "S" + 'G|versionneu'
+    ..//.formula U|xtunqdirname = "S_" + 'U|xtscrn' + "_" + 'M|nummer'
 } 
 
 def updateRegistry( ) { 
     .formula U|xtcurl = "curl -X POST "
     .formula U|xtcurl = U|xtcurl + 'F|sysinfo(10)^ymydmsresturl' + "/api/v1/document/add "
     .formula U|xtcurl = U|xtcurl + "  -H " + apostroph + "cache-control: no-cache" + apostroph + " "
+    .formula U|xtcurl = U|xtcurl + "  -H " + apostroph + "token: xxxxxx" + apostroph + " "
     .formula U|xtcurl = U|xtcurl + "  -H " + apostroph + "content-type: application/json" + apostroph + " "
     .formula U|xtcurl = U|xtcurl + "  -d " + apostroph + "{ "
     .formula U|xtcurl = U|xtcurl + "  " + dblquote + "instance" + dblquote + ":" + dblquote + 'U|xtmand' + dblquote + ", "
@@ -171,7 +173,8 @@ def updateRegistry( ) {
     .formula U|xtcurl = U|xtcurl + "  " + dblquote + "user" + dblquote + ": " + 'G|passw^mitarb^nummer' + ", "
     .formula U|xtcurl = U|xtcurl + "  " + dblquote + "docType" + dblquote + ": " + dblquote + 'U|xtfiletype' + dblquote + " "
     .formula U|xtcurl = U|xtcurl + "}" + apostroph + " "
-    .system 'U|xtcurl' background    
+    .system 'U|xtcurl' background   
+    .println  'U|xtcurl' 
 } 
 
 def loadDMSUI( ) { 
@@ -183,7 +186,7 @@ def getUserName( ) {
     .formula U|xtpermissionsel = "select file" + 'F|sysinfo(10)^ymydmsfileno' + " " + dblquote + "$,,ymydmsemployee=" + 'G|passw^mitarb^nummer' + ";@gruppe=1" + dblquote
     .'U|xtpermissionsel'
     if (G|mehr) {
-        .formula U|xtusername = "gchinthaka"
+        .formula U|xtusername = 'H|ymydmswebun'
     } else {
         .formula U|xtusername = "admin"
     }
@@ -203,6 +206,7 @@ def copyFile( ) {
 def uploadFile( ) { 
     .input datei.f
     .formula U|xtfileupload = "edpinfosys.sh -n DOCHANDLER -p " + 'G|einmalpw' + " -s ymydmsfilepath,ymydmsjson,bstart -w " + 'U|xtfinaldest' + "\;" + U|xtunqdirname + "\;1" 
+    ..//.println 'U|xtfileupload'
     .system 'U|xtfileupload' background
 }
  

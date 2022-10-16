@@ -154,6 +154,8 @@ def updateUser( ) {
         .formula U|xtcurl = U|xtcurl + "  " + dblquote + "instance" + dblquote + ":" + dblquote + 'U|xtmand' + dblquote + ", "
         .formula U|xtcurl = U|xtcurl + "  " + dblquote + "userName" + dblquote + ":" + dblquote + 'M|ymydmswebun' + dblquote + ", "
         .formula U|xtcurl = U|xtcurl + "  " + dblquote + "email" + dblquote + ":" + dblquote + 'M|ymydmsemployee^email' + dblquote + ", "
+        .formula U|xtcurl = U|xtcurl + "  " + dblquote + "role" + dblquote + ":" + dblquote + "ROLE_ADMIN" + dblquote + ", "
+        .formula U|xtcurl = U|xtcurl + "  " + dblquote + "userId" + dblquote + ":" + dblquote + 'M|ymydmsemployee^nummer' + dblquote + ", "
         if (M|ymydmsactive) {
             .formula U|xtcurl = U|xtcurl + "  " + dblquote + "active" + dblquote + ":true" + ", "
         } else {
