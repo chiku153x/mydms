@@ -158,11 +158,11 @@ def updateRegistry( ) {
     .formula U|xtcurl = "curl -X POST "
     .formula U|xtcurl = U|xtcurl + 'F|sysinfo(10)^ymydmsresturl' + "/api/v1/document/add "
     .formula U|xtcurl = U|xtcurl + "  -H " + apostroph + "cache-control: no-cache" + apostroph + " "
-    .formula U|xtcurl = U|xtcurl + "  -H " + apostroph + "token: xxxxxx" + apostroph + " "
+    .formula U|xtcurl = U|xtcurl + "  -H " + apostroph + "token: v1" + apostroph + " "
     .formula U|xtcurl = U|xtcurl + "  -H " + apostroph + "content-type: application/json" + apostroph + " "
     .formula U|xtcurl = U|xtcurl + "  -d " + apostroph + "{ "
     .formula U|xtcurl = U|xtcurl + "  " + dblquote + "instance" + dblquote + ":" + dblquote + 'U|xtmand' + dblquote + ", "
-    .formula U|xtcurl = U|xtcurl + "  " + dblquote + "number" + dblquote + ":" + dblquote + 'M|ymydmsnum' + dblquote + ", "
+    .formula U|xtcurl = U|xtcurl + "  " + dblquote + "number" + dblquote + ":" + dblquote + 'M|nummer' + dblquote + ", "
     .formula U|xtcurl = U|xtcurl + "  " + dblquote + "objectNumber" + dblquote + ":" + dblquote + 'M|nummer' + dblquote + ", "
     .formula U|xtcurl = U|xtcurl + "  " + dblquote + "dir" + dblquote + ":" + dblquote + 'U|xtunqdirname' + dblquote + ", "
     .formula U|xtcurl = U|xtcurl + "  " + dblquote + "screen" + dblquote + ":" + dblquote + 'G|evtmaske' + dblquote + ", "
@@ -174,12 +174,11 @@ def updateRegistry( ) {
     .formula U|xtcurl = U|xtcurl + "  " + dblquote + "docType" + dblquote + ": " + dblquote + 'U|xtfiletype' + dblquote + " "
     .formula U|xtcurl = U|xtcurl + "}" + apostroph + " "
     .system 'U|xtcurl' background   
-    .println  'U|xtcurl' 
 } 
 
 def loadDMSUI( ) { 
     .call getUserName()
-    .formula M|ymydmswebui = 'F|sysinfo(10)^ymydmswebuiurl' + "/index.html?instance=" + 'U|xtmand' + "&screen=" + 'G|evtmaske' + "&number=" + 'M|ymydmsnum' + "&user=" + 'U|xtusername' + "&v=" + 'G|versionneu'
+    .formula M|ymydmswebui = 'F|sysinfo(10)^ymydmswebuiurl' + "/index.html?instance=" + 'U|xtmand' + "&screen=" + 'G|evtmaske' + "&number=" + 'M|nummer' + "&user=" + 'U|xtusername' + "&v=" + 'G|versionneu'
 } 
 
 def getUserName( ) { 

@@ -131,7 +131,8 @@ def updatePasswordDefinition( ) {
     .'U|xtpasssel'
     if(G|mehr){
         .formula H|startseite = "(URL)"
-        .formula H|starturl = 'F|sysinfo(10)^ymydmswebuiurl' + "/search.html?user=" + 'M|ymydmswebun'
+        ..//.formula H|starturl = 'F|sysinfo(10)^ymydmswebuiurl' + "/search.html?user=" + 'M|ymydmswebun' + "&pw=" + 'M|ymydmswebpw'
+        .formula H|starturl = 'F|sysinfo(10)^ymydmswebuiurl' + "/search.html?user=" + 'M|ymydmswebun' + "&pw=" + 'M|ymydmswebpw'
         .rewrite
     }
 }
