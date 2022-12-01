@@ -1,0 +1,279 @@
+..!interpreter english declaration noabbrev
+
+..============================================================================
+..  Author             : Chinthaka
+..  Date of Creation   : Aug 25, 2022
+..  Name               : S00X.DOCMGT.PERMISSION.FO2
+..  Path/Pfad          : ow1/S00X.DOCMGT.PERMISSION.FO2
+..  Function           :
+..  required Paths     :
+..  Menu Items         :
+..  Mask Priority      :
+..  for EFOP           :
+..  Starting Ticket    :
+..                     History of Changes
+..                     ==================
+.. Ticket of Change    : Handle Document Management Permission screen
+..
+..============================================================================
+..<META P|='P88:10' >
+
+..<VAR folded>
+.var text xtpasssel
+.var text xtun
+.var text xtmand
+.var text xtcurl
+.var bool isusernameduplicate
+.var text xtpermobj
+.var text xtdupsel
+.var bool isemplduplicate
+.var text xtselected
+.var text xtscrname
+.var text xtmodule
+.var text xtscrnno
+.var text xttmpfile
+..</VAR>
+
+def main() {
+    .call inputDefaults( )
+    .call handleScreenEvents()
+    .call handleFieldEvents()
+}
+
+def handleFieldEvents( ) { 
+    switch (G|evtvar) {
+        case ("ymydmsadd") {
+            .call handleAddButton()
+        }
+        case ("ymydmsemployee") {
+            .call handleEmployeeField()
+        }
+        case ("ymydmswebpwmask") {
+            .call handlePasswordMask()
+        }
+        case ("ymydmsscrn") {
+            .call setTableFields()
+        }
+    }
+} 
+
+def setTableFields( ) { 
+    .formula M|ymydmsscrnnum = M|ymydmsscrn^kbezbspr
+    .formula M|ymydmsmodule = M|ymydmsscrn^langtxt
+    .formula M|ymydmsscrnname = M|ymydmsscrn^namebspr
+} 
+
+def handleScreenEvents( ) { 
+    switch (G|evtart) {
+        case ("maskpruef") {
+            .call handleScreenValidation()
+        }
+        case ("maskein") {
+            .call handleEnterScreen()
+        }
+    }
+}
+
+def handleEnterScreen( ) { 
+    if (G|evtkommd = G|kaktname12 ; G|evtkommd = G|kaktname13) {
+        if (_F|empty(M|ymydmswebpw)) {
+            .formula M|ymydmswebpwmask = "**********"
+        }
+    }
+    if (G|evtkommd = G|kaktname13) {
+        .protection ymydmsemployee 0
+        .protection ymydmswebun 0
+    }
+} 
+
+def handleScreenValidation( ) { 
+    if (G|evtkommd = G|kaktname13 ; G|evtkommd = G|kaktname14) {
+        if (F|empty(M|ymydmsemployee)) {
+            .error Employee is required
+            .end 1
+            .cursor ymydmsemployee 0
+        }
+        
+        if (F|empty(M|ymydmswebun)) {
+            .error Username is required
+            .end 1
+            .cursor ymydmswebun 0
+        }
+        
+        if (F|empty(M|ymydmswebpw)) {
+            .error Password is required
+            .end 1
+            .cursor ymydmswebpwmask 0
+        }  
+        
+        .call checkEmployeeDuplicate()
+        .call checkUserNameDuplicate()
+        
+        if (U|isemplduplicate) {
+            .error Permission object for the employee is already exist. ('U|xtpermobj')
+            .end 1
+            .cursor ymydmsemployee 0
+        }
+        
+        if (U|isusernameduplicate) {
+            .error Duplicated username. ('U|xtpermobj')
+            .end 1
+            .cursor ymydmswebun 0
+        }
+        
+        .call updateDMSRestService()
+        .call updatePasswordDefinition()
+    }
+} 
+
+def updatePasswordDefinition( ) { 
+    .formula U|xtpasssel = "select lock no wait Company " + dblquote + "$,,@gruppe=11;passmitarb^nummer=="+'M|ymydmsemployee^nummer' + dblquote
+    .'U|xtpasssel'
+    if(G|mehr){
+        .formula H|startseite = "(URL)"
+        ..//.formula H|starturl = 'F|sysinfo(10)^ymydmswebuiurl' + "/search.html?user=" + 'M|ymydmswebun' + "&pw=" + 'M|ymydmswebpw'
+        .formula H|starturl = 'F|sysinfo(10)^ymydmswebuiurl' + "/search.html?user=" + 'M|ymydmswebun' + "&pw=" + 'M|ymydmswebpw'
+        .rewrite
+    }
+}
+
+def updateDMSRestService( ) {
+    .call getEnv()
+    .call updateUser()
+    .call updatePermission()  
+}
+
+
+def updateUser( ) { 
+    .select screen header
+    if (G|mehr) {
+        .formula U|xtcurl = "curl -X POST "
+        .formula U|xtcurl = U|xtcurl + 'F|sysinfo(10)^ymydmsresturl' + "/api/v1/user/add "
+        .formula U|xtcurl = U|xtcurl + "  -H " + apostroph + "cache-control: no-cache" + apostroph + " "
+        .formula U|xtcurl = U|xtcurl + "  -H " + apostroph + "content-type: application/json" + apostroph + " "
+        .formula U|xtcurl = U|xtcurl + "  -d " + apostroph + "{ "
+        .formula U|xtcurl = U|xtcurl + "  " + dblquote + "instance" + dblquote + ":" + dblquote + 'U|xtmand' + dblquote + ", "
+        .formula U|xtcurl = U|xtcurl + "  " + dblquote + "userName" + dblquote + ":" + dblquote + 'M|ymydmswebun' + dblquote + ", "
+        .formula U|xtcurl = U|xtcurl + "  " + dblquote + "email" + dblquote + ":" + dblquote + 'M|ymydmsemployee^email' + dblquote + ", "
+        .formula U|xtcurl = U|xtcurl + "  " + dblquote + "role" + dblquote + ":" + dblquote + "ROLE_ADMIN" + dblquote + ", "
+        .formula U|xtcurl = U|xtcurl + "  " + dblquote + "userId" + dblquote + ":" + dblquote + 'M|ymydmsemployee^nummer' + dblquote + ", "
+        if (M|ymydmsactive) {
+            .formula U|xtcurl = U|xtcurl + "  " + dblquote + "active" + dblquote + ":true" + ", "
+        } else {
+            .formula U|xtcurl = U|xtcurl + "  " + dblquote + "active" + dblquote + ":false" + ", "
+        }
+        .formula U|xtcurl = U|xtcurl + "  " + dblquote + "password" + dblquote + ":" + dblquote + 'M|ymydmswebpw' + dblquote 
+        .formula U|xtcurl = U|xtcurl + "}" + apostroph + " "
+        .system 'U|xtcurl' background    
+    }
+} 
+
+def updatePermission( ) { 
+    .input datei.f
+    .select screen header
+    .formula U|xtun = 'M|ymydmswebun'
+    .formula U|xtcurl = "curl -X POST "
+    .formula U|xtcurl = U|xtcurl + 'F|sysinfo(10)^ymydmsresturl' + "/api/v1/permission/add "
+    .formula U|xtcurl = U|xtcurl + "  -H " + apostroph + "cache-control: no-cache" + apostroph + " "
+    .formula U|xtcurl = U|xtcurl + "  -H " + apostroph + "content-type: application/json" + apostroph + " "
+    .formula U|xtcurl = U|xtcurl + "  -d " + apostroph + "["
+    if (G|mehr) {
+        .select screen line
+        while (G|mehr) {
+            .formula U|xtcurl = U|xtcurl + "{"
+            .formula U|xtcurl = U|xtcurl + "  " + dblquote + "instance" + dblquote + ":" + dblquote + 'U|xtmand' + dblquote + ", "
+            .formula U|xtcurl = U|xtcurl + "  " + dblquote + "userName" + dblquote + ":" + dblquote + 'U|xtun' + dblquote + ", "
+            .formula U|xtcurl = U|xtcurl + "  " + dblquote + "screen" + dblquote + ":" + dblquote + 'M|ymydmsscrnnum' + dblquote + ", "
+            .formula U|xtcurl = U|xtcurl + "  " + dblquote + "active" + dblquote + ":true"
+            .formula U|xtcurl = U|xtcurl + "},"
+            .select screen line continue
+        }
+    }
+    .formula U|xtcurl = 'U|xtcurl'  + "]" + apostroph + " "
+    .formula U|xtcurl = F|regreplace('U|xtcurl',"\},\]","\}\]")
+    ..//.println 'U|xtcurl'
+    .system 'U|xtcurl' background  
+} 
+
+
+
+def checkUserNameDuplicate( ) { 
+    .formula U|xtdupsel = "select file" + 'F|sysinfo(10)^ymydmsfileno' + dblquote + "$,,ymydmswebun==" + 'M|ymydmswebun' + ";@gruppe=1" + dblquote
+    .'U|xtdupsel'
+    while (G|mehr) {
+        if (H|nummer <> M|nummer) {
+            .formula U|isusernameduplicate = G|true
+            .formula U|xtpermobj = H|nummer
+        }
+        .select continue
+    }
+} 
+
+def checkEmployeeDuplicate( ) { 
+    .formula U|xtdupsel = "select file" + 'F|sysinfo(10)^ymydmsfileno' + dblquote + "$,,ymydmsemployee==" + 'M|ymydmsemployee^id' + ";@gruppe=1" + dblquote
+    .'U|xtdupsel'
+    while (G|mehr) {
+        if (H|nummer <> M|nummer) {
+            .formula U|isemplduplicate = G|true
+            .formula U|xtpermobj = H|nummer
+        }
+        .select continue
+    }
+} 
+
+def handleEmployeeField( ) { 
+    switch (G|evtart) {
+        case ("feldaus") {
+            .call handleEmployeeExitField()
+        }
+    }
+} 
+
+def handleEmployeeExitField( ) { 
+    if (G|evtkommd = G|kaktname13 ; G|evtkommd = G|kaktname14) {
+        .formula M|such = M|ymydmsemployee^such
+    }
+} 
+
+def handlePasswordMask( ) { 
+    .formula M|ymydmswebpw = M|ymydmswebpwmask
+} 
+
+def handleAddButton( ) { 
+    .file -TEMPNAME U|xttmpfile
+    .output new 'U|xttmpfile'
+    .input datei.f
+    .println ..!interpreter english declaration noabbrev 
+    .println .menu Select Screen
+    .select from "ow1/DOCMGT.INI" U|xtscrnno , U|xtmodule , U|xtscrname ,
+    while (G|mehr) {
+        .println 'U|xtscrnno' - 'U|xtscrname' >>.formula U|xtselected = "'U|xtscrnno'|'U|xtmodule'|'U|xtscrname'"
+        .select from "ow1/DOCMGT.INI" U|xtscrnno , U|xtmodule , U|xtscrname , 
+    }
+    .output terminal
+    .input 'U|xttmpfile'
+    .select screen line 'M|tzeilen'
+    if (G|mehr) {
+        if (F|empty(M|ymydmsmodule)) {
+            .make screen line --
+        }
+    }
+    .make screen line +o
+    .formula M|ymydmsscrnnum = 'U|xtselected' << "|" << "|"
+    .formula M|ymydmsmodule = 'U|xtselected' >> "|" << "|"
+    .formula M|ymydmsscrnname = 'U|xtselected' >> "|" >> "|"
+} 
+
+def inputDefaults( ) {
+    .set demand -
+    .set trans -
+    .input "KAKTNAME.KONST"
+    .input "KDATNAME.KONST"
+    .input "KKOMNAME.KONST"
+}
+
+..<BLOCK>
+def getEnv() {
+    .formula U|xtmand = F|regreplaceall(F|tolower(G|mandant), " ", "_")
+}
+..</BLOCK>

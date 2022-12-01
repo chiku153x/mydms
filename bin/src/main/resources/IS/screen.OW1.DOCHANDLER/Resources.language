@@ -1,0 +1,8 @@
+language.source=de
+dochandler_ow1$0=Document Handler
+dochandler_ow1$1=Seite 1
+dochandler_ow1_fhead_ymydmsfilepath=File Path
+dochandler_ow1_fhead_ymydmsheaders=Headers
+dochandler_ow1_fhead_ymydmsjson=Json Payload
+dochandler_ow1_fhead_ymydmsmethod=Method
+dochandler_ow1_fhead_ymydmsurl=URL

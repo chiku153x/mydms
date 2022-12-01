@@ -1,0 +1,257 @@
+..!interpreter english declaration noabbrev
+
+..============================================================================
+..  Author             : Chinthaka
+..  Date of Creation   : Aug 22, 2022
+..  Name               : S00X.DOCMGT.UI.FO2
+..  Path/Pfad          : ow1/S00X.DOCMGT.UI.FO2
+..  Function           :
+..  required Paths     :
+..  Menu Items         :
+..  Mask Priority      :
+..  for EFOP           :
+..  Starting Ticket    :
+..                     History of Changes
+..                     ==================
+.. Ticket of Change    : Handle Master files and Transaction screens to support Document Management
+..
+..============================================================================
+..<META P|='P88:10' >
+
+..<VAR folded>
+.var text xtselectedkey
+.var text xtright
+.var text xtleft
+.var text xtkeyword
+.var text xtpermissionsel
+.var text xtusername
+.var text xtcurl
+.var text xtunqdirname
+.var text xtfileupload
+.var P12:3 xpselected
+.var text xttmpf
+.var text xtunqn
+.var text xtscrn
+.var text xtmand
+.var text xtfilesel
+.var integer xicount
+.var text xttmpfile
+.var text xtperm
+.var text xtd
+.var text xtfinaldest
+.var text xtfiletype
+.var text xtfilename
+..</VAR>
+
+def main() {
+    if (_F|sysinfo(10)^ymydmsenabled) {
+        .return
+    }
+    .call inputDefaults() 
+    .call handleScreenEvents()
+    .call handleFieldEvents()
+}
+
+
+def handleFieldEvents( ) { 
+    switch (G|evtvar) {
+        case ("ymydmsseltype") {
+            if (G|evtart = "buttonnach") {
+                .call showMenu()
+            }  
+        }
+        case ("ymydmsattach") {
+            if (G|evtart = "buttonnach") {
+                .call attachFile()
+            }  
+        }
+        case ("ymydmsaddkey") {
+            if (G|evtart = "buttonnach") {
+                .call addKeywords()
+            }  
+        }
+        case ("ymydmsremkey") {
+            if (G|evtart = "buttonnach") {
+                .call removeKeywords()
+            }  
+        }
+    }
+} 
+
+def removeKeywords( ) { 
+    if (F|empty(M|ymydmskeywords)) {
+        .return
+    }
+    
+    .file -TEMPNAME U|xttmpfile
+    .output new 'U|xttmpfile'
+    .input datei.f
+    .println ..!interpreter english declaration noabbrev 
+    .println .menu Select a keyword to remove
+    .formula U|xtleft = 'M|ymydmskeywords'
+    while (F|strindex('U|xtleft', ",") > 0) {
+        .formula U|xtright = 'U|xtleft' << "," 
+        .formula U|xtleft = 'U|xtleft' >> "," 
+        if (_F|empty(U|xtright)) {
+            .println 'U|xtright' >>.formula U|xtselectedkey = "'U|xtright'"
+        } 
+    }
+    .output terminal
+    .input 'U|xttmpfile'
+    .formula M|ymydmskeywords = F|regreplace('M|ymydmskeywords', 'U|xtselectedkey' + ",", "")
+} 
+
+def addKeywords( ) { 
+    .read "Enter a keyword" U|xtkeyword
+    if (_F|empty(U|xtkeyword)) {
+        .formula M|ymydmskeywords = M|ymydmskeywords + U|xtkeyword + ","
+    }
+} 
+
+def handleScreenEvents( ) { 
+    switch (G|evtart) {
+        case ("maskein") {
+            .protection ymydmstype
+            .protection ymydmskeywords
+            if (G|evtkommd <> G|kaktname13 ) {
+                .protection ymydmssubject
+                .protection ymydmsseltype
+                .protection ymydmssubject
+                .protection ymydmsfile
+                .protection ymydmsattach
+                .protection ymydmskeywords
+                .protection ymydmsaddkey
+                .protection ymydmsremkey
+            }
+            .call setUniqNum()
+            .call getEnv()
+            .call loadDMSUI()
+        }
+    }
+} 
+
+def setUniqNum( ) { 
+    if (G|evtkommd = 'G|kaktname14' ; (G|evtkommd = 'G|kaktname13' & F|empty(M|ymydmsnum))) {
+        .formula M|ymydmsnum = 'G|versionneu'
+    }
+} 
+
+def attachFile() {
+    if (F|empty(M|ymydmsfile)) {
+        .error "Select a document first"
+    } else {
+        .call getEnv()
+        .call copyFile()
+        .call createUniqueDirName()
+        .call uploadFile()
+        .call updateRegistry()
+        .call loadDMSUI()
+    }    
+}
+
+def createUniqueDirName( ) { 
+    .formula U|xtunqdirname = "S" + 'G|versionneu'
+    ..//.formula U|xtunqdirname = "S_" + 'U|xtscrn' + "_" + 'M|nummer'
+} 
+
+def updateRegistry( ) { 
+    .formula U|xtcurl = "curl -X POST "
+    .formula U|xtcurl = U|xtcurl + 'F|sysinfo(10)^ymydmsresturl' + "/api/v1/document/add "
+    .formula U|xtcurl = U|xtcurl + "  -H " + apostroph + "cache-control: no-cache" + apostroph + " "
+    .formula U|xtcurl = U|xtcurl + "  -H " + apostroph + "token: v1" + apostroph + " "
+    .formula U|xtcurl = U|xtcurl + "  -H " + apostroph + "content-type: application/json" + apostroph + " "
+    .formula U|xtcurl = U|xtcurl + "  -d " + apostroph + "{ "
+    .formula U|xtcurl = U|xtcurl + "  " + dblquote + "instance" + dblquote + ":" + dblquote + 'U|xtmand' + dblquote + ", "
+    .formula U|xtcurl = U|xtcurl + "  " + dblquote + "number" + dblquote + ":" + dblquote + 'M|nummer' + dblquote + ", "
+    .formula U|xtcurl = U|xtcurl + "  " + dblquote + "objectNumber" + dblquote + ":" + dblquote + 'M|nummer' + dblquote + ", "
+    .formula U|xtcurl = U|xtcurl + "  " + dblquote + "dir" + dblquote + ":" + dblquote + 'U|xtunqdirname' + dblquote + ", "
+    .formula U|xtcurl = U|xtcurl + "  " + dblquote + "screen" + dblquote + ":" + dblquote + 'G|evtmaske' + dblquote + ", "
+    .formula U|xtcurl = U|xtcurl + "  " + dblquote + "docName" + dblquote + ":" + dblquote + 'U|xtfilename' + dblquote + ", "
+    .formula U|xtcurl = U|xtcurl + "  " + dblquote + "category" + dblquote + ": " + dblquote + 'M|ymydmstype' + dblquote + ", "
+    .formula U|xtcurl = U|xtcurl + "  " + dblquote + "subject" + dblquote + ": " + dblquote + 'M|ymydmssubject' + dblquote + ", "
+    .formula U|xtcurl = U|xtcurl + "  " + dblquote + "keywords" + dblquote + ": " + dblquote + 'M|ymydmskeywords' + dblquote + ", "
+    .formula U|xtcurl = U|xtcurl + "  " + dblquote + "user" + dblquote + ": " + 'G|passw^mitarb^nummer' + ", "
+    .formula U|xtcurl = U|xtcurl + "  " + dblquote + "docType" + dblquote + ": " + dblquote + 'U|xtfiletype' + dblquote + " "
+    .formula U|xtcurl = U|xtcurl + "}" + apostroph + " "
+    .system 'U|xtcurl' background   
+} 
+
+def loadDMSUI( ) { 
+    .call getUserName()
+    .formula M|ymydmswebui = 'F|sysinfo(10)^ymydmswebuiurl' + "/index.html?instance=" + 'U|xtmand' + "&screen=" + 'G|evtmaske' + "&number=" + 'M|nummer' + "&user=" + 'U|xtusername' + "&v=" + 'G|versionneu'
+} 
+
+def getUserName( ) { 
+    .formula U|xtpermissionsel = "select file" + 'F|sysinfo(10)^ymydmsfileno' + " " + dblquote + "$,,ymydmsemployee=" + 'G|passw^mitarb^nummer' + ";@gruppe=1" + dblquote
+    .'U|xtpermissionsel'
+    if (G|mehr) {
+        .formula U|xtusername = 'H|ymydmswebun'
+    } else {
+        .formula U|xtusername = "admin"
+    }
+    
+} 
+
+def copyFile( ) { 
+    .formula U|xtfilename = M|ymydmsfile >$ "\"
+    .formula U|xtfiletype = U|xtfilename >$ "."
+    .formula U|xtfinaldest = dblquote + U|xttmpf + 'U|xtfilename' + dblquote
+    .formula U|xtd = dblquote + 'M|ymydmsfile' + dblquote
+    .pc.copy -BIN 'U|xtd' 'U|xtfinaldest'
+    .formula U|xtperm = "chmod -R 777 " + 'U|xtfinaldest'
+    .system 'U|xtperm' background
+} 
+
+def uploadFile( ) { 
+    .input datei.f
+    .formula U|xtfileupload = "edpinfosys.sh -n DOCHANDLER -p " + 'G|einmalpw' + " -s ymydmsfilepath,ymydmsjson,bstart -w " + 'U|xtfinaldest' + "\;" + U|xtunqdirname + "\;1" 
+    ..//.println 'U|xtfileupload'
+    .system 'U|xtfileupload' background
+}
+ 
+..<BLOCK>
+def showMenu() {
+    .file -TEMPNAME U|xttmpfile
+    .formula U|xicount = 0 
+    .formula U|xtfilesel = "select file" + 'F|sysinfo(10)^ymydmsfileno' + dblquote + "$,,ymydmsscrnuum==" + 'G|evtmaske' + ";@ablageart=(Active)" + dblquote
+    .'U|xtfilesel'
+    .output new 'U|xttmpfile'
+    .println ..!interpreter english declaration noabbrev 
+    .println .menu Select Type
+    while (G|mehr) {
+        .select line
+        while (G|mehr) {
+            .formula U|xicount = U|xicount + 1
+            .println 'H|ymydmsshorttxt^namebspr' >>.formula U|xpselected = "'H|ymydmsshorttxt^id'"
+            .select line
+        }
+    }
+    
+    if (U|xicount > 0) {
+        .input 'U|xttmpfile'
+        .assign M|ymydmstype = U|xpselected^id
+    } else {
+        .error No menu items to show
+    }   
+}
+..</BLOCK>
+
+..<BLOCK>
+def inputDefaults( ) {
+    .set demand -
+    .set trans -
+    .input "KAKTNAME.KONST"
+    .input "KDATNAME.KONST"
+    .input "KKOMNAME.KONST"
+}
+..</BLOCK>
+
+
+..<BLOCK>
+def getEnv() {
+    .formula U|xtmand = F|regreplaceall(F|tolower(G|mandant), " ", "_")
+    .formula U|xtscrn = G|evtmaske
+    .formula U|xtunqn = M|ymydmsnum
+    .formula U|xttmpf = F|sysinfo(10)^ymydmstmpfileloc
+}
+..</BLOCK>

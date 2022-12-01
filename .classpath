@@ -1,25 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" output="bin/main" path="src/main/java">
+	<classpathentry kind="output" path="bin/default"/>
+	<classpathentry output="bin/main" kind="src" path="src/main/java">
 		<attributes>
 			<attribute name="gradle_scope" value="main"/>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" output="bin/main" path="src/main/resources">
+	<classpathentry output="bin/main" kind="src" path="src/main/resources">
 		<attributes>
 			<attribute name="gradle_scope" value="main"/>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" output="bin/test" path="src/test/java">
+	<classpathentry output="bin/test" kind="src" path="src/test/java">
 		<attributes>
 			<attribute name="gradle_scope" value="test"/>
 			<attribute name="gradle_used_by_scope" value="test"/>
 			<attribute name="test" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" output="bin/integTest" path="src/integTest/java">
+	<classpathentry output="bin/integTest" kind="src" path="src/integTest/java">
 		<attributes>
 			<attribute name="gradle_scope" value="integTest"/>
 			<attribute name="gradle_used_by_scope" value="integTest"/>
@@ -27,6 +28,148 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8/"/>
-	<classpathentry kind="con" path="org.eclipse.buildship.core.gradleclasspathcontainer"/>
-	<classpathentry kind="output" path="bin/default"/>
+	<classpathentry kind="lib" path="C:/Users/Chinthaka/.gradle/caches/modules-2/files-2.1/de.abas.homedir/abas-axi2/1.0.0/2042ad864fc954a75dd82f730ad19f87ed65d7c/abas-axi2-1.0.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="integTest,main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Chinthaka/.gradle/caches/modules-2/files-2.1/de.abas.homedir/abas-axi/1.0.0/13c9178849cf503d7e7f08ef8ae79bc2a571bc96/abas-axi-1.0.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="integTest,main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Chinthaka/.gradle/caches/modules-2/files-2.1/de.abas.homedir/abas-db-internal/1.0.0/dc1f140440ee2e5eaf945c966c9f758e5fa53ef5/abas-db-internal-1.0.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="integTest,main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Chinthaka/.gradle/caches/modules-2/files-2.1/de.abas.homedir/abas-db-util/1.0.0/f9bdefb4c853e30deee289807783a87aa2e21aca/abas-db-util-1.0.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="integTest,main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/Chinthaka/.gradle/caches/modules-2/files-2.1/de.abas.clientdir/abas-db/1.0.0-SNAPSHOT/9955f0e273ab03ffe45b31ed8906b068d549a714/abas-db-1.0.0-SNAPSHOT-sources.jar" kind="lib" path="C:/Users/Chinthaka/.gradle/caches/modules-2/files-2.1/de.abas.clientdir/abas-db/1.0.0-SNAPSHOT/f395ba8a0f77711be0247240376b92b0af5d18ae/abas-db-1.0.0-SNAPSHOT.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="integTest,main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/Chinthaka/.gradle/caches/modules-2/files-2.1/de.abas.clientdir/abas-db-index/1.0.0-SNAPSHOT/b55913f3c77c918d96faa56da9f0592b1df45c51/abas-db-index-1.0.0-SNAPSHOT-sources.jar" kind="lib" path="C:/Users/Chinthaka/.gradle/caches/modules-2/files-2.1/de.abas.clientdir/abas-db-index/1.0.0-SNAPSHOT/b32df9e95d32890b8f629f5ca4b89a047353310c/abas-db-index-1.0.0-SNAPSHOT.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="integTest,main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/Chinthaka/.gradle/caches/modules-2/files-2.1/de.abas.clientdir/abas-db-infosys/1.0.0-SNAPSHOT/f57eab3a3085ff9e93b3272bd0a1015338ce9144/abas-db-infosys-1.0.0-SNAPSHOT-sources.jar" kind="lib" path="C:/Users/Chinthaka/.gradle/caches/modules-2/files-2.1/de.abas.clientdir/abas-db-infosys/1.0.0-SNAPSHOT/c10d4e471c4c5f84166ba371233db1f105e0cf84/abas-db-infosys-1.0.0-SNAPSHOT.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="integTest,main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/Chinthaka/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpmime/4.3.1/6dccd53d31a0112f029e3c328090b317178da405/httpmime-4.3.1-sources.jar" kind="lib" path="C:/Users/Chinthaka/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpmime/4.3.1/f7899276dddd01d8a42ecfe27e7031fcf9824422/httpmime-4.3.1.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Users/Chinthaka/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpmime/4.3.1/18cc5c302a633a56091438d854f8f490edf738af/httpmime-4.3.1-javadoc.jar!/"/>
+			<attribute name="gradle_used_by_scope" value="integTest,main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/Chinthaka/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpclient/4.5/c9504d3448744739d334bde12bfbc91fd7f85115/httpclient-4.5-sources.jar" kind="lib" path="C:/Users/Chinthaka/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpclient/4.5/a1e6cbb3cc2c5f210dd1310ff9fcb2c09c0d1438/httpclient-4.5.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Users/Chinthaka/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpclient/4.5/837946d7784b9141e6ed2f79e5ad11e176913e3f/httpclient-4.5-javadoc.jar!/"/>
+			<attribute name="gradle_used_by_scope" value="integTest,main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/Chinthaka/.gradle/caches/modules-2/files-2.1/org.json/json/20171018/b4a63d74bc32f012342173c1a1da6fbe90065d69/json-20171018-sources.jar" kind="lib" path="C:/Users/Chinthaka/.gradle/caches/modules-2/files-2.1/org.json/json/20171018/36ced462c97f0845b4a7b266a25cebe95d18baa3/json-20171018.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Users/Chinthaka/.gradle/caches/modules-2/files-2.1/org.json/json/20171018/5ebafa6d9eace1ec57e012e6dc0f66fa5306233b/json-20171018-javadoc.jar!/"/>
+			<attribute name="gradle_used_by_scope" value="integTest,main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/Chinthaka/.gradle/caches/modules-2/files-2.1/de.abas.esdk.test.util/esdk-test-utils/0.0.9/ae7e63e5e8a068b055c1e08c49333d43a06ca4/esdk-test-utils-0.0.9-sources.jar" kind="lib" path="C:/Users/Chinthaka/.gradle/caches/modules-2/files-2.1/de.abas.esdk.test.util/esdk-test-utils/0.0.9/1ce7c7b6f706e52388d13bd8d6c3ad9d852a45a9/esdk-test-utils-0.0.9.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Users/Chinthaka/.gradle/caches/modules-2/files-2.1/de.abas.esdk.test.util/esdk-test-utils/0.0.9/d449f795b797fa7dc3e3f4909eaf9738e2a74f3b/esdk-test-utils-0.0.9-javadoc.jar!/"/>
+			<attribute name="gradle_used_by_scope" value="integTest"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Chinthaka/.gradle/caches/modules-2/files-2.1/de.abas.homedir/abas-db-base/1.0.0/5eb712d4e67757a153deab1fe0da2c5cfcfd8436/abas-db-base-1.0.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="integTest,main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Chinthaka/.gradle/caches/modules-2/files-2.1/de.abas.homedir/abas-enums/1.0.0/519d23a4098924f942f63287efe9e241cc8ba5e1/abas-enums-1.0.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="integTest,main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Chinthaka/.gradle/caches/modules-2/files-2.1/de.abas.homedir/abas-erp-common/1.0.0/f0e138c6631ea4ad0f40495efaf8407b61a68b44/abas-erp-common-1.0.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="integTest,main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Chinthaka/.gradle/caches/modules-2/files-2.1/de.abas.homedir/abas-jfop-runtime-api/1.0.0/46f32f56e9ffe1ee5a0802c899595bb7d0b0348e/abas-jfop-runtime-api-1.0.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="integTest,main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Chinthaka/.gradle/caches/modules-2/files-2.1/de.abas.homedir/jedp/1.0.0/969a8f41b45b0cacea66a3ef1a7199ecfedc32b5/jedp-1.0.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="integTest,main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/Chinthaka/.gradle/caches/modules-2/files-2.1/junit/junit/4.13.2/33987872a811fe4d4001ed494b07854822257f42/junit-4.13.2-sources.jar" kind="lib" path="C:/Users/Chinthaka/.gradle/caches/modules-2/files-2.1/junit/junit/4.13.2/8ac9e16d933b6fb43bc7f576336b8f4d7eb5ba12/junit-4.13.2.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Users/Chinthaka/.gradle/caches/modules-2/files-2.1/junit/junit/4.13.2/f2f3f384dacd2ade2ddf7aa7e0f4360dfee38672/junit-4.13.2-javadoc.jar!/"/>
+			<attribute name="gradle_used_by_scope" value="integTest,test"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/Chinthaka/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest-all/1.3/47e033b7ab18c5dbd5fe29fc1bd5a40afe028818/hamcrest-all-1.3-sources.jar" kind="lib" path="C:/Users/Chinthaka/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest-all/1.3/63a21ebc981131004ad02e0434e799fd7f3a8d5a/hamcrest-all-1.3.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Users/Chinthaka/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest-all/1.3/3dc58dac8f7a74bb8c3c8cc579f2f773cc0fd9e9/hamcrest-all-1.3-javadoc.jar!/"/>
+			<attribute name="gradle_used_by_scope" value="integTest,test"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/Chinthaka/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.4.1/9700be0d0a331691654a8e901943c9a74e33c5fc/httpcore-4.4.1-sources.jar" kind="lib" path="C:/Users/Chinthaka/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.4.1/f5aa318bda4c6c8d688c9d00b90681dcd82ce636/httpcore-4.4.1.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Users/Chinthaka/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.4.1/ee000b614136eae09ba1d3ccc95e8e72fa5466b4/httpcore-4.4.1-javadoc.jar!/"/>
+			<attribute name="gradle_used_by_scope" value="integTest,main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/Chinthaka/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.2/ecf26c7507d67782a3bbd148d170b31dfad001aa/commons-logging-1.2-sources.jar" kind="lib" path="C:/Users/Chinthaka/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.2/4bfc12adfe4842bf07b657f0369c4cb522955686/commons-logging-1.2.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Users/Chinthaka/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.2/83033ee697035dfb9ce3503e1ac0c5a33021e503/commons-logging-1.2-javadoc.jar!/"/>
+			<attribute name="gradle_used_by_scope" value="integTest,main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/Chinthaka/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.9/3f15fff45d57656685abfee9e8302bf14580044c/commons-codec-1.9-sources.jar" kind="lib" path="C:/Users/Chinthaka/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.9/9ce04e34240f674bc72680f8b843b1457383161a/commons-codec-1.9.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Users/Chinthaka/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.9/d103169e712eb2473072d53636b0c3bc380b8afb/commons-codec-1.9-javadoc.jar!/"/>
+			<attribute name="gradle_used_by_scope" value="integTest,main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/Chinthaka/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest-core/1.3/1dc37250fbc78e23a65a67fbbaf71d2e9cbc3c0b/hamcrest-core-1.3-sources.jar" kind="lib" path="C:/Users/Chinthaka/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest-core/1.3/42a25dc3219429f0e5d060061f71acb49bf010a0/hamcrest-core-1.3.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Users/Chinthaka/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest-core/1.3/ad09811315f1d4f5756986575b0ea16b99cd686f/hamcrest-core-1.3-javadoc.jar!/"/>
+			<attribute name="gradle_used_by_scope" value="integTest,test"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Chinthaka/.gradle/caches/modules-2/files-2.1/de.abas.homedir/abas-jfop-base/1.0.0/591475242e9f0ff93011207feaad6d6072ff0ef6/abas-jfop-base-1.0.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="integTest,main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Chinthaka/.gradle/caches/modules-2/files-2.1/de.abas.homedir/commons-collections/1.0.0/761ea405b9b37ced573d2df0d1e3a4e0f9edc668/commons-collections-1.0.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="integTest,main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Chinthaka/.gradle/caches/modules-2/files-2.1/de.abas.homedir/jcl-over-slf4j/1.0.0/ce49a188721bc39cb9710b346ae9b7ec27b0f36b/jcl-over-slf4j-1.0.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="integTest,main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Chinthaka/.gradle/caches/modules-2/files-2.1/de.abas.homedir/slf4j-api/1.0.0/5b338f206827d88acd890739f400a9b7664e5984/slf4j-api-1.0.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="integTest,main,test"/>
+		</attributes>
+	</classpathentry>
 </classpath>

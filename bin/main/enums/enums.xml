@@ -1,0 +1,298 @@
+<ABASData>
+  <RecordSet tableNumber="107:1" tableName="Aufzählung:Aufzählung" identifiers="classname,guid" rowIdentifiers="aebezeichner" rowImportMode="updateMatching">
+    <Record id="(265,107,0)">
+      <Head>
+        <Field name="nummer" abasType="NK107">1000007</Field>
+        <Field name="such" abasType="SWK107">DOCMGTSCRN</Field>
+        <Field name="name" abasType="GL45">Document Management Screens</Field>
+        <Field name="name14" abasType="GL45">Document Management Screens</Field>
+        <Field name="tabart" abasType="NT24">P109:2</Field>
+        <Field name="fldname" abasType="GL20">sucherw</Field>
+        <Field name="fldkname" abasType="GL20">such</Field>
+        <Field name="fldbezname" abasType="GL20">classname</Field>
+        <Field name="fldiname" abasType="GL20"></Field>
+        <Field name="leerok" abasType="B1">0</Field>
+        <Field name="id" abasType="ID107">(265,107,0)</Field>
+        <Field name="classname" abasType="GLC40">DocumentManagementScreens</Field>
+        <Field name="guid" abasType="GLA38">b58954af-bf52-425c-835a-18b6a5f73022</Field>
+      </Head>
+      <Row number="1">
+        <Field name="vaufzelem" abasType="VID88">(1137,109,0)</Field>
+        <Field name="aefix" abasType="B1">0</Field>
+        <Field name="aekfix" abasType="B1">0</Field>
+        <Field name="aebezfix" abasType="B1">1</Field>
+        <Field name="aeaktiv" abasType="B1">1</Field>
+        <Field name="aedefault" abasType="B1">0</Field>
+        <Field name="zid" abasType="IDZ107:1">(265,107,0,1)</Field>
+        <Field name="aebezeichner" abasType="GL40">_0</Field>
+      </Row>
+      <Row number="2">
+        <Field name="vaufzelem" abasType="VID88">(1138,109,0)</Field>
+        <Field name="aefix" abasType="B1">0</Field>
+        <Field name="aekfix" abasType="B1">0</Field>
+        <Field name="aebezfix" abasType="B1">1</Field>
+        <Field name="aeaktiv" abasType="B1">1</Field>
+        <Field name="aedefault" abasType="B1">0</Field>
+        <Field name="zid" abasType="IDZ107:1">(265,107,0,2)</Field>
+        <Field name="aebezeichner" abasType="GL40">_1</Field>
+      </Row>
+      <Row number="3">
+        <Field name="vaufzelem" abasType="VID88">(1139,109,0)</Field>
+        <Field name="aefix" abasType="B1">0</Field>
+        <Field name="aekfix" abasType="B1">0</Field>
+        <Field name="aebezfix" abasType="B1">1</Field>
+        <Field name="aeaktiv" abasType="B1">1</Field>
+        <Field name="aedefault" abasType="B1">0</Field>
+        <Field name="zid" abasType="IDZ107:1">(265,107,0,3)</Field>
+        <Field name="aebezeichner" abasType="GL40">_2</Field>
+      </Row>
+      <Row number="4">
+        <Field name="vaufzelem" abasType="VID88">(1140,109,0)</Field>
+        <Field name="aefix" abasType="B1">0</Field>
+        <Field name="aekfix" abasType="B1">0</Field>
+        <Field name="aebezfix" abasType="B1">1</Field>
+        <Field name="aeaktiv" abasType="B1">1</Field>
+        <Field name="aedefault" abasType="B1">0</Field>
+        <Field name="zid" abasType="IDZ107:1">(265,107,0,4)</Field>
+        <Field name="aebezeichner" abasType="GL40">_77</Field>
+      </Row>
+      <Row number="5">
+        <Field name="vaufzelem" abasType="VID88">(1141,109,0)</Field>
+        <Field name="aefix" abasType="B1">0</Field>
+        <Field name="aekfix" abasType="B1">0</Field>
+        <Field name="aebezfix" abasType="B1">1</Field>
+        <Field name="aeaktiv" abasType="B1">1</Field>
+        <Field name="aedefault" abasType="B1">0</Field>
+        <Field name="zid" abasType="IDZ107:1">(265,107,0,5)</Field>
+        <Field name="aebezeichner" abasType="GL40">_32</Field>
+      </Row>
+      <Row number="6">
+        <Field name="vaufzelem" abasType="VID88">(1142,109,0)</Field>
+        <Field name="aefix" abasType="B1">0</Field>
+        <Field name="aekfix" abasType="B1">0</Field>
+        <Field name="aebezfix" abasType="B1">1</Field>
+        <Field name="aeaktiv" abasType="B1">1</Field>
+        <Field name="aedefault" abasType="B1">0</Field>
+        <Field name="zid" abasType="IDZ107:1">(265,107,0,6)</Field>
+        <Field name="aebezeichner" abasType="GL40">_35</Field>
+      </Row>
+      <Row number="7">
+        <Field name="vaufzelem" abasType="VID88">(1143,109,0)</Field>
+        <Field name="aefix" abasType="B1">0</Field>
+        <Field name="aekfix" abasType="B1">0</Field>
+        <Field name="aebezfix" abasType="B1">1</Field>
+        <Field name="aeaktiv" abasType="B1">1</Field>
+        <Field name="aedefault" abasType="B1">0</Field>
+        <Field name="zid" abasType="IDZ107:1">(265,107,0,7)</Field>
+        <Field name="aebezeichner" abasType="GL40">_36</Field>
+      </Row>
+      <Row number="8">
+        <Field name="vaufzelem" abasType="VID88">(1144,109,0)</Field>
+        <Field name="aefix" abasType="B1">0</Field>
+        <Field name="aekfix" abasType="B1">0</Field>
+        <Field name="aebezfix" abasType="B1">1</Field>
+        <Field name="aeaktiv" abasType="B1">1</Field>
+        <Field name="aedefault" abasType="B1">0</Field>
+        <Field name="zid" abasType="IDZ107:1">(265,107,0,8)</Field>
+        <Field name="aebezeichner" abasType="GL40">_42</Field>
+      </Row>
+      <Row number="9">
+        <Field name="vaufzelem" abasType="VID88">(1145,109,0)</Field>
+        <Field name="aefix" abasType="B1">0</Field>
+        <Field name="aekfix" abasType="B1">0</Field>
+        <Field name="aebezfix" abasType="B1">1</Field>
+        <Field name="aeaktiv" abasType="B1">1</Field>
+        <Field name="aedefault" abasType="B1">0</Field>
+        <Field name="zid" abasType="IDZ107:1">(265,107,0,9)</Field>
+        <Field name="aebezeichner" abasType="GL40">_45</Field>
+      </Row>
+      <Row number="10">
+        <Field name="vaufzelem" abasType="VID88">(1146,109,0)</Field>
+        <Field name="aefix" abasType="B1">0</Field>
+        <Field name="aekfix" abasType="B1">0</Field>
+        <Field name="aebezfix" abasType="B1">1</Field>
+        <Field name="aeaktiv" abasType="B1">1</Field>
+        <Field name="aedefault" abasType="B1">0</Field>
+        <Field name="zid" abasType="IDZ107:1">(265,107,0,10)</Field>
+        <Field name="aebezeichner" abasType="GL40">_46</Field>
+      </Row>
+      <Row number="11">
+        <Field name="vaufzelem" abasType="VID88">(1147,109,0)</Field>
+        <Field name="aefix" abasType="B1">0</Field>
+        <Field name="aekfix" abasType="B1">0</Field>
+        <Field name="aebezfix" abasType="B1">1</Field>
+        <Field name="aeaktiv" abasType="B1">1</Field>
+        <Field name="aedefault" abasType="B1">0</Field>
+        <Field name="zid" abasType="IDZ107:1">(265,107,0,11)</Field>
+        <Field name="aebezeichner" abasType="GL40">_143</Field>
+      </Row>
+    </Record>
+  </RecordSet>
+  <RecordSet tableNumber="109:2" tableName="Wertemengen:Bezeichner" identifiers="guid">
+    <Record id="(1137,109,0)">
+      <Head>
+        <Field name="id" abasType="ID109">(1137,109,0)</Field>
+        <Field name="guid" abasType="GLA38">3d96cf50-7c0a-46f3-8923-43d412597a4c</Field>
+        <Field name="nummer" abasType="NK109">1000855</Field>
+        <Field name="such" abasType="SWK109">DMS_S000</Field>
+        <Field name="name" abasType="GL50"></Field>
+        <Field name="name14" abasType="GL50">Customer</Field>
+        <Field name="langtxt" abasType="GL">Customer</Field>
+        <Field name="kbezbspr" abasType="GL15">0</Field>
+        <Field name="katego" abasType="NT15"></Field>
+        <Field name="icontxt" abasType="DV1"></Field>
+        <Field name="besch" abasType="T65"></Field>
+      </Head>
+    </Record>
+    <Record id="(1138,109,0)">
+      <Head>
+        <Field name="id" abasType="ID109">(1138,109,0)</Field>
+        <Field name="guid" abasType="GLA38">1fc3c208-2700-49ae-a5c2-92f8e134ec4c</Field>
+        <Field name="nummer" abasType="NK109">1000856</Field>
+        <Field name="such" abasType="SWK109">DMS_S001</Field>
+        <Field name="name" abasType="GL50"></Field>
+        <Field name="name14" abasType="GL50">Supplier</Field>
+        <Field name="langtxt" abasType="GL">Supplier</Field>
+        <Field name="kbezbspr" abasType="GL15">1</Field>
+        <Field name="katego" abasType="NT15"></Field>
+        <Field name="icontxt" abasType="DV1"></Field>
+        <Field name="besch" abasType="T65"></Field>
+      </Head>
+    </Record>
+    <Record id="(1139,109,0)">
+      <Head>
+        <Field name="id" abasType="ID109">(1139,109,0)</Field>
+        <Field name="guid" abasType="GLA38">85cf39d1-8af5-4c81-b5aa-d34125715669</Field>
+        <Field name="nummer" abasType="NK109">1000857</Field>
+        <Field name="such" abasType="SWK109">DMS_S002</Field>
+        <Field name="name" abasType="GL50"></Field>
+        <Field name="name14" abasType="GL50">Product</Field>
+        <Field name="langtxt" abasType="GL">Product</Field>
+        <Field name="kbezbspr" abasType="GL15">2</Field>
+        <Field name="katego" abasType="NT15"></Field>
+        <Field name="icontxt" abasType="DV1"></Field>
+        <Field name="besch" abasType="T65"></Field>
+      </Head>
+    </Record>
+    <Record id="(1140,109,0)">
+      <Head>
+        <Field name="id" abasType="ID109">(1140,109,0)</Field>
+        <Field name="guid" abasType="GLA38">23098964-38bc-405b-ac1b-10c71e7ed268</Field>
+        <Field name="nummer" abasType="NK109">1000858</Field>
+        <Field name="such" abasType="SWK109">DMS_S077</Field>
+        <Field name="name" abasType="GL50"></Field>
+        <Field name="name14" abasType="GL50">Work Order</Field>
+        <Field name="langtxt" abasType="GL">Production</Field>
+        <Field name="kbezbspr" abasType="GL15">77</Field>
+        <Field name="katego" abasType="NT15"></Field>
+        <Field name="icontxt" abasType="DV1"></Field>
+        <Field name="besch" abasType="T65"></Field>
+      </Head>
+    </Record>
+    <Record id="(1141,109,0)">
+      <Head>
+        <Field name="id" abasType="ID109">(1141,109,0)</Field>
+        <Field name="guid" abasType="GLA38">7b88e94c-4412-4daf-af6d-a72e5ea5e3d1</Field>
+        <Field name="nummer" abasType="NK109">1000859</Field>
+        <Field name="such" abasType="SWK109">DMS_S032</Field>
+        <Field name="name" abasType="GL50"></Field>
+        <Field name="name14" abasType="GL50">Sales Order</Field>
+        <Field name="langtxt" abasType="GL">Sales</Field>
+        <Field name="kbezbspr" abasType="GL15">32</Field>
+        <Field name="katego" abasType="NT15"></Field>
+        <Field name="icontxt" abasType="DV1"></Field>
+        <Field name="besch" abasType="T65"></Field>
+      </Head>
+    </Record>
+    <Record id="(1142,109,0)">
+      <Head>
+        <Field name="id" abasType="ID109">(1142,109,0)</Field>
+        <Field name="guid" abasType="GLA38">4ade65c2-4af4-4246-9a19-7cfc2aed1089</Field>
+        <Field name="nummer" abasType="NK109">1000860</Field>
+        <Field name="such" abasType="SWK109">DMS_S035</Field>
+        <Field name="name" abasType="GL50"></Field>
+        <Field name="name14" abasType="GL50">Sales Packing Slip</Field>
+        <Field name="langtxt" abasType="GL">Sales</Field>
+        <Field name="kbezbspr" abasType="GL15">35</Field>
+        <Field name="katego" abasType="NT15"></Field>
+        <Field name="icontxt" abasType="DV1"></Field>
+        <Field name="besch" abasType="T65"></Field>
+      </Head>
+    </Record>
+    <Record id="(1143,109,0)">
+      <Head>
+        <Field name="id" abasType="ID109">(1143,109,0)</Field>
+        <Field name="guid" abasType="GLA38">b854fd19-0aa9-48aa-bead-204c0fcf57c6</Field>
+        <Field name="nummer" abasType="NK109">1000861</Field>
+        <Field name="such" abasType="SWK109">DMS_S036</Field>
+        <Field name="name" abasType="GL50"></Field>
+        <Field name="name14" abasType="GL50">Sales Invoice</Field>
+        <Field name="langtxt" abasType="GL">Sales</Field>
+        <Field name="kbezbspr" abasType="GL15">36</Field>
+        <Field name="katego" abasType="NT15"></Field>
+        <Field name="icontxt" abasType="DV1"></Field>
+        <Field name="besch" abasType="T65"></Field>
+      </Head>
+    </Record>
+    <Record id="(1144,109,0)">
+      <Head>
+        <Field name="id" abasType="ID109">(1144,109,0)</Field>
+        <Field name="guid" abasType="GLA38">5b16c43f-e35b-4edc-a11e-02dfefa34e3d</Field>
+        <Field name="nummer" abasType="NK109">1000862</Field>
+        <Field name="such" abasType="SWK109">DMS_S042</Field>
+        <Field name="name" abasType="GL50"></Field>
+        <Field name="name14" abasType="GL50">Purchase Order</Field>
+        <Field name="langtxt" abasType="GL">Purchasing</Field>
+        <Field name="kbezbspr" abasType="GL15">42</Field>
+        <Field name="katego" abasType="NT15"></Field>
+        <Field name="icontxt" abasType="DV1"></Field>
+        <Field name="besch" abasType="T65"></Field>
+      </Head>
+    </Record>
+    <Record id="(1145,109,0)">
+      <Head>
+        <Field name="id" abasType="ID109">(1145,109,0)</Field>
+        <Field name="guid" abasType="GLA38">167510b7-190f-41e3-a6c9-be2b624f52de</Field>
+        <Field name="nummer" abasType="NK109">1000863</Field>
+        <Field name="such" abasType="SWK109">DMS_S045</Field>
+        <Field name="name" abasType="GL50"></Field>
+        <Field name="name14" abasType="GL50">Purchasing Packing Slip</Field>
+        <Field name="langtxt" abasType="GL">Purchasing</Field>
+        <Field name="kbezbspr" abasType="GL15">45</Field>
+        <Field name="katego" abasType="NT15"></Field>
+        <Field name="icontxt" abasType="DV1"></Field>
+        <Field name="besch" abasType="T65"></Field>
+      </Head>
+    </Record>
+    <Record id="(1146,109,0)">
+      <Head>
+        <Field name="id" abasType="ID109">(1146,109,0)</Field>
+        <Field name="guid" abasType="GLA38">90a20ae1-91ec-4500-aea9-22d462c83fdc</Field>
+        <Field name="nummer" abasType="NK109">1000864</Field>
+        <Field name="such" abasType="SWK109">DMS_S046</Field>
+        <Field name="name" abasType="GL50"></Field>
+        <Field name="name14" abasType="GL50">Purchasing Invoice</Field>
+        <Field name="langtxt" abasType="GL">Purchasing</Field>
+        <Field name="kbezbspr" abasType="GL15">46</Field>
+        <Field name="katego" abasType="NT15"></Field>
+        <Field name="icontxt" abasType="DV1"></Field>
+        <Field name="besch" abasType="T65"></Field>
+      </Head>
+    </Record>
+    <Record id="(1147,109,0)">
+      <Head>
+        <Field name="id" abasType="ID109">(1147,109,0)</Field>
+        <Field name="guid" abasType="GLA38">4b065827-fc28-4d36-999a-c946449534d8</Field>
+        <Field name="nummer" abasType="NK109">1000865</Field>
+        <Field name="such" abasType="SWK109">DMS_S143</Field>
+        <Field name="name" abasType="GL50"></Field>
+        <Field name="name14" abasType="GL50">Lot</Field>
+        <Field name="langtxt" abasType="GL">Batches</Field>
+        <Field name="kbezbspr" abasType="GL15">143</Field>
+        <Field name="katego" abasType="NT15"></Field>
+        <Field name="icontxt" abasType="DV1"></Field>
+        <Field name="besch" abasType="T65"></Field>
+      </Head>
+    </Record>
+  </RecordSet>
+</ABASData>

@@ -1,0 +1,67 @@
+{
+  "name": "Kunde",
+  "number": 0,
+  "isMasterData": true,
+  "classname": "Customer",
+  "groups": [{
+    "name": "Kunde",
+    "number": 1,
+    "classname": "Customer",
+    "headFields": [{
+      "name": "num",
+      "type": "GL50",
+      "description": "DMS Number",
+      "screenVisibility": "Editable",
+      "showPriority": "A",
+      "changePriority": "A"
+    }, {
+      "name": "type",
+      "isSkip": true,
+      "type": "PT12:3",
+      "description": "Type",
+      "screenVisibility": "Editable",
+      "showPriority": "A",
+      "changePriority": "A"
+    }, {
+      "name": "seltype",
+      "isSkip": true,
+      "type": "BU3",
+      "description": "Select",
+      "screenVisibility": "ViewEditable",
+      "showPriority": "A",
+      "changePriority": "A"
+    }, {
+      "name": "subject",
+      "isSkip": true,
+      "type": "GL50",
+      "description": "Subject",
+      "screenVisibility": "Editable",
+      "showPriority": "A",
+      "changePriority": "A"
+    }, {
+      "name": "file",
+      "isSkip": true,
+      "type": "DV0",
+      "description": "File",
+      "screenVisibility": "Editable",
+      "showPriority": "A",
+      "changePriority": "A"
+    }, {
+      "name": "attach",
+      "isSkip": true,
+      "type": "BU3",
+      "description": "Attach",
+      "screenVisibility": "ViewEditable",
+      "showPriority": "A",
+      "changePriority": "A"
+    }, {
+      "name": "webui",
+      "isSkip": true,
+      "type": "URL2",
+      "description": "Web UI",
+      "screenVisibility": "Editable",
+      "showPriority": "A",
+      "changePriority": "A"
+    }]
+  }]
+}

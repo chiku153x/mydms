@@ -1,24 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
 	<name>mydocmgt</name>
-	<comment>Project mydms created by Buildship.</comment>
-	<projects>
-	</projects>
-	<buildSpec>
-		<buildCommand>
-			<name>org.eclipse.jdt.core.javabuilder</name>
-			<arguments>
-			</arguments>
-		</buildCommand>
-		<buildCommand>
-			<name>org.eclipse.buildship.core.gradleprojectbuilder</name>
-			<arguments>
-			</arguments>
-		</buildCommand>
-	</buildSpec>
+	<comment>abas Essentials SDK (ESDK) App Project ''</comment>
+	<projects/>
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>de.abas.tools.esdk.esdknature</nature>
-		<nature>org.eclipse.buildship.core.gradleprojectnature</nature>
 	</natures>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments/>
+		</buildCommand>
+	</buildSpec>
+	<linkedResources/>
+	<filteredResources/>
 </projectDescription>

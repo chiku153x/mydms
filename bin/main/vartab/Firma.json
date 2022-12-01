@@ -1,0 +1,92 @@
+{
+  "name": "Firma",
+  "number": 12,
+  "isMasterData": true,
+  "classname": "Company",
+  "groups": [{
+    "name": "Betriebsdaten",
+    "number": 10,
+    "classname": "CompanyData",
+    "headFields": [{
+      "name": "enabled",
+      "type": "B",
+      "description": "Is Document Management Enabled ?",
+      "screenVisibility": "Editable",
+      "showPriority": "A",
+      "changePriority": "A"
+    }, {
+      "name": "resturl",
+      "type": "GL50",
+      "description": "DMS Rest Service",
+      "screenVisibility": "Editable",
+      "showPriority": "A",
+      "changePriority": "A"
+    }, {
+      "name": "resttest",
+      "isSkip": true,
+      "type": "BU3",
+      "description": "DMS Rest Service test",
+      "screenVisibility": "ViewEditable",
+      "showPriority": "A",
+      "changePriority": "A"
+    }, {
+      "name": "webuiurl",
+      "type": "GL50",
+      "description": "DMS Web UI",
+      "screenVisibility": "Editable",
+      "showPriority": "A",
+      "changePriority": "A"
+    }, {
+      "name": "webuitest",
+      "isSkip": true,
+      "type": "BU3",
+      "description": "DMS Web UI test",
+      "screenVisibility": "ViewEditable",
+      "showPriority": "A",
+      "changePriority": "A"
+    }, {
+      "name": "fileupsrv",
+      "type": "GL50",
+      "description": "DMS File Upload",
+      "screenVisibility": "Editable",
+      "showPriority": "A",
+      "changePriority": "A"
+    }, {
+      "name": "fileuptest",
+      "isSkip": true,
+      "type": "BU3",
+      "description": "DMS File Upload test",
+      "screenVisibility": "ViewEditable",
+      "showPriority": "A",
+      "changePriority": "A"
+    }, {
+      "name": "fileno",
+      "type": "I3",
+      "description": "DMS Additional File No",
+      "screenVisibility": "Editable",
+      "showPriority": "A",
+      "changePriority": "A"
+    }, {
+      "name": "tmpfileloc",
+      "type": "GL50",
+      "description": "DMS Temp File Location",
+      "screenVisibility": "Editable",
+      "showPriority": "A",
+      "changePriority": "A"
+    }, {
+      "name": "tmpfiletest",
+      "type": "BU3",
+      "description": "DMS Temp File Location test",
+      "screenVisibility": "Editable",
+      "showPriority": "A",
+      "changePriority": "A"
+    }, {
+      "name": "updatescr",
+      "type": "BU3",
+      "description": "Update Web UI Screens List",
+      "screenVisibility": "Editable",
+      "showPriority": "A",
+      "changePriority": "A"
+    }]
+  }]
+}
